@@ -1,0 +1,7 @@
+<categories>
+	<category name="Uncategorized" slug="uncategorized"/>
+	<category name="Test" slug="test"></category>
+	<category name="Assert" slug="assert"></category>
+	<category name="Callbacks" slug="callbacks"></category>
+	<category name="Async Control" slug="async-control"></category>
+</categories>
