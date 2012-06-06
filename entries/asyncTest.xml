@@ -1,13 +1,13 @@
 <entry type="method" name="asyncTest">
 	<signature>
-		<argument name="name">
-			<desc></desc>
+		<argument name="name" type="String">
+			<desc>Title of unit being tested</desc>
 		</argument>
-		<argument name="expected">
-			<desc></desc>
+		<argument name="expected" type="Number">
+			<desc>Number of assertions in this test</desc>
 		</argument>
-		<argument name="test">
-			<desc></desc>
+		<argument name="test" type="Function">
+			<desc>Function to close over assertions</desc>
 		</argument>
 	</signature>
 	<desc>

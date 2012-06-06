@@ -1,10 +1,10 @@
 <entry type="method" name="module">
 	<signature>
-		<argument name="name">
-			<desc></desc>
+		<argument name="name" type="String">
+			<desc>Module or Grouping Name</desc>
 		</argument>
-		<argument name="lifecycle">
-			<desc></desc>
+		<argument name="lifecycle" type="PlainObject">
+			<desc>Preset setup and teardown callbacks</desc>
 		</argument>
 	</signature>
 	<desc>

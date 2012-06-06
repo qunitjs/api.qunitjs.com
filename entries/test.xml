@@ -1,13 +1,13 @@
 <entry type="method" name="test">
 	<signature>
-		<argument name="title">
-			<desc></desc>
+		<argument name="title" type="String">
+			<desc>Title of unit being tested</desc>
 		</argument>
-		<argument name="expected">
-			<desc></desc>
+		<argument name="expected" type="Number">
+			<desc>Number of assertions in this test</desc>
 		</argument>
-		<argument name="test">
-			<desc></desc>
+		<argument name="test" type="Function">
+			<desc>Function to close over assertions</desc>
 		</argument>
 	</signature>
 	<desc>

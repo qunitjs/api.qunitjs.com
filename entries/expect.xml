@@ -1,7 +1,7 @@
 <entry type="method" name="expect">
 	<signature>
-		<argument name="amount">
-			<desc></desc>
+		<argument name="amount" type="Number">
+			<desc>Number of assertions in this test.</desc>
 		</argument>
 	</signature>
 	<desc>

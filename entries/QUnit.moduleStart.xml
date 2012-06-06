@@ -1,9 +1,9 @@
 <entry type="method" name="QUnit.moduleStart">
 	<signature>
-		<argument name="callback">
-			<desc></desc>
+		<argument name="callback" type="Function">
+			<desc>Callback to execute</desc>
 		</argument>
 	</signature>
-	<desc></desc>
+	<desc>Register a callback to fired whenever a module begins.</desc>
 	<category slug="callbacks"/>
 </entry>

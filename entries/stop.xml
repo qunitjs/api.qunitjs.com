@@ -1,6 +1,6 @@
 <entry type="method" name="stop">
 	<signature>
-		<argument name="increment">
+		<argument name="increment" type="Number">
 			<desc></desc>
 		</argument>
 	</signature>

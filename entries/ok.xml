@@ -1,10 +1,10 @@
 <entry type="method" name="ok">
 	<signature>
-		<argument name="state">
-			<desc></desc>
+		<argument name="state" type="Expression">
+			<desc>Expression being tested</desc>
 		</argument>
-		<argument name="message">
-			<desc></desc>
+		<argument name="message" type="String">
+			<desc>A short description of the assertion</desc>
 		</argument>
 	</signature>
 	<desc>

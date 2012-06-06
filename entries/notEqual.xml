@@ -1,13 +1,13 @@
 <entry type="method" name="notEqual">
 	<signature>
-		<argument name="actual">
-			<desc></desc>
+		<argument name="actual" type="String,Number,Boolean">
+			<desc>Expression being tested</desc>
 		</argument>
-		<argument name="expected">
-			<desc></desc>
+		<argument name="expected" type="String,Number,Boolean">
+			<desc>Known comparison value</desc>
 		</argument>
-		<argument name="message">
-			<desc></desc>
+		<argument name="message" type="String">
+			<desc>A short description of the assertion</desc>
 		</argument>
 	</signature>
 	<desc>
