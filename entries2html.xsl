@@ -23,54 +23,6 @@
 						<a href="#overview">Overview</a>
 					</li>
 					<li>
-						<a href="#options">Options</a>
-						<ul>
-							<xsl:for-each select="options/option">
-								<li>
-									<a href="#option-{@name}">
-										<xsl:value-of select="@name"/>
-									</a>
-								</li>
-							</xsl:for-each>
-						</ul>
-					</li>
-					<li>
-						<a href="#methods">Methods</a>
-						<ul>
-							<xsl:for-each select="methods/method">
-								<li>
-									<a href="#method-{@name}">
-										<xsl:value-of select="@name"/>
-									</a>
-								</li>
-							</xsl:for-each>
-						</ul>
-					</li>
-					<li>
-						<a href="#events">Events</a>
-						<ul>
-							<xsl:for-each select="events/event">
-								<li>
-									<a href="#event-{@name}">
-										<xsl:value-of select="@name"/>
-									</a>
-								</li>
-							</xsl:for-each>
-						</ul>
-					</li>
-					<li>
-						<a href="#theming">Theming</a>
-                                                <ul>
-                                                        <xsl:for-each select="theming/theme">
-                                                                <li>
-                                                                        <a href="#theme-{@name}">
-                                                                                <xsl:value-of select="@name"/>
-                                                                        </a>
-                                                                </li>
-                                                        </xsl:for-each>
-                                                </ul>
-					</li>
-					<li>
 						<a href="#examples">Examples</a>
 					</li>
 				</ul>
@@ -82,100 +34,6 @@
 				<p>
 					<xsl:copy-of select="longdesc/node()"/>
 				</p>
-			</section>
-			<section id="options">
-				<header>
-					<h2 class="underline">Options</h2>
-				</header>
-				<ul>
-					<xsl:for-each select="options/option">
-						<li id="option-{@name}">
-							<h3>
-								<xsl:value-of select="@name"/>
-							</h3>
-							<p>
-								<strong>Type: </strong>
-								<xsl:value-of select="@type"/>
-								<xsl:for-each select="type">
-									<xsl:if test="position() &gt; 1">, </xsl:if>
-									<xsl:value-of select="@name"/>
-								</xsl:for-each>
-							</p>
-							<p>
-								<strong>Default: </strong>
-								<xsl:value-of select="@default"/>
-							</p>
-							<p>
-								<xsl:copy-of select="desc/node()"/>
-							</p>
-						</li>
-					</xsl:for-each>
-				</ul>
-			</section>
-			<section id="methods">
-				<header>
-					<h2 class="underline">Methods</h2>
-				</header>
-				<ul>
-					<xsl:for-each select="methods/method">
-						<li id="method-{@name}">
-							<h3><xsl:value-of select="@name"/>(
-     <xsl:for-each select="argument"><xsl:if test="position() &gt; 1">, </xsl:if><xsl:if test="@optional">[</xsl:if><xsl:value-of select="@name"/><xsl:if test="@optional">]</xsl:if></xsl:for-each>
-     )</h3>
-							<p>
-								<xsl:copy-of select="desc/node()"/>
-							</p>
-							<xsl:call-template name="arguments"/>
-						</li>
-					</xsl:for-each>
-				</ul>
-			</section>
-			<section id="events">
-				<header>
-					<h2 class="underline">Events</h2>
-				</header>
-				<ul>
-					<xsl:for-each select="events/event">
-						<li id="event-{@name}">
-							<h3><xsl:value-of select="@name"/>(
-     <xsl:for-each select="argument"><xsl:if test="position() &gt; 1">, </xsl:if><xsl:value-of select="@name"/></xsl:for-each>
-     )</h3>
-							<p>
-								<xsl:copy-of select="desc/node()"/>
-							</p>
-							<xsl:call-template name="arguments"/>
-						</li>
-					</xsl:for-each>
-				</ul>
-			</section>
-			<section id="theming">
-				<header>
-					<h2 class="underline">Theming</h2>
-				</header>
-                                <ul>
-                                        <xsl:for-each select="theming/theme">
-                                                <li id="theme-{@name}">
-                                                        <h3>
-                                                                <xsl:value-of select="@name"/>
-                                                        </h3>
-                                                        <p>
-                                                                <strong>Type: </strong>
-                                                                <xsl:value-of select="@type"/>
-                                                                <xsl:for-each select="type">
-                                                                        <xsl:if test="position() &gt; 1">, </xsl:if>
-                                                                        <xsl:value-of select="@name"/>
-                                                                </xsl:for-each>
-                                                        </p>
-                                                        <p>
-                                                                <strong>Default: </strong>
-                                                                <xsl:value-of select="@default"/>
-                                                        </p>
-                                                        <p>
-                                                                <xsl:copy-of select="desc/node()"/>
-                                                        </p>
-                                                </li>
-                                        </xsl:for-each>
-                                </ul>
 			</section>
 			<section id="examples">
 				<header>
@@ -194,16 +52,16 @@
 &lt;head&gt;
 &lt;meta charset="utf-8"&gt;
 &lt;title&gt;<xsl:value-of select="desc"/>&lt;/title&gt;
-&lt;link rel="stylesheet" href="jquery-mobile.css"&gt;<xsl:if test="css">
+&lt;link rel="stylesheet" href="qunit.css"&gt;<xsl:if test="css">
 &lt;style&gt;<xsl:copy-of select="css/text()"/>  &lt;/style&gt;</xsl:if>
-&lt;script src="jquery.js"&gt;&lt;/script&gt;
-&lt;script src="jquery-mobile.js"&gt;&lt;/script&gt;
+&lt;script src="qunitjs.js"&gt;&lt;/script&gt;
+&lt;script&gt;<xsl:copy-of select="code/text()"/>&lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
-&lt;div data-role="page"&gt;
-<xsl:copy-of select="html/text()"/>
+&lt;div id="qunit"&gt;&lt;/div&gt;
+&lt;div id="qunit-fixture"&gt;
+	<xsl:copy-of select="html/text()"/>
 &lt;/div&gt;
-&lt;script&gt;<xsl:copy-of select="code/text()"/>&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code>
