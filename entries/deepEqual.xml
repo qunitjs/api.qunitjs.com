@@ -14,7 +14,7 @@
     A deep recursive comparison assertion, working on primitive types, arrays, objects, regular expressions, dates and functions.
   </desc>
   <longdesc>
-    <p>The <code>deepEqual()</code> assertion can be used just like <code>equal()</code> and is a better choice in most cases. Instead of the simple comparison operator (<code>==</code>), it uses the more accurate comparison operator (<code>===</code>). That way, <code>undefined</code> doesn't equal <code>null</code>, <code>0</code>, or the empty string (<code>""</code>). It also compares the content of objects so that <code>{ key: value }</code> is equal to <code>{ key: value }</code>, even when comparing two objects with distinct identities.</p>
+    <p>The <code>deepEqual()</code> assertion can be used just like <code>equal()</code> when comparing the value of objects, such that <code>{ key: value }</code> is equal to <code>{ key: value }</code>. For non-scalar values, identity will be disregarded by <code>deepEqual</code>.</p>
 
     <p><code>notDeepEqual()</code> can be used to explicitly test deep, strict inequality.</p>
   </longdesc>
