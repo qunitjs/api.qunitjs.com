@@ -1,11 +1,11 @@
 <entry type="method" name="expect">
-	<signature>
-		<argument name="amount" type="Number">
-			<desc>Number of assertions in this test.</desc>
-		</argument>
-	</signature>
-	<desc>
-		Specify how many assertions are expected to run within a test.
-	</desc>
-	<category slug="test"/>
+  <signature>
+    <argument name="amount" type="Number">
+      <desc>Number of assertions in this test.</desc>
+    </argument>
+  </signature>
+  <desc>
+    Specify how many assertions are expected to run within a test.
+  </desc>
+  <category slug="test"/>
 </entry>

@@ -1,17 +1,17 @@
 <entry type="method" name="raises">
-	<signature>
-		<argument name="block" type="Function">
-			<desc>Function to execute</desc>
-		</argument>
-		<argument name="expected" type="Error">
-			<desc>Error Object to compare</desc>
-		</argument>
-		<argument name="message" type="String">
-			<desc>A short description of the assertion</desc>
-		</argument>
-	</signature>
-	<desc>
-		Assertion to test if a callback throws an exception when run.
-	</desc>
-	<category slug="assert"/>
+  <signature>
+    <argument name="block" type="Function">
+      <desc>Function to execute</desc>
+    </argument>
+    <argument name="expected" type="Error">
+      <desc>Error Object to compare</desc>
+    </argument>
+    <argument name="message" type="String">
+      <desc>A short description of the assertion</desc>
+    </argument>
+  </signature>
+  <desc>
+    Assertion to test if a callback throws an exception when run.
+  </desc>
+  <category slug="assert"/>
 </entry>

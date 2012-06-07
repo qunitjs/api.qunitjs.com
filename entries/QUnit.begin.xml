@@ -1,9 +1,9 @@
 <entry type="method" name="QUnit.begin">
-	<signature>
-		<argument name="callback" type="Function">
-			<desc>Callback to execute</desc>
-		</argument>
-	</signature>
-	<desc>Register a callback to fired when the test suite begins.</desc>
-	<category slug="callbacks"/>
+  <signature>
+    <argument name="callback" type="Function">
+      <desc>Callback to execute</desc>
+    </argument>
+  </signature>
+  <desc>Register a callback to fired when the test suite begins.</desc>
+  <category slug="callbacks"/>
 </entry>

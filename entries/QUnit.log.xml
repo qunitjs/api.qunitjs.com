@@ -1,8 +1,8 @@
 <entry type="method" name="QUnit.log">
-	<signature>
-		<argument name="callback" type="Function">
-			<desc>Callback to execute</desc>
-		</argument>
-	</signature>
-	<desc>Register a callback to fired when each assertion completes.</desc> <category slug="callbacks"/>
+  <signature>
+    <argument name="callback" type="Function">
+      <desc>Callback to execute</desc>
+    </argument>
+  </signature>
+  <desc>Register a callback to fired when each assertion completes.</desc> <category slug="callbacks"/>
 </entry>
