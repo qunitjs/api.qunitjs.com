@@ -10,5 +10,29 @@
   <desc>
     Separate tests into modules.
   </desc>
+  <longdesc>
+    <p>All tests that occur after a call to <code>module()</code> will be grouped into that module. The test names will all be preceded by the module name in the test results. You can then use that module name to select tests to run.</p>
+  </longdesc>
+  <example height="250">
+    <desc>Use the <code>module()</code> function to group tests together:</desc>
+<code><![CDATA[
+module( "group a" );
+test( "a basic test example", function() {
+  ok( true, "this test is fine" );
+});
+test( "a basic test example 2", function() {
+  ok( true, "this test is fine" );
+});
+
+module( "group b" );
+test( "a basic test example 3", function() {
+  ok( true, "this test is fine" );
+});
+test( "a basic test example 4", function() {
+  ok( true, "this test is fine" );
+});
+]]></code>
+  </example>
+
   <category slug="test"/>
 </entry>
