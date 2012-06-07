@@ -1,9 +1,9 @@
 <entry type="method" name="deepEqual">
   <signature>
-    <argument name="actual" type="String,Number,Boolean,Array,PlainObject,Date,RegExp,Function,Nan,Null,Undefined">
-      <desc>Expression being tested</desc>
+    <argument name="actual" type="Object">
+      <desc>Object or Expression being tested</desc>
     </argument>
-    <argument name="expected" type="String,Number,Boolean,Array,PlainObject,Date,RegExp,Function,Nan,Null,Undefined">
+    <argument name="expected" type="Object">
       <desc>Known comparison value</desc>
     </argument>
     <argument name="message" type="String">
