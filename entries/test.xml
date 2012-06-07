@@ -1,17 +1,44 @@
 <entry type="method" name="test">
-	<signature>
-		<argument name="title" type="String">
-			<desc>Title of unit being tested</desc>
-		</argument>
-		<argument name="expected" type="Number">
-			<desc>Number of assertions in this test</desc>
-		</argument>
-		<argument name="test" type="Function">
-			<desc>Function to close over assertions</desc>
-		</argument>
-	</signature>
-	<desc>
-		Add a test to run.
-	</desc>
-	<category slug="test"/>
+  <signature>
+    <argument name="title" type="String">
+      <desc>Title of unit being tested</desc>
+    </argument>
+    <argument name="expected" type="Number">
+      <desc>Number of assertions in this test</desc>
+    </argument>
+    <argument name="test" type="Function">
+      <desc>Function to close over assertions</desc>
+    </argument>
+  </signature>
+  <desc>
+    Add a test to run.
+  </desc>
+  <longdesc>
+    <p>When testing the most common, synchronous code, use <code>test()</code></p>
+  </longdesc>
+  <example height="250">
+    <desc>Simple, synchronous code test.</desc>
+<code><![CDATA[
+  test( "hello test", function() {
+    ok( 1 == "1", "Passed!" );
+  });
+]]></code>
+  </example>
+  <example height="250">
+    <desc>A more practical example.</desc>
+<code><![CDATA[
+test( "a test", function() {
+
+  function square( x ) {
+    return x * x;
+  }
+
+  var result = square( 2 );
+
+  equal( result, 4, "square(2) equals 4" );
+});
+]]></code>
+  </example>
+
+  <category slug="test"/>
 </entry>
