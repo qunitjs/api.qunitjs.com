@@ -11,7 +11,36 @@
     </argument>
   </signature>
   <desc>
-    A comparison assertion, equivalent to JUnit’s assertEquals.
+    A comparison assertion, equivalent to JUnit/CommonJS assertEqual(s).
   </desc>
+  <longdesc>
+    <p>The <code>equal</code> assertion uses the simple comparison operator (<code>==</code>) to compare the actual and expected arguments. When they are equal, the assertion passes; otherwise, it fails. When it fails, both actual and expected values are displayed in the test result, in addition to a given message.</p>
+
+    <p><code>notEqual()</code> can be used to explicitly test inequality.</p>
+  </longdesc>
+  <example height="250">
+    <desc>The simplest assertion example:</desc>
+<code><![CDATA[
+test( "a test", function() {
+  equal( 1, "1", "String '1' and number 1 have the same value" );
+});
+]]></code>
+  </example>
+  <example height="250">
+    <desc>A slightly more thorough set of assertions:</desc>
+<code><![CDATA[
+  test( "equal test", function() {
+    equal( 0, 0, "Zero; equal succeeds" );
+    equal( "", 0, "Empty, Zero; equal succeeds" );
+    equal( "", "", "Empty, Empty; equal succeeds" );
+    equal( 0, 0, "Zero, Zero; equal succeeds" );
+
+    equal( "three", 3, "Three, 3; equal fails" );
+    equal( null, false, "null, false; equal fails" );
+  });
+]]></code>
+  </example>
+
+
   <category slug="assert"/>
 </entry>
