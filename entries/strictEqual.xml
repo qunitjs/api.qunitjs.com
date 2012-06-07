@@ -11,7 +11,21 @@
     </argument>
   </signature>
   <desc>
-    A stricter comparison assertion then equal. Compares both type and value.
+    A strict type and value comparison assertion.
   </desc>
+  <longdesc>
+    <p>The <code>strictEqual()</code> assertion provides the most rigid comparison of type and value with the strict equality operator (<code>===</code>.</p>
+
+    <p><code>notStrictEqual()</code> can be used to explicitly test strict inequality.</p>
+  </longdesc>
+  <example height="250">
+    <desc>Compare the value of two primitives, having the same value and type.</desc>
+<code><![CDATA[
+test( "strictEqual test", function() {
+  strictEqual( 1, 1, "1 and 1 are the same value and type" );
+});
+]]></code>
+  </example>
+
   <category slug="assert"/>
 </entry>
