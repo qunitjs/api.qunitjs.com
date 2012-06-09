@@ -1,13 +1,18 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type="method" name="test">
   <signature>
     <argument name="title" type="String">
       <desc>Title of unit being tested</desc>
     </argument>
-    <argument name="expected" type="Number">
+    <argument name="expected" type="Number" optional="true">
       <desc>Number of assertions in this test</desc>
     </argument>
-    <argument name="test" type="Function">
+    <argument name="test">
       <desc>Function to close over assertions</desc>
+      <type name="Function">
+        <argument name="assert" type="QUnit.assert"></argument>
+      </type>
     </argument>
   </signature>
   <desc>
@@ -15,6 +20,7 @@
   </desc>
   <longdesc>
     <p>When testing the most common, synchronous code, use <code>test()</code></p>
+    <p>The <code>assert</code> argument to the callback contains all of QUnit's assertion methods. If you are avoiding using any of QUnit's globals, you can use the assert argument instead.</p>
   </longdesc>
   <example height="250">
     <desc>Simple, synchronous code test.</desc>
@@ -25,9 +31,9 @@
 ]]></code>
   </example>
   <example height="250">
-    <desc>A more practical example.</desc>
+    <desc>A more practical example, using the assert argument and no globals.</desc>
 <code><![CDATA[
-test( "a test", function() {
+QUnit.test( "a test", function( assert ) {
 
   function square( x ) {
     return x * x;
@@ -35,7 +41,7 @@ test( "a test", function() {
 
   var result = square( 2 );
 
-  equal( result, 4, "square(2) equals 4" );
+  assert.equal( result, 4, "square(2) equals 4" );
 });
 ]]></code>
   </example>

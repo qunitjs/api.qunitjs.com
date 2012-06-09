@@ -37,6 +37,23 @@
 					<h2 class="underline">Overview</h2>
 				</header>
 				<p>
+					<code>
+					<xsl:value-of select="@name" /><xsl:if test="@type='method'">(<xsl:if test="signature/argument"><xsl:text> </xsl:text>
+					  <xsl:for-each select="signature[1]/argument">
+
+					    <xsl:if test="@optional">[</xsl:if>
+					    <xsl:if test="position() &gt; 1">
+					      <xsl:text>, </xsl:text>
+					    </xsl:if>
+					    <xsl:value-of select="@name" />:
+					    <xsl:call-template name="render-types" />
+					    <xsl:if test="@optional"><xsl:text>&#160;</xsl:text>]</xsl:if>
+					    </xsl:for-each>
+					<xsl:text>&#160;</xsl:text></xsl:if>)</xsl:if>
+					  <xsl:text> </xsl:text>
+					</code>
+				</p>
+				<p>
 					<xsl:copy-of select="longdesc/node()"/>
 				</p>
 			</section>
