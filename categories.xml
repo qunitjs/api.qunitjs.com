@@ -4,4 +4,5 @@
 	<category name="Assert" slug="assert"></category>
 	<category name="Callbacks" slug="callbacks"></category>
 	<category name="Async Control" slug="async-control"></category>
+	<category name="Configuration" slug="config"></category>
 </categories>

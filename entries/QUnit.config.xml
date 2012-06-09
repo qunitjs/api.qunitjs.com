@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
+<entry type="property" name="QUnit.config">
+  <options>
+    <option name="reorder" type="Boolean" default="true">
+      <desc>
+        By default, QUnit will run tests first that failed on a previous run. In a large testsuite, this can speed up testing a lot.
+        <p>It can also lead to random erros, in case your testsuite has non-atomic tests, where the order is important. You should fix those issues, instead of disabling reordering!</p>
+        </desc>
+    </option>
+    <option name="altertitle" type="Boolean" default="true">
+      <desc>
+        By default, QUnit updates document.title to add a checkmark or x-mark to indicate if a testsuite passed or failed. This makes it easy to see a suites result even without looking at a tab's content.
+        <p>If you're dealing with code that tests <code>document.title</code> changes or have some other problem with this feature, set this option to false to disable it.</p>
+      </desc>
+    </option>
+    <option name="requireExpects" type="Boolean" default="false">
+      <desc>
+        The <code>expect()</code> method is optional by default, though it can be useful to require each test to specify the number of expected assertions.
+        <p>Enabling this option will cause tests to fail, if they don't call <code>expect()</code> at all.</p>
+      </desc>
+    </option>
+  </options>
+  <desc>Configuration for QUnit</desc>
+  <longdesc>
+    <p>QUnit has a bunch of internal configuration defaults, some of which are useful to override. Check the description for each option for details.</p>
+  </longdesc>
+  <example height="250">
+    <desc>Disable reordering, useful when a testsuite is fubar.</desc>
+<code><![CDATA[
+QUnit.config.reorder = false;
+]]></code>
+  </example>
+  <category slug="config"/>
+</entry>
