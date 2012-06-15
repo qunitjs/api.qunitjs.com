@@ -73,10 +73,12 @@
 									<strong>Type: </strong>
 									<xsl:call-template name="render-types" />
 								</p>
-								<p>
-									<strong>Default: </strong>
-									<xsl:value-of select="@default"/>
-								</p>
+								<xsl:if test="@default">
+									<p>
+										<strong>Default: </strong>
+										<xsl:value-of select="@default"/>
+									</p>
+								</xsl:if>
 								<p>
 									<xsl:copy-of select="desc/node()"/>
 								</p>
