@@ -20,6 +20,12 @@
         <p>Enabling this option will cause tests to fail, if they don't call <code>expect()</code> at all.</p>
       </desc>
     </option>
+    <option name="urlConfig" type="Array">
+      <desc>
+        This property controls which checkboxes to put into the QUnit toolbar element (below the header). By default, the "noglobals" and "notrycatch" checkboxes are there. By extending this array, you can add your own checkboxes.
+        <p>Each element should have three properties: <code>id</code> will be used as the config and query-string key, <code>label</code> will be used as the display propery (text in the UI), <code>tooltip</code> will be used as the title attribute, and should explain what the checkbox does.</p>
+      </desc>
+    </option>
   </options>
   <desc>Configuration for QUnit</desc>
   <longdesc>
@@ -31,5 +37,15 @@
 QUnit.config.reorder = false;
 ]]></code>
   </example>
+    <example height="250">
+      <desc>Add a new checkbox to the toolbar, using the <code>urlConfig</code> property. This assumes there's other code on the page that will check the <code>QUnit.config.min</code> property to react to the selection.</desc>
+  <code><![CDATA[
+  QUnit.config.urlConfig.push({
+    id: "min",
+    label: "Minified source",
+    tooltip: "Load minified source files instead of the regular unminified ones."
+  });
+  ]]></code>
+    </example>
   <category slug="config"/>
 </entry>
