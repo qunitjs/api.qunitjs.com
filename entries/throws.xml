@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
-<entry type="method" name="raises">
+<entry type="method" name="throws">
   <signature>
     <argument name="block" type="Function">
       <desc>Function to execute</desc>
@@ -16,12 +16,12 @@
     Assertion to test if a callback throws an exception when run.
   </desc>
   <longdesc>
-    <p>When testing code that is expected to throw an exception based on a specific set of circumstances, use <code>raises()</code> to catch the error object for testing and comparison.</p>
+    <p>When testing code that is expected to throw an exception based on a specific set of circumstances, use <code>throws()</code> to catch the error object for testing and comparison.</p>
   </longdesc>
   <example height="250">
     <desc>Assert the correct error message is received for a custom error object.</desc>
 <code><![CDATA[
-test( "raises", function() {
+test( "throws", function() {
 
   function CustomError( message ) {
     this.message = message;
@@ -31,14 +31,14 @@ test( "raises", function() {
     return this.message;
   };
 
-  raises(
+  throws(
     function() {
       throw "error"
     },
-    "raises with just a message, no expected"
+    "throws with just a message, no expected"
   );
 
-  raises(
+  throws(
     function() {
       throw new CustomError();
     },
@@ -46,7 +46,7 @@ test( "raises", function() {
     "raised error is an instance of CustomError"
   );
 
-  raises(
+  throws(
     function() {
       throw new CustomError("some error description");
     },
