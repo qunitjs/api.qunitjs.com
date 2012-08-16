@@ -26,7 +26,9 @@ grunt.initConfig({
 	"build-resources": {
 		all: grunt.file.expandFiles( "resources/*" )
 	},
-	wordpress: grunt.file.readJSON( "config.json" )
+	wordpress: grunt.utils._.extend({
+		dir: "dist/wordpress"
+	}, grunt.file.readJSON( "config.json" ) )
 });
 
 grunt.registerTask( "default", "build-wordpress" );
