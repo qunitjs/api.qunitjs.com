@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type="method" name="strictEqual">
+  <title>strictEqual()</title>
   <signature>
     <argument name="actual" type="String,Number,Boolean">
       <desc>Expression being tested</desc>

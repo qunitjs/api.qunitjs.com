@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type="method" name="expect">
+  <title>expect()</title>
   <signature>
     <argument name="amount" type="Number">
       <desc>Number of assertions in this test.</desc>

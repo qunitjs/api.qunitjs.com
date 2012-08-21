@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type="method" name="deepEqual">
+  <title>deepEqual()</title>
   <signature>
     <argument name="actual" type="Object">
       <desc>Object or Expression being tested</desc>

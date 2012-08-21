@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type="property" name="QUnit.config">
+  <title>QUnit.config</title>
   <options>
     <option name="reorder" type="Boolean" default="true">
       <desc>

@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type="method" name="QUnit.moduleStart">
+  <title>QUnit.moduleStart()</title>
   <signature>
     <argument name="callback" type="Function">
       <desc>Callback to execute</desc>
