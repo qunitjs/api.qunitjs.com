@@ -3,6 +3,8 @@
 
 <!-- Set this to true to display links to /category/version/{version} -->
 <xsl:variable name="version-category-links" select="false()"/>
+<!-- Set this to false to prevent prefixing method names with a dot -->
+<xsl:variable name="method-prefix-dot" select="true()"/>
 
 <xsl:template match="/">
 	<script>{
@@ -51,44 +53,46 @@
 			</xsl:attribute>
 
 			<xsl:call-template name="entry-title"/>
-			<xsl:call-template name="entry-body"/>
+			<div class="entry-wrapper">
+				<xsl:call-template name="entry-body"/>
 
-			<xsl:if test="normalize-space(longdesc/*)">
-				<div class="longdesc">
-					<xsl:copy-of select="longdesc/*" />
-				</div>
-			</xsl:if>
+				<xsl:if test="normalize-space(longdesc/*)">
+					<div class="longdesc">
+						<xsl:apply-templates select="longdesc"/>
+					</div>
+				</xsl:if>
 
-			<xsl:if test="note">
-				<h3>Additional Notes:</h3>
-				<div class="longdesc">
-					<ul>
-						<xsl:for-each select="note">
-							<li><xsl:call-template name="note"/></li>
-						</xsl:for-each>
-					</ul>
-				</div>
-			</xsl:if>
+				<xsl:if test="note">
+					<h3>Additional Notes:</h3>
+					<div class="longdesc">
+						<ul>
+							<xsl:for-each select="note">
+								<li><xsl:call-template name="note"/></li>
+							</xsl:for-each>
+						</ul>
+					</div>
+				</xsl:if>
 
-			<xsl:if test="example">
-				<section class="entry-examples">
-					<xsl:attribute name="id">
-						<xsl:text>entry-examples</xsl:text>
-						<xsl:if test="$entry-index &gt; 1">
-							<xsl:text>-</xsl:text><xsl:value-of select="$entry-index - 1"/>
-						</xsl:if>
-					</xsl:attribute>
+				<xsl:if test="example">
+					<section class="entry-examples">
+						<xsl:attribute name="id">
+							<xsl:text>entry-examples</xsl:text>
+							<xsl:if test="$entry-index &gt; 1">
+								<xsl:text>-</xsl:text><xsl:value-of select="$entry-index - 1"/>
+							</xsl:if>
+						</xsl:attribute>
 
-					<header>
-						<h2 class="underline">Example<xsl:if test="$number-examples &gt; 1">s</xsl:if>:</h2>
-					</header>
+						<header>
+							<h2 class="underline">Example<xsl:if test="$number-examples &gt; 1">s</xsl:if>:</h2>
+						</header>
 
-					<xsl:apply-templates select="example">
-						<xsl:with-param name="entry-index" select="$entry-index"/>
-						<xsl:with-param name="number-examples" select="$number-examples"/>
-					</xsl:apply-templates>
-				</section>
-			</xsl:if>
+						<xsl:apply-templates select="example">
+							<xsl:with-param name="entry-index" select="$entry-index"/>
+							<xsl:with-param name="number-examples" select="$number-examples"/>
+						</xsl:apply-templates>
+					</section>
+				</xsl:if>
+			</div>
 		</article>
 	</xsl:for-each>
 </xsl:template>
@@ -131,6 +135,7 @@
 			<xsl:for-each select="signature[1]">
 				<xsl:call-template name="method-signature">
 					<xsl:with-param name="method-name" select="$entry-name"/>
+					<xsl:with-param name="dot" select="$method-prefix-dot"/>
 				</xsl:call-template>
 			</xsl:for-each>
 		</a>
@@ -140,6 +145,7 @@
 				<li>
 					<xsl:call-template name="method-signature">
 						<xsl:with-param name="method-name" select="$entry-name"/>
+						<xsl:with-param name="dot" select="$method-prefix-dot"/>
 					</xsl:call-template>
 				</li>
 			</xsl:for-each>
@@ -158,18 +164,11 @@
 					<xsl:for-each select="signature[1]">
 						<xsl:call-template name="method-signature">
 							<xsl:with-param name="method-name" select="$entry-name"/>
+							<xsl:with-param name="dot" select="$method-prefix-dot"/>
 						</xsl:call-template>
 					</xsl:for-each>
 				</span>
-				<xsl:text> </xsl:text>
-				<span class="returns">
-					<xsl:if test="@return != ''">
-						<xsl:text>Returns: </xsl:text>
-						<a class="return" href="http://api.jquery.com/Types/#{@return}">
-							<xsl:value-of select="@return"/>
-						</a>
-					</xsl:if>
-				</span>
+				<xsl:call-template name="return-value"/>
 			</xsl:when>
 			<xsl:when test="$entry-type='selector'">
 				<span>
@@ -181,22 +180,11 @@
 				<span>
 					<xsl:value-of select="@name"/>
 				</span>
-				<xsl:text> </xsl:text>
-				<span class="returns">
-					<xsl:if test="@return != ''">
-						<xsl:text>Returns: </xsl:text>
-						<a class="return" href="http://api.jquery.com/Types/#{@return}">
-							<xsl:value-of select="@return"/>
-						</a>
-					</xsl:if>
-				</span>
+				<xsl:call-template name="return-value"/>
 			</xsl:when>
-			<xsl:when test="$entry-type='widget'">
-				<span>
-					<xsl:value-of select="@name"/>
-					<xsl:text> widget</xsl:text>
-				</span>
-			</xsl:when>
+			<xsl:otherwise>
+				<span><xsl:value-of select="title"/></span>
+			</xsl:otherwise>
 		</xsl:choose>
 	</h2>
 </xsl:template>
@@ -288,6 +276,7 @@
 					</xsl:if>
 					<xsl:call-template name="method-signature">
 						<xsl:with-param name="method-name" select="$entry-name"/>
+						<xsl:with-param name="dot" select="$method-prefix-dot"/>
 					</xsl:call-template>
 				</h4>
 
@@ -306,15 +295,18 @@
 				<h2 class="underline">Options</h2>
 			</header>
 			<xsl:for-each select="options/option">
+				<xsl:sort select="@name"/>
 				<div id="option-{@name}">
 					<h3>
 						<xsl:value-of select="@name"/>
 					</h3>
 					<div>
-						<strong>Type: </strong><xsl:call-template name="render-types"/>
+						<strong>Type: </strong>
+						<xsl:call-template name="render-types"/>
 					</div>
 					<div>
-						<strong>Default: </strong><xsl:value-of select="@default"/>
+						<strong>Default: </strong>
+						<code><xsl:value-of select="@default"/></code>
 					</div>
 					<div>
 						<xsl:apply-templates select="desc">
@@ -329,7 +321,7 @@
 								<li>
 									<strong><xsl:value-of select="../@name"/></strong>
 									<xsl:text>: </xsl:text>
-									<xsl:copy-of select="node()"/>
+									<xsl:apply-templates select="."/>
 								</li>
 							</xsl:for-each>
 						</ul>
@@ -347,6 +339,7 @@
 				<h2 class="underline">Methods</h2>
 			</header>
 			<xsl:for-each select="methods/method">
+				<xsl:sort select="@name"/>
 				<xsl:variable name="method-name" select="@name"/>
 				<div id="method-{$method-name}">
 					<xsl:for-each select="signature | self::node()[count(signature) = 0]">
@@ -365,6 +358,7 @@
 				<h2 class="underline">Events</h2>
 			</header>
 			<xsl:for-each select="events/event">
+				<xsl:sort select="@name"/>
 				<div id="event-{@name}">
 					<xsl:call-template name="widget-method-event">
 						<xsl:with-param name="entry-name" select="$entry-name"/>
@@ -454,6 +448,44 @@
 	</xsl:if>
 </xsl:template>
 
+<!-- Render a single type -->
+<xsl:template name="render-type">
+	<xsl:param name="typename"/>
+	<xsl:choose>
+	<!--
+		If the type is "Function" we special case and write the function signature,
+		e.g. function(String)=>String
+		- formal arguments are child elements to the current element
+		- the return element is optional
+	-->
+	<xsl:when test="$typename = 'Function'">
+		<a href="http://api.jquery.com/Types/#Function">Function</a>
+		<xsl:text>(</xsl:text>
+		<xsl:if test="argument">
+			<xsl:text> </xsl:text>
+			<xsl:for-each select="argument">
+				<xsl:if test="position() &gt; 1">, </xsl:if>
+				<xsl:value-of select="@name"/>
+				<xsl:text>: </xsl:text>
+				<xsl:call-template name="render-types"/>
+			</xsl:for-each>
+			<xsl:text> </xsl:text>
+		</xsl:if>
+		<xsl:text>)</xsl:text>
+
+		<!-- display return type if present -->
+		<xsl:if test="return or @return">
+			=>
+			<xsl:call-template name="render-return-types" />
+		</xsl:if>
+	</xsl:when>
+	<xsl:otherwise>
+		<!-- not function - just display typename -->
+		<a href="http://api.jquery.com/Types#{$typename}"><xsl:value-of select="$typename" /></a>
+	</xsl:otherwise>
+	</xsl:choose>
+</xsl:template>
+
 <xsl:template name="render-return-types">
 	<xsl:if test="@return and return">
 		<strong>ERROR: Use <i>either</i> @return or return element</strong>
@@ -477,40 +509,16 @@
 	</xsl:if>
 </xsl:template>
 
-<!-- Render a single type -->
-<xsl:template name="render-type">
-	<xsl:param name="typename"/>
-	<xsl:choose>
-	<!--
-		If the type is "Function" we special case and write the function signature,
-		e.g. function(String)=>String
-		- formal arguments are child elements to the current element
-		- the return element is optional
-	-->
-	<xsl:when test="$typename = 'Function'">
-		<a href="http://api.jquery.com/Types/#Function">Function</a>(
-		<xsl:if test="argument">
-			<xsl:text> </xsl:text>
-			<xsl:for-each select="argument">
-				<xsl:if test="position() &gt; 1">, </xsl:if>
-				<xsl:value-of select="@name"/>
-				<xsl:text>: </xsl:text>
-				<xsl:call-template name="render-types"/>
-			</xsl:for-each>
-			<xsl:text> </xsl:text>
-		</xsl:if>)
-
-		<!-- display return type if present -->
-		<xsl:if test="return or @return">
-			=>
-			<xsl:call-template name="render-return-types" />
-		</xsl:if>
-	</xsl:when>
-	<xsl:otherwise>
-		<!-- not function - just display typename -->
-		<a href="http://api.jquery.com/Types#{$typename}"><xsl:value-of select="$typename" /></a>
-	</xsl:otherwise>
-	</xsl:choose>
+<xsl:template name="return-value">
+	<xsl:if test="@return != ''">
+		<xsl:text> </xsl:text>
+		<span class="returns">
+			<xsl:text>Returns: </xsl:text>
+			<a class="return" href="http://api.jquery.com/Types/#{@return}">
+				<xsl:value-of select="@return"/>
+			</a>
+		</span>
+	</xsl:if>
 </xsl:template>
 
 <xsl:template name="method-signature">
@@ -518,7 +526,8 @@
 	<xsl:param name="dot" select="false()"/>
 
 	<xsl:if test="$dot and not(contains($method-name, '.')) and $method-name != 'jQuery'">.</xsl:if>
-	<xsl:value-of select="$method-name"/>(
+	<xsl:value-of select="$method-name"/>
+	<xsl:text>(</xsl:text>
 	<xsl:if test="argument">
 		<xsl:text> </xsl:text>
 		<xsl:for-each select="argument">
@@ -528,7 +537,8 @@
 			<xsl:if test="@optional"><xsl:text> ]</xsl:text></xsl:if>
 		</xsl:for-each>
 		<xsl:text> </xsl:text>
-	</xsl:if>)
+	</xsl:if>
+	<xsl:text>)</xsl:text>
 </xsl:template>
 
 <xsl:template name="arguments">
@@ -608,6 +618,7 @@
 		<xsl:call-template name="method-signature">
 			<xsl:with-param name="method-name" select="$method-name"/>
 		</xsl:call-template>
+		<xsl:call-template name="return-value"/>
 	</h3>
 	<div>
 		<xsl:apply-templates select="desc">
@@ -618,19 +629,26 @@
 	<xsl:call-template name="arguments"/>
 </xsl:template>
 
-<xsl:template match="desc">
+<!-- <desc> and <longdesc> support <placeholder name="foo"> to replace the
+placeholder with @foo from the <entry> -->
+<xsl:template match="desc|longdesc">
 	<xsl:param name="entry-name"/>
 	<xsl:apply-templates select="./node()">
 		<xsl:with-param name="entry-name" select="$entry-name"/>
 	</xsl:apply-templates>
 </xsl:template>
-<!-- This makes elements inside <desc> get copied over properly -->
-<xsl:template match="desc/*">
-	<xsl:copy-of select="."/>
+<!-- This makes elements and attributes get copied over properly -->
+<xsl:template match="desc//*|desc//@*|longdesc//*|longdesc//@*">
+	<xsl:copy>
+		<xsl:apply-templates select="@* | node()"/>
+	</xsl:copy>
 </xsl:template>
-<xsl:template match="desc/placeholder">
-	<xsl:param name="entry-name"/>
-	<xsl:value-of select="$entry-name"/>
+<!-- <xi:include> will add an xml:base attribute, so we strip it out -->
+<xsl:template match="//@xml:base"/>
+<!-- replace the <placeholder> with the associated attribute from the entry -->
+<xsl:template match="//placeholder">
+	<xsl:variable name="name" select="@name"/>
+	<xsl:value-of select="ancestor::entry/@*[name()=$name]"/>
 </xsl:template>
 
 <!-- escape-string, from xml2json.xsl -->
