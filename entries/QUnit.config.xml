@@ -2,32 +2,32 @@
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type="property" name="QUnit.config">
   <title>QUnit.config</title>
-  <options>
-    <option name="reorder" type="Boolean" default="true">
+  <properties>
+    <property name="reorder" type="Boolean" default="true">
       <desc>
         By default, QUnit will run tests first that failed on a previous run. In a large testsuite, this can speed up testing a lot.
         <p>It can also lead to random erros, in case your testsuite has non-atomic tests, where the order is important. You should fix those issues, instead of disabling reordering!</p>
         </desc>
-    </option>
-    <option name="altertitle" type="Boolean" default="true">
+    </property>
+    <property name="altertitle" type="Boolean" default="true">
       <desc>
         By default, QUnit updates document.title to add a checkmark or x-mark to indicate if a testsuite passed or failed. This makes it easy to see a suites result even without looking at a tab's content.
         <p>If you're dealing with code that tests <code>document.title</code> changes or have some other problem with this feature, set this option to false to disable it.</p>
       </desc>
-    </option>
-    <option name="requireExpects" type="Boolean" default="false">
+    </property>
+    <property name="requireExpects" type="Boolean" default="false">
       <desc>
         The <code>expect()</code> method is optional by default, though it can be useful to require each test to specify the number of expected assertions.
         <p>Enabling this option will cause tests to fail, if they don't call <code>expect()</code> at all.</p>
       </desc>
-    </option>
-    <option name="urlConfig" type="Array">
+    </property>
+    <property name="urlConfig" type="Array">
       <desc>
         This property controls which checkboxes to put into the QUnit toolbar element (below the header). By default, the "noglobals" and "notrycatch" checkboxes are there. By extending this array, you can add your own checkboxes.
         <p>Each element should have three properties: <code>id</code> will be used as the config and query-string key, <code>label</code> will be used as the display propery (text in the UI), <code>tooltip</code> will be used as the title attribute, and should explain what the checkbox does.</p>
       </desc>
-    </option>
-  </options>
+    </property>
+  </properties>
   <desc>Configuration for QUnit</desc>
   <longdesc>
     <p>QUnit has a bunch of internal configuration defaults, some of which are useful to override. Check the description for each option for details.</p>
