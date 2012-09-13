@@ -1,6 +1,6 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
-<xsl:import href="entries2html-base.xsl"/>
+<xsl:import href="node_modules/grunt-jquery-content/tasks/jquery-xml/entries2html-base.xsl"/>
 <xsl:variable name="method-prefix-dot" select="false()"/>
 
 <xsl:template name="example-code">
