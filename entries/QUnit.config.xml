@@ -3,16 +3,21 @@
 <entry type="property" name="QUnit.config">
   <title>QUnit.config</title>
   <properties>
-    <property name="reorder" type="Boolean" default="true">
-      <desc>
-        By default, QUnit will run tests first that failed on a previous run. In a large testsuite, this can speed up testing a lot.
-        <p>It can also lead to random erros, in case your testsuite has non-atomic tests, where the order is important. You should fix those issues, instead of disabling reordering!</p>
-        </desc>
-    </property>
     <property name="altertitle" type="Boolean" default="true">
       <desc>
         By default, QUnit updates document.title to add a checkmark or x-mark to indicate if a testsuite passed or failed. This makes it easy to see a suites result even without looking at a tab's content.
         <p>If you're dealing with code that tests <code>document.title</code> changes or have some other problem with this feature, set this option to false to disable it.</p>
+      </desc>
+    </property>
+    <property name="autostart" type="Boolean" default="true">
+      <desc>
+        By default, QUnit runs tests when <code>load</code> event is triggered on the <code>window</code>. If you're loading tests asynchronsly, you can set this property to <code>false</code>, then call <code>QUnit.start()</code> once everything is loaded. See below for an example.
+      </desc>
+    </property>
+    <property name="reorder" type="Boolean" default="true">
+      <desc>
+        By default, QUnit will run tests first that failed on a previous run. In a large testsuite, this can speed up testing a lot.
+        <p>It can also lead to random errors, in case your testsuite has non-atomic tests, where the order is important. You should fix those issues, instead of disabling reordering!</p>
       </desc>
     </property>
     <property name="requireExpects" type="Boolean" default="false">
@@ -33,9 +38,15 @@
     <p>QUnit has a bunch of internal configuration defaults, some of which are useful to override. Check the description for each option for details.</p>
   </longdesc>
   <example height="250">
-    <desc>Disable reordering, useful when a testsuite is fubar.</desc>
+    <desc>Disable autostart, useful when loading tests asynchronsly, here using requirejs:</desc>
 <code><![CDATA[
-QUnit.config.reorder = false;
+QUnit.config.autostart = false;
+require(
+  [ "tests/testModule1", "tests/testModule2" ],
+  function() {
+    QUnit.start();
+  }
+);
 ]]></code>
   </example>
     <example height="250">
