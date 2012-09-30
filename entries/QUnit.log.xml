@@ -4,10 +4,22 @@
 	<title>QUnit.log()</title>
 	<signature>
 		<argument name="callback">
-			<desc>Callback to execute</desc>
+			<desc>Callback to execute. Provides a single argument with the following properties:</desc>
 			<type name="Function">
-				<argument name="details" type="Object" />
+				<argument name="details" type="Object"/>
 			</type>
+			<property name="result" type="Boolean">
+				<desc>The boolean result of an assertion, <code>true</code> means passed, <code>false</code> means failed.</desc>
+			</property>
+			<property name="actual" type="Object">
+				<desc>One side of a comparision assertion. Can be undefined when <code>ok()</code> is used.</desc>
+			</property>
+			<property name="expected" type="Object">
+				<desc>One side of a comparision assertion. Can be undefined when <code>ok()</code> is used.</desc>
+			</property>
+			<property name="message" type="String">
+				<desc>A string description provided by the assertion.</desc>
+			</property>
 		</argument>
 	</signature>
 	<desc>Register a callback to fire whenever an assertion completes.</desc>
@@ -15,22 +27,8 @@
 		This is one of several callbacks QUnit provides. Its intended for integration scenarios like PhantomJS or Jenkins.
 		<p>The properties of the details argument are listed below as options.</p>
 	</longdesc>
-	<options>
-		<option name="result" type="Boolean">
-			<desc>The boolean result of an assertion, <code>true</code> means passed, <code>false</code> means failed.</desc>
-		</option>
-		<option name="actual" type="Object">
-			<desc>One side of a comparision assertion. Can be undefined when <code>ok()</code> is used.</desc>
-		</option>
-		<option name="expected" type="Object">
-			<desc>One side of a comparision assertion. Can be undefined when <code>ok()</code> is used.</desc>
-		</option>
-		<option name="message" type="String">
-			<desc>A string description provided by the assertion.</desc>
-		</option>
-	</options>
-	<example height="250">
-		<desc>Register a callback that logs assertion result and its message to the console.</desc>
+	<example>
+		<desc>Register a callback that logs assertion result and its message</desc>
 		<code><![CDATA[
 QUnit.log(function( details ) {
 	console.log( "Log: ", details.result, details.message );
