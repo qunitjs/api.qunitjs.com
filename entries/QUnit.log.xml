@@ -1,41 +1,41 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type="method" name="QUnit.log">
-  <title>QUnit.log()</title>
-  <signature>
-    <argument name="callback">
-      <desc>Callback to execute</desc>
-      <type name="Function">
-        <argument name="details" type="Object" />
-      </type>
-    </argument>
-  </signature>
-  <desc>Register a callback to fire whenever an assertion completes.</desc>
-  <longdesc>
-    This is one of several callbacks QUnit provides. Its intended for integration scenarios like PhantomJS or Jenkins.
-    <p>The properties of the details argument are listed below as options.</p>
-  </longdesc>
-  <options>
-    <option name="result" type="Boolean">
-      <desc>The boolean result of an assertion, <code>true</code> means passed, <code>false</code> means failed.</desc>
-    </option>
-    <option name="actual" type="Object">
-      <desc>One side of a comparision assertion. Can be undefined when <code>ok()</code> is used.</desc>
-    </option>
-    <option name="expected" type="Object">
-      <desc>One side of a comparision assertion. Can be undefined when <code>ok()</code> is used.</desc>
-    </option>
-    <option name="message" type="String">
-      <desc>A string description provided by the assertion.</desc>
-    </option>
-  </options>
-  <example height="250">
-    <desc>Register a callback that logs assertion result and its message to the console.</desc>
-    <code><![CDATA[
+	<title>QUnit.log()</title>
+	<signature>
+		<argument name="callback">
+			<desc>Callback to execute</desc>
+			<type name="Function">
+				<argument name="details" type="Object" />
+			</type>
+		</argument>
+	</signature>
+	<desc>Register a callback to fire whenever an assertion completes.</desc>
+	<longdesc>
+		This is one of several callbacks QUnit provides. Its intended for integration scenarios like PhantomJS or Jenkins.
+		<p>The properties of the details argument are listed below as options.</p>
+	</longdesc>
+	<options>
+		<option name="result" type="Boolean">
+			<desc>The boolean result of an assertion, <code>true</code> means passed, <code>false</code> means failed.</desc>
+		</option>
+		<option name="actual" type="Object">
+			<desc>One side of a comparision assertion. Can be undefined when <code>ok()</code> is used.</desc>
+		</option>
+		<option name="expected" type="Object">
+			<desc>One side of a comparision assertion. Can be undefined when <code>ok()</code> is used.</desc>
+		</option>
+		<option name="message" type="String">
+			<desc>A string description provided by the assertion.</desc>
+		</option>
+	</options>
+	<example height="250">
+		<desc>Register a callback that logs assertion result and its message to the console.</desc>
+		<code><![CDATA[
 QUnit.log(function( details ) {
-  console.log( "Log: ", details.result, details.message );
+	console.log( "Log: ", details.result, details.message );
 });
 ]]></code>
-  </example>
-  <category slug="callbacks"/>
+	</example>
+	<category slug="callbacks"/>
 </entry>

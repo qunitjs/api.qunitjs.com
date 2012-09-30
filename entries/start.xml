@@ -1,31 +1,31 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type="method" name="start">
-  <title>start()</title>
-  <signature>
-    <argument name="decrement" type="Number">
-      <desc></desc>
-    </argument>
-  </signature>
-  <desc>
-    Start running tests again after the testrunner was stopped. See stop().
-  </desc>
-  <longdesc>
-    <p>When your async test has multiple exit points, call start() for the corresponding number of stop() increments.</p>
-  </longdesc>
-  <example height="250">
-    <desc>A test that waits 150ms for an async operation to finish, then asserts the result.</desc>
+	<title>start()</title>
+	<signature>
+		<argument name="decrement" type="Number">
+			<desc></desc>
+		</argument>
+	</signature>
+	<desc>
+		Start running tests again after the testrunner was stopped. See stop().
+	</desc>
+	<longdesc>
+		<p>When your async test has multiple exit points, call start() for the corresponding number of stop() increments.</p>
+	</longdesc>
+	<example height="250">
+		<desc>A test that waits 150ms for an async operation to finish, then asserts the result.</desc>
 <code><![CDATA[
 test( "a test", function() {
-  stop();
-  asyncOp();
-  setTimeout(function() {
-    equals( asyncOp.result, "someExpectedValue" );
-    start();
-  }, 150 );
+	stop();
+	asyncOp();
+	setTimeout(function() {
+		equals( asyncOp.result, "someExpectedValue" );
+		start();
+	}, 150 );
 });
 ]]></code>
-  </example>
+	</example>
 
-  <category slug="async-control"/>
+	<category slug="async-control"/>
 </entry>

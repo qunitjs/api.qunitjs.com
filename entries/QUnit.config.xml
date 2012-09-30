@@ -1,63 +1,63 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type="property" name="QUnit.config">
-  <title>QUnit.config</title>
-  <properties>
-    <property name="altertitle" type="Boolean" default="true">
-      <desc>
-        By default, QUnit updates document.title to add a checkmark or x-mark to indicate if a testsuite passed or failed. This makes it easy to see a suites result even without looking at a tab's content.
-        <p>If you're dealing with code that tests <code>document.title</code> changes or have some other problem with this feature, set this option to false to disable it.</p>
-      </desc>
-    </property>
-    <property name="autostart" type="Boolean" default="true">
-      <desc>
-        By default, QUnit runs tests when <code>load</code> event is triggered on the <code>window</code>. If you're loading tests asynchronsly, you can set this property to <code>false</code>, then call <code>QUnit.start()</code> once everything is loaded. See below for an example.
-      </desc>
-    </property>
-    <property name="reorder" type="Boolean" default="true">
-      <desc>
-        By default, QUnit will run tests first that failed on a previous run. In a large testsuite, this can speed up testing a lot.
-        <p>It can also lead to random errors, in case your testsuite has non-atomic tests, where the order is important. You should fix those issues, instead of disabling reordering!</p>
-      </desc>
-    </property>
-    <property name="requireExpects" type="Boolean" default="false">
-      <desc>
-        The <code>expect()</code> method is optional by default, though it can be useful to require each test to specify the number of expected assertions.
-        <p>Enabling this option will cause tests to fail, if they don't call <code>expect()</code> at all.</p>
-      </desc>
-    </property>
-    <property name="urlConfig" type="Array">
-      <desc>
-        This property controls which checkboxes to put into the QUnit toolbar element (below the header). By default, the "noglobals" and "notrycatch" checkboxes are there. By extending this array, you can add your own checkboxes.
-        <p>Each element should have three properties: <code>id</code> will be used as the config and query-string key, <code>label</code> will be used as the display propery (text in the UI), <code>tooltip</code> will be used as the title attribute, and should explain what the checkbox does.</p>
-      </desc>
-    </property>
-  </properties>
-  <desc>Configuration for QUnit</desc>
-  <longdesc>
-    <p>QUnit has a bunch of internal configuration defaults, some of which are useful to override. Check the description for each option for details.</p>
-  </longdesc>
-  <example height="250">
-    <desc>Disable autostart, useful when loading tests asynchronsly, here using requirejs:</desc>
+	<title>QUnit.config</title>
+	<properties>
+		<property name="altertitle" type="Boolean" default="true">
+			<desc>
+				By default, QUnit updates document.title to add a checkmark or x-mark to indicate if a testsuite passed or failed. This makes it easy to see a suites result even without looking at a tab's content.
+				<p>If you're dealing with code that tests <code>document.title</code> changes or have some other problem with this feature, set this option to false to disable it.</p>
+			</desc>
+		</property>
+		<property name="autostart" type="Boolean" default="true">
+			<desc>
+				By default, QUnit runs tests when <code>load</code> event is triggered on the <code>window</code>. If you're loading tests asynchronsly, you can set this property to <code>false</code>, then call <code>QUnit.start()</code> once everything is loaded. See below for an example.
+			</desc>
+		</property>
+		<property name="reorder" type="Boolean" default="true">
+			<desc>
+				By default, QUnit will run tests first that failed on a previous run. In a large testsuite, this can speed up testing a lot.
+				<p>It can also lead to random errors, in case your testsuite has non-atomic tests, where the order is important. You should fix those issues, instead of disabling reordering!</p>
+			</desc>
+		</property>
+		<property name="requireExpects" type="Boolean" default="false">
+			<desc>
+				The <code>expect()</code> method is optional by default, though it can be useful to require each test to specify the number of expected assertions.
+				<p>Enabling this option will cause tests to fail, if they don't call <code>expect()</code> at all.</p>
+			</desc>
+		</property>
+		<property name="urlConfig" type="Array">
+			<desc>
+				This property controls which checkboxes to put into the QUnit toolbar element (below the header). By default, the "noglobals" and "notrycatch" checkboxes are there. By extending this array, you can add your own checkboxes.
+				<p>Each element should have three properties: <code>id</code> will be used as the config and query-string key, <code>label</code> will be used as the display propery (text in the UI), <code>tooltip</code> will be used as the title attribute, and should explain what the checkbox does.</p>
+			</desc>
+		</property>
+	</properties>
+	<desc>Configuration for QUnit</desc>
+	<longdesc>
+		<p>QUnit has a bunch of internal configuration defaults, some of which are useful to override. Check the description for each option for details.</p>
+	</longdesc>
+	<example height="250">
+		<desc>Disable autostart, useful when loading tests asynchronsly, here using requirejs:</desc>
 <code><![CDATA[
 QUnit.config.autostart = false;
 require(
-  [ "tests/testModule1", "tests/testModule2" ],
-  function() {
-    QUnit.start();
-  }
+	[ "tests/testModule1", "tests/testModule2" ],
+	function() {
+		QUnit.start();
+	}
 );
 ]]></code>
-  </example>
-    <example height="250">
-      <desc>Add a new checkbox to the toolbar, using the <code>urlConfig</code> property. This assumes there's other code on the page that will check the <code>QUnit.config.min</code> property to react to the selection.</desc>
-  <code><![CDATA[
-  QUnit.config.urlConfig.push({
-    id: "min",
-    label: "Minified source",
-    tooltip: "Load minified source files instead of the regular unminified ones."
-  });
-  ]]></code>
-    </example>
-  <category slug="config"/>
+	</example>
+		<example height="250">
+			<desc>Add a new checkbox to the toolbar, using the <code>urlConfig</code> property. This assumes there's other code on the page that will check the <code>QUnit.config.min</code> property to react to the selection.</desc>
+	<code><![CDATA[
+	QUnit.config.urlConfig.push({
+		id: "min",
+		label: "Minified source",
+		tooltip: "Load minified source files instead of the regular unminified ones."
+	});
+	]]></code>
+		</example>
+	<category slug="config"/>
 </entry>

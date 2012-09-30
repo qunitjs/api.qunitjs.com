@@ -1,34 +1,34 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type="method" name="deepEqual">
-  <title>deepEqual()</title>
-  <signature>
-    <argument name="actual" type="Object">
-      <desc>Object or Expression being tested</desc>
-    </argument>
-    <argument name="expected" type="Object">
-      <desc>Known comparison value</desc>
-    </argument>
-    <argument name="message" type="String">
-      <desc>A short description of the assertion</desc>
-    </argument>
-  </signature>
-  <desc>
-    A deep recursive comparison assertion, working on primitive types, arrays, objects, regular expressions, dates and functions.
-  </desc>
-  <longdesc>
-    <p>The <code>deepEqual()</code> assertion can be used just like <code>equal()</code> when comparing the value of objects, such that <code>{ key: value }</code> is equal to <code>{ key: value }</code>. For non-scalar values, identity will be disregarded by <code>deepEqual</code>.</p>
-    <p><a href="/notDeepEqual"><code>notDeepEqual()</code></a> can be used to explicitly test deep, strict inequality.</p>
-  </longdesc>
-  <example>
-    <desc>Compare the value of two objects.</desc>
+	<title>deepEqual()</title>
+	<signature>
+		<argument name="actual" type="Object">
+			<desc>Object or Expression being tested</desc>
+		</argument>
+		<argument name="expected" type="Object">
+			<desc>Known comparison value</desc>
+		</argument>
+		<argument name="message" type="String">
+			<desc>A short description of the assertion</desc>
+		</argument>
+	</signature>
+	<desc>
+		A deep recursive comparison assertion, working on primitive types, arrays, objects, regular expressions, dates and functions.
+	</desc>
+	<longdesc>
+		<p>The <code>deepEqual()</code> assertion can be used just like <code>equal()</code> when comparing the value of objects, such that <code>{ key: value }</code> is equal to <code>{ key: value }</code>. For non-scalar values, identity will be disregarded by <code>deepEqual</code>.</p>
+		<p><a href="/notDeepEqual"><code>notDeepEqual()</code></a> can be used to explicitly test deep, strict inequality.</p>
+	</longdesc>
+	<example>
+		<desc>Compare the value of two objects.</desc>
 <code><![CDATA[
 test( "deepEqual test", function() {
-  var obj = { foo: "bar" };
+	var obj = { foo: "bar" };
 
-  deepEqual( obj, { foo: "bar" }, "Two objects can be the same in value" );
+	deepEqual( obj, { foo: "bar" }, "Two objects can be the same in value" );
 });
 ]]></code>
-  </example>
-  <category slug="assert"/>
+	</example>
+	<category slug="assert"/>
 </entry>

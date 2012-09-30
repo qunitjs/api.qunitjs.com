@@ -1,51 +1,51 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type="method" name="test">
-  <title>test()</title>
-  <signature>
-    <argument name="title" type="String">
-      <desc>Title of unit being tested</desc>
-    </argument>
-    <argument name="expected" type="Number" optional="true">
-      <desc>Number of assertions in this test</desc>
-    </argument>
-    <argument name="test">
-      <desc>Function to close over assertions</desc>
-      <type name="Function">
-        <argument name="assert" type="QUnit.assert"></argument>
-      </type>
-    </argument>
-  </signature>
-  <desc>
-    Add a test to run.
-  </desc>
-  <longdesc>
-    <p>When testing the most common, synchronous code, use <code>test()</code></p>
-    <p>The <code>assert</code> argument to the callback contains all of QUnit's assertion methods. If you are avoiding using any of QUnit's globals, you can use the assert argument instead.</p>
-  </longdesc>
-  <example height="250">
-    <desc>Simple, synchronous code test.</desc>
+	<title>test()</title>
+	<signature>
+		<argument name="title" type="String">
+			<desc>Title of unit being tested</desc>
+		</argument>
+		<argument name="expected" type="Number" optional="true">
+			<desc>Number of assertions in this test</desc>
+		</argument>
+		<argument name="test">
+			<desc>Function to close over assertions</desc>
+			<type name="Function">
+				<argument name="assert" type="QUnit.assert"></argument>
+			</type>
+		</argument>
+	</signature>
+	<desc>
+		Add a test to run.
+	</desc>
+	<longdesc>
+		<p>When testing the most common, synchronous code, use <code>test()</code></p>
+		<p>The <code>assert</code> argument to the callback contains all of QUnit's assertion methods. If you are avoiding using any of QUnit's globals, you can use the assert argument instead.</p>
+	</longdesc>
+	<example height="250">
+		<desc>Simple, synchronous code test.</desc>
 <code><![CDATA[
-  test( "hello test", function() {
-    ok( 1 == "1", "Passed!" );
-  });
+	test( "hello test", function() {
+		ok( 1 == "1", "Passed!" );
+	});
 ]]></code>
-  </example>
-  <example height="250">
-    <desc>A more practical example, using the assert argument and no globals.</desc>
+	</example>
+	<example height="250">
+		<desc>A more practical example, using the assert argument and no globals.</desc>
 <code><![CDATA[
 QUnit.test( "a test", function( assert ) {
 
-  function square( x ) {
-    return x * x;
-  }
+	function square( x ) {
+		return x * x;
+	}
 
-  var result = square( 2 );
+	var result = square( 2 );
 
-  assert.equal( result, 4, "square(2) equals 4" );
+	assert.equal( result, 4, "square(2) equals 4" );
 });
 ]]></code>
-  </example>
+	</example>
 
-  <category slug="test"/>
+	<category slug="test"/>
 </entry>

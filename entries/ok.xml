@@ -1,38 +1,38 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type="method" name="ok">
-  <title>ok()</title>
-  <signature>
-    <argument name="state" type="Expression">
-      <desc>Expression being tested</desc>
-    </argument>
-    <argument name="message" type="String">
-      <desc>A short description of the assertion</desc>
-    </argument>
-  </signature>
-  <desc>
-    A boolean assertion, equivalent to CommonJS's assert.ok() and JUnit's assertTrue(). Passes if the first argument is truthy.
-  </desc>
-  <longdesc>
-    <p>The most basic assertion in QUnit, <code>ok()</code> requires just one argument. If the argument evaluates to true, the assertion passes; otherwise, it fails. If a second message argument is provided, it will be displayed in place of the result.</p>
+	<title>ok()</title>
+	<signature>
+		<argument name="state" type="Expression">
+			<desc>Expression being tested</desc>
+		</argument>
+		<argument name="message" type="String">
+			<desc>A short description of the assertion</desc>
+		</argument>
+	</signature>
+	<desc>
+		A boolean assertion, equivalent to CommonJS's assert.ok() and JUnit's assertTrue(). Passes if the first argument is truthy.
+	</desc>
+	<longdesc>
+		<p>The most basic assertion in QUnit, <code>ok()</code> requires just one argument. If the argument evaluates to true, the assertion passes; otherwise, it fails. If a second message argument is provided, it will be displayed in place of the result.</p>
 
-  </longdesc>
-  <example height="250">
+	</longdesc>
+	<example height="250">
 
 <code><![CDATA[
 test( "ok test", function() {
-  ok( true, "true succeeds" );
-  ok( "non-empty", "non-empty string succeeds" );
+	ok( true, "true succeeds" );
+	ok( "non-empty", "non-empty string succeeds" );
 
-  ok( false, "false fails" );
-  ok( 0, "0 fails" );
-  ok( NaN, "NaN fails" );
-  ok( "", "empty string fails" );
-  ok( null, "null fails" );
-  ok( undefined, "undefined fails" );
+	ok( false, "false fails" );
+	ok( 0, "0 fails" );
+	ok( NaN, "NaN fails" );
+	ok( "", "empty string fails" );
+	ok( null, "null fails" );
+	ok( undefined, "undefined fails" );
 });
 ]]></code>
-  </example>
+	</example>
 
-  <category slug="assert"/>
+	<category slug="assert"/>
 </entry>

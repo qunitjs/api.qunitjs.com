@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type="method" name="QUnit.moduleDone">
-  <title>QUnit.moduleDone()</title>
-  <signature>
-    <argument name="callback" type="Function">
-      <desc>Callback to execute</desc>
-    </argument>
-  </signature>
-  <desc>Register a callback to fire whenever a module ends.</desc>
-  <category slug="callbacks"/>
+	<title>QUnit.moduleDone()</title>
+	<signature>
+		<argument name="callback" type="Function">
+			<desc>Callback to execute</desc>
+		</argument>
+	</signature>
+	<desc>Register a callback to fire whenever a module ends.</desc>
+	<category slug="callbacks"/>
 </entry>

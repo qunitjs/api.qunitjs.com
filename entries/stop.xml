@@ -1,29 +1,29 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type="method" name="stop">
-  <title>stop()</title>
-  <signature>
-    <argument name="increment" type="Integer" optional="true">
-      <desc>Optional argument to merge multiple stop() calls into one. Use with multiple corrsponding start() calls.</desc>
-    </argument>
-  </signature>
-  <desc>Stop the testrunner to wait for async tests to run. Call start() to continue.</desc>
-  <longdesc>
-    <p>When your async test has multiple exit points, call stop() with the increment argument, corresponding to the number of start() calls you need.</p>
-    <p>On Blackberry 5.0, window.stop is a native read-only function. If you deal with that browser, use QUnit.stop() instead, which will work anywhere.</p>
-  </longdesc>
-  <example height="250">
-    <desc>A test that waits 150ms for an async operation to finish, then asserts the result.</desc>
+	<title>stop()</title>
+	<signature>
+		<argument name="increment" type="Integer" optional="true">
+			<desc>Optional argument to merge multiple stop() calls into one. Use with multiple corrsponding start() calls.</desc>
+		</argument>
+	</signature>
+	<desc>Stop the testrunner to wait for async tests to run. Call start() to continue.</desc>
+	<longdesc>
+		<p>When your async test has multiple exit points, call stop() with the increment argument, corresponding to the number of start() calls you need.</p>
+		<p>On Blackberry 5.0, window.stop is a native read-only function. If you deal with that browser, use QUnit.stop() instead, which will work anywhere.</p>
+	</longdesc>
+	<example height="250">
+		<desc>A test that waits 150ms for an async operation to finish, then asserts the result.</desc>
 <code><![CDATA[
 test( "a test", function() {
-  stop();
-  asyncOp();
-  setTimeout(function() {
-    equals( asyncOp.result, "someExpectedValue" );
-    start();
-  }, 150 );
+	stop();
+	asyncOp();
+	setTimeout(function() {
+		equals( asyncOp.result, "someExpectedValue" );
+		start();
+	}, 150 );
 });
 ]]></code>
-  </example>
-  <category slug="async-control"/>
+	</example>
+	<category slug="async-control"/>
 </entry>

@@ -1,62 +1,62 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type="method" name="throws">
-  <title>throws()</title>
-  <signature>
-    <argument name="block" type="Function">
-      <desc>Function to execute</desc>
-    </argument>
-    <argument name="expected" type="Error">
-      <desc>Error Object to compare</desc>
-    </argument>
-    <argument name="message" type="String">
-      <desc>A short description of the assertion</desc>
-    </argument>
-  </signature>
-  <desc>
-    Assertion to test if a callback throws an exception when run.
-  </desc>
-  <longdesc>
-    <p>When testing code that is expected to throw an exception based on a specific set of circumstances, use <code>throws()</code> to catch the error object for testing and comparison.</p>
-  </longdesc>
-  <example height="250">
-    <desc>Assert the correct error message is received for a custom error object.</desc>
+	<title>throws()</title>
+	<signature>
+		<argument name="block" type="Function">
+			<desc>Function to execute</desc>
+		</argument>
+		<argument name="expected" type="Error">
+			<desc>Error Object to compare</desc>
+		</argument>
+		<argument name="message" type="String">
+			<desc>A short description of the assertion</desc>
+		</argument>
+	</signature>
+	<desc>
+		Assertion to test if a callback throws an exception when run.
+	</desc>
+	<longdesc>
+		<p>When testing code that is expected to throw an exception based on a specific set of circumstances, use <code>throws()</code> to catch the error object for testing and comparison.</p>
+	</longdesc>
+	<example height="250">
+		<desc>Assert the correct error message is received for a custom error object.</desc>
 <code><![CDATA[
 test( "throws", function() {
 
-  function CustomError( message ) {
-    this.message = message;
-  }
+	function CustomError( message ) {
+		this.message = message;
+	}
 
-  CustomError.prototype.toString = function() {
-    return this.message;
-  };
+	CustomError.prototype.toString = function() {
+		return this.message;
+	};
 
-  throws(
-    function() {
-      throw "error"
-    },
-    "throws with just a message, no expected"
-  );
+	throws(
+		function() {
+			throw "error"
+		},
+		"throws with just a message, no expected"
+	);
 
-  throws(
-    function() {
-      throw new CustomError();
-    },
-    CustomError,
-    "raised error is an instance of CustomError"
-  );
+	throws(
+		function() {
+			throw new CustomError();
+		},
+		CustomError,
+		"raised error is an instance of CustomError"
+	);
 
-  throws(
-    function() {
-      throw new CustomError("some error description");
-    },
-    /description/,
-    "raised error message contains 'description'"
-  );
+	throws(
+		function() {
+			throw new CustomError("some error description");
+		},
+		/description/,
+		"raised error message contains 'description'"
+	);
 });
 ]]></code>
-  </example>
+	</example>
 
-  <category slug="assert"/>
+	<category slug="assert"/>
 </entry>
