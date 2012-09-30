@@ -15,7 +15,7 @@ grunt.initConfig({
 		grunt: "grunt.js"
 	},
 	watch: {
-		files: "entries/**",
+		files: [ "entries/**", "categories.xml" ],
 		tasks: "deploy"
 	},
 	xmllint: {

@@ -7,13 +7,7 @@
       <desc>Callback to execute</desc>
     </argument>
   </signature>
-  <desc>Register a callback to fired when the test suite begins.</desc>
+  <desc>Register a callback to fire whenever the test suite begins.</desc>
 	<longdesc><code>QUnit.begin()</code> is called once before running any tests. (a better would've been QUnit.start, but thats already in use elsewhere and can't be changed.) </longdesc>
-	<example height="250">
-    <desc>Register a callback that logs test results to the console.</desc>
-    <code><![CDATA[
-QUnit.begin();
-]]></code>
-  </example>
   <category slug="callbacks"/>
 </entry>

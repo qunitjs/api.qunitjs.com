@@ -7,7 +7,7 @@
       <argument name="details" type="Object" />
     </argument>
   </signature>
-  <desc>Register a callback to fired when the test suite ends.</desc>
+  <desc>Register a callback to fire whenever the test suite ends.</desc>
 	 <longdesc>
 		<code>QUnit.done()</code> is called whenever all the tests have finished running. <code>failed</code> is the number of failures that occurred. <code>total</code> is the total number of assertions that occurred, <code>passed</code> the passing assertions. <code>runtime</code> is the time in milliseconds to run the tests from start to finish.
   </longdesc>
