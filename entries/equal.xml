@@ -21,7 +21,7 @@
     <p><a href="/notEqual"><code>notEqual()</code></a> can be used to explicitly test inequality.</p>
     <p><a href="/strictEqual"><code>strictEqual()</code></a> can be used to test strict equality.</p>
   </longdesc>
-  <example height="250">
+  <example>
     <desc>The simplest assertion example:</desc>
 <code><![CDATA[
 test( "a test", function() {
@@ -29,7 +29,7 @@ test( "a test", function() {
 });
 ]]></code>
   </example>
-  <example height="250">
+  <example>
     <desc>A slightly more thorough set of assertions:</desc>
 <code><![CDATA[
   test( "equal test", function() {
@@ -43,7 +43,5 @@ test( "a test", function() {
   });
 ]]></code>
   </example>
-
-
   <category slug="assert"/>
 </entry>

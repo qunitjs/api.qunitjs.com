@@ -21,29 +21,13 @@
     <p><a href="/equal"><code>equal()</code></a> can be used to test equality.</p>
     <p><a href="/strictEqual"><code>strictEqual()</code></a> can be used to test strict equality.</p>
   </longdesc>
-  <example height="250">
+  <example>
     <desc>The simplest assertion example:</desc>
 <code><![CDATA[
 test( "a test", function() {
-  equal( 1, "1", "String '1' and number 1 have the same value" );
+  notStrictEqual( 1, "1", "String '1' and number 1 don't have the same value" );
 });
 ]]></code>
   </example>
-  <example height="250">
-    <desc>A slightly more thorough set of assertions:</desc>
-<code><![CDATA[
-  test( "equal test", function() {
-    equal( 0, 0, "Zero; equal succeeds" );
-    equal( "", 0, "Empty, Zero; equal succeeds" );
-    equal( "", "", "Empty, Empty; equal succeeds" );
-    equal( 0, 0, "Zero, Zero; equal succeeds" );
-
-    equal( "three", 3, "Three, 3; equal fails" );
-    equal( null, false, "null, false; equal fails" );
-  });
-]]></code>
-  </example>
-
-
   <category slug="assert"/>
 </entry>
