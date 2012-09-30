@@ -14,6 +14,11 @@
 				By default, QUnit runs tests when <code>load</code> event is triggered on the <code>window</code>. If you're loading tests asynchronsly, you can set this property to <code>false</code>, then call <code>QUnit.start()</code> once everything is loaded. See below for an example.
 			</desc>
 		</property>
+		<property name="current" type="Object">
+			<desc>
+				This object isn't actually a configuration property, but is listed here anyway, as its exported through <code>QUnit.config</code>. This gives you access to some QUnit internals at runtime. See below for an example.
+			</desc>
+		</property>
 		<property name="reorder" type="Boolean" default="true">
 			<desc>
 				By default, QUnit will run tests first that failed on a previous run. In a large testsuite, this can speed up testing a lot.
@@ -37,7 +42,7 @@
 	<longdesc>
 		<p>QUnit has a bunch of internal configuration defaults, some of which are useful to override. Check the description for each option for details.</p>
 	</longdesc>
-	<example height="250">
+	<example>
 		<desc>Disable autostart, useful when loading tests asynchronsly, here using requirejs:</desc>
 <code><![CDATA[
 QUnit.config.autostart = false;
@@ -49,15 +54,25 @@ require(
 );
 ]]></code>
 	</example>
-		<example height="250">
-			<desc>Add a new checkbox to the toolbar, using the <code>urlConfig</code> property. This assumes there's other code on the page that will check the <code>QUnit.config.min</code> property to react to the selection.</desc>
-	<code><![CDATA[
-	QUnit.config.urlConfig.push({
-		id: "min",
-		label: "Minified source",
-		tooltip: "Load minified source files instead of the regular unminified ones."
-	});
-	]]></code>
-		</example>
+	<example>
+		<desc>Access <code>QUnit.config.current.testName</code> to pass the current test's name on to another tool</desc>
+<code><![CDATA[
+test("some test", function() {
+	// a few regular assertions
+	// then a call to another tool
+	speedTest( QUnit.config.current.testName, codeUnderTest );
+});
+]]></code>
+	</example>
+	<example>
+		<desc>Add a new checkbox to the toolbar, using the <code>urlConfig</code> property. This assumes there's other code on the page that will check the <code>QUnit.config.min</code> property to react to the selection.</desc>
+<code><![CDATA[
+QUnit.config.urlConfig.push({
+	id: "min",
+	label: "Minified source",
+	tooltip: "Load minified source files instead of the regular unminified ones."
+});
+]]></code>
+	</example>
 	<category slug="config"/>
 </entry>
