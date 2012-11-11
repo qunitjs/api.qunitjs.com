@@ -20,6 +20,9 @@
 			<property name="message" type="String">
 				<desc>A string description provided by the assertion.</desc>
 			</property>
+			<property name="source" type="String">
+				<desc>The associated stacktrace, either from an exception or pointing to the source of the assertion. Depends on browser support for providing stacktraces, so can be undefined.</desc>
+			</property>
 		</argument>
 	</signature>
 	<desc>Register a callback to fire whenever an assertion completes.</desc>
