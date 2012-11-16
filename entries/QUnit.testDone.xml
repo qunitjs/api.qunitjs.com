@@ -23,6 +23,9 @@
 			<property name="total" type="Number">
 				<desc>The total number of assertions</desc>
 			</property>
+			<property name="duration" type="Number">
+				<desc>The total runtime, including setup and teardown</desc>
+			</property>
 		</argument>
 	</signature>
 	<desc>Register a callback to fire whenever a test ends.</desc>
@@ -30,7 +33,7 @@
 		<desc>Register a callback that logs results of a single test</desc>
 		<code><![CDATA[
 QUnit.testDone(function( details ) {
-	console.log( "Finished running: ", details.module, details.name, "Failed/total: ", details.failed, details.total );
+	console.log( "Finished running: ", details.module, details.name, "Failed/total: ", details.failed, details.total, details.duration );
 });
 ]]></code>
 	</example>
