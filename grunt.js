@@ -26,6 +26,9 @@ grunt.initConfig({
 	xmltidy: {
 		all: [].concat( entryFiles, "categories.xml" )
 	},
+	"build-pages": {
+		all: grunt.file.expandFiles( "pages/**" )
+	},
 	"build-xml-entries": {
 		all: entryFiles
 	},
@@ -38,7 +41,7 @@ grunt.initConfig({
 });
 
 grunt.registerTask( "default", "build-wordpress" );
-grunt.registerTask( "build", "build-xml-entries build-xml-categories build-xml-full build-resources" );
+grunt.registerTask( "build", "build-pages build-xml-entries build-xml-categories build-xml-full build-resources" );
 grunt.registerTask( "build-wordpress", "check-modules clean lint xmllint build" );
 grunt.registerTask( "tidy", "xmllint xmltidy" );
 
