@@ -7,10 +7,10 @@
 			<desc>Optional argument to merge multiple stop() calls into one. Use with multiple corrsponding start() calls.</desc>
 		</argument>
 	</signature>
-	<desc>Stop the testrunner to wait for async tests to run. Call start() to continue.</desc>
+	<desc>Stop the testrunner to wait for async tests to run. Call <a href="/start/"><code>start()</code></a> to continue.</desc>
 	<longdesc>
-		<p>When your async test has multiple exit points, call stop() with the increment argument, corresponding to the number of start() calls you need.</p>
-		<p>On Blackberry 5.0, window.stop is a native read-only function. If you deal with that browser, use QUnit.stop() instead, which will work anywhere.</p>
+		<p>When your async test has multiple exit points, call stop() with the increment argument, corresponding to the number of <a href="/start/"><code>start()</code></a> calls you need.</p>
+		<p>On Blackberry 5.0, window.stop is a native read-only function. If you deal with that browser, use <code>QUnit.stop()</code> instead, which will work anywhere.</p>
 	</longdesc>
 	<example height="250">
 		<desc>A test that waits 150ms for an async operation to finish, then asserts the result.</desc>

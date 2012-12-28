@@ -17,7 +17,7 @@
 		Add an asynchronous test to run. The test must include a call to start().
 	</desc>
 	<longdesc>
-		<p>For testing asynchronous code, <code>asyncTest</code> will automatically stop the test runner and wait for your code to call <code>start()</code> to continue.</p>
+		<p>For testing asynchronous code, <code>asyncTest</code> will automatically stop the test runner and wait for your code to call <a href="/start/"><code>start()</code></a> to continue.</p>
 	</longdesc>
 	<example height="250">
 		<desc>The following illustrates an asynchronous test that waits 1 second before resuming</desc>
@@ -47,5 +47,6 @@ asyncTest( "asynchronous test: video ready to play", 1, function() {
 	</example>
 
 
+	<category slug="async-control"/>
 	<category slug="test"/>
 </entry>
