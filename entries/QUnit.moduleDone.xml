@@ -26,7 +26,7 @@
 	<example>
 		<desc>Register a callback that logs the module results</desc>
 		<code><![CDATA[
-QUnit.moduleStart(function( details ) {
+QUnit.moduleDone(function( details ) {
 	console.log( "Finished running: ", details.name, "Failed/total: ", details.failed, details.total );
 });
 ]]></code>
