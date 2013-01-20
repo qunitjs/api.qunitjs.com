@@ -3,12 +3,12 @@
 <entry type="method" name="start">
 	<title>start()</title>
 	<signature>
-		<argument name="decrement" type="Number">
-			<desc></desc>
+		<argument name="decrement" type="Integer" optional="true">
+			<desc>Optional argument to merge multiple start() calls into one. Use with multiple corrsponding stop() calls.</desc>
 		</argument>
 	</signature>
 	<desc>
-		Start running tests again after the testrunner was stopped. See stop().
+		Start running tests again after the testrunner was stopped. See <a href="/stop/"><code>stop()</code></a>.
 	</desc>
 	<longdesc>
 		<p>When your async test has multiple exit points, call <code>start()</code> for the corresponding number of <a href="/stop/"><code>stop()</code></a> increments.</p>
