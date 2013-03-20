@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type="property" name="QUnit.config">
 	<title>QUnit.config</title>
-	<properties>
+	<signature>
 		<property name="altertitle" type="Boolean" default="true">
 			<desc>
 				By default, QUnit updates document.title to add a checkmark or x-mark to indicate if a testsuite passed or failed. This makes it easy to see a suites result even without looking at a tab's content.
@@ -42,7 +42,7 @@
 				<p>Each element should have three properties: <code>id</code> will be used as the config and query-string key, <code>label</code> will be used as the display propery (text in the UI), <code>tooltip</code> will be used as the title attribute, and should explain what the checkbox does.</p>
 			</desc>
 		</property>
-	</properties>
+	</signature>
 	<desc>Configuration for QUnit</desc>
 	<longdesc>
 		<p>QUnit has a bunch of internal configuration defaults, some of which are useful to override. Check the description for each option for details.</p>
