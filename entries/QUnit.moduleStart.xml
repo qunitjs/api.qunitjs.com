@@ -18,7 +18,7 @@
 		<desc>Register a callback that logs the module name</desc>
 		<code><![CDATA[
 QUnit.moduleStart(function( details ) {
-	console.log( "Now running: ", details.module );
+	console.log( "Now running: ", details.name );
 });
 ]]></code>
 	</example>
