@@ -1,6 +1,5 @@
 {
-	"url": "dev.api.qunitjs.com",
+	"url": "local.api.qunitjs.com",
 	"username": "admin",
-	"password": "secret",
-	"dir": "dist/wordpress"
+	"password": "secret"
 }
