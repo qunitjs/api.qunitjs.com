@@ -14,7 +14,7 @@
 		</argument>
 	</signature>
 	<desc>
-		A non-strict comparison assertion, checking for inequality.
+		A strict comparison assertion, checking for inequality.
 	</desc>
 	<longdesc>
 		<p>The <code>notStrictEqual</code> assertion uses the strict inverted comparison operator (<code>!==</code>) to compare the actual and expected arguments. When they aren't equal, the assertion passes; otherwise, it fails. When it fails, both actual and expected values are displayed in the test result, in addition to a given message.</p>
