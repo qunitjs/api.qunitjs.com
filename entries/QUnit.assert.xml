@@ -2,56 +2,15 @@
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type="property" name="QUnit.assert">
 	<title>QUnit.assert</title>
-	<signature>
-		<property name="deepEqual" type="Function">
-			<desc>
-				A deep recursive comparison assertion, working on primitive types, arrays, objects, regular expressions, dates and functions.
-			</desc>
-		</property>
-		<property name="equal" type="Function">
-			<desc>
-				A non-strict comparison assertion, roughly equivalent to JUnit <code>assertEquals</code>.
-			</desc>
-		</property>
-		<property name="notDeepEqual">
-			<desc>
-				An inverted deep recursive comparison assertion, working on primitive types, arrays, objects, regular expressions, dates and functions.
-			</desc>
-		</property>
-		<property name="notEqual" type="Function">
-			<desc>
-				A non-strict comparison assertion, checking for inequality.
-			</desc>
-		</property>
-		<property name="notStrictEqual" type="Function">
-			<desc>
-				A strict comparison assertion, checking for inequality.
-			</desc>
-		</property>
-		<property name="ok" type="Function">
-			<desc>
-				A boolean assertion, equivalent to CommonJS's assert.ok() and JUnit's assertTrue(). Passes if the first argument is truthy.
-			</desc>
-		</property>
-		<property name="strictEqual" type="Function">
-			<desc>
-				A strict type and value comparison assertion.
-			</desc>
-		</property>
-		<property name="throws" type="Function">
-			<desc>
-				Assertion to test if a callback throws an exception when run.
-			</desc>
-		</property>
-	</signature>
 	<desc>Namespace for QUnit assertions</desc>
 	<longdesc>
 		<p>QUnit's built-in assertions are defined on the <code>QUnit.assert</code> object. This object is passed as the only argument to the <code>test</code> and <code>asyncTest</code> function.</p>
+		<p>This object has properties for each of <a href="/category/assert/">QUnit's built-in assertion methods</a>.</p>
 	</longdesc>
 	<example>
 		<desc>Use the <code>ok</code> assertion in any of three ways:</desc>
 <code><![CDATA[
-test("`ok` assertion is defined in three places", function( assert ) {
+test( "`ok` assertion is defined in three places", function( assert ) {
 	ok( true, "Globally" );
 	QUnit.assert.ok( true, "on the `QUnit.assert` object" );
 	assert.ok( true, "on the object passed to the `test` function" );
