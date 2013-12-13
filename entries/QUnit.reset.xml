@@ -5,7 +5,7 @@
 	<signature/>
 	<desc>DEPRECATED: Reset the test fixture in the DOM.</desc>
 	<longdesc>
-		<p><strong>This methods is DEPRECATED. Don't use it!</strong></p>
+		<p class="warning"><strong>Note:</strong> This methods is DEPRECATED. Don't use it!</p>
 		<ul>
 			<li>Use multiple tests instead of resetting inside a test.</li>
 			<li>Use testStart or testDone for custom cleanup.</li>
