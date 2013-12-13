@@ -28,7 +28,7 @@ test( "a test", function() {
 		return x * x;
 	});
 
-	equal( result, 4, "2 square equals 4" );
+	equal( result, 4, "2 squared equals 4" );
 });
 ]]></code>
 	</example>
@@ -46,7 +46,7 @@ test( "a test", 2, function() {
 		return x * x;
 	});
 
-	equal( result, 4, "2 square equals 4" );
+	equal( result, 4, "2 squared equals 4" );
 });
 ]]></code>
 	</example>
