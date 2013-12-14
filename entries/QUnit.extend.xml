@@ -13,7 +13,7 @@
 	<desc>Copy the properties defined by the <code>mixin</code> object into the <code>target</code> object</desc>
 	<longdesc>
 		<p>
-			This method will modify the <code>target</code> object to contain the "own" properties defined by the <code>mixin</code>. If <code>mixin</code> object specifies the value of any attribute as <code>undefined</code>, this property will instead be removed from the <code>target</code> object.
+			This method will modify the <code>target</code> object to contain the "own" properties defined by the <code>mixin</code>. If the <code>mixin</code> object specifies the value of any attribute as <code>undefined</code>, this property will instead be removed from the <code>target</code> object.
 		</p>
 	</longdesc>
 	<example>
