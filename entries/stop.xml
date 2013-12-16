@@ -10,7 +10,6 @@
 	<desc>Increase the number of <a href="/start/"><code>start()</code></a> calls the testrunner should wait for before continuing.</desc>
 	<longdesc>
 		<p>When your async test has multiple exit points, call <code>stop()</code> multiple times or use the increment argument.</p>
-		<p>On Blackberry 5.0, <code>window.stop</code> is a native read-only function. If you deal with that browser, use <code>QUnit.stop()</code> instead, which will work anywhere.</p>
 	</longdesc>
 	<example height="250">
 		<desc>A test that waits 150ms for an async operation to finish, then asserts the result.</desc>
