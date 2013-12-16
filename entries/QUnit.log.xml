@@ -31,7 +31,7 @@
 		<p>The properties of the details argument are listed below as options.</p>
 	</longdesc>
 	<example>
-		<desc>Register a callback that logs assertion result and its message</desc>
+		<desc>Register a callback that logs the assertion result and its message</desc>
 		<code><![CDATA[
 QUnit.log(function( details ) {
 	console.log( "Log: ", details.result, details.message );
