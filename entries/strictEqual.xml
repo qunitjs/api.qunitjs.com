@@ -25,7 +25,7 @@
 		<desc>Compare the value of two primitives, having the same value and type.</desc>
 <code><![CDATA[
 test( "strictEqual test", function() {
-	strictEqual( 1, 1, "1 and 1 are the same value and type" );
+	strictEqual( 1, 1, "1 and 1 have the same value and type" );
 });
 ]]></code>
 	</example>
