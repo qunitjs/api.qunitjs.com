@@ -19,7 +19,7 @@
 	<example>
 		<desc>Define a custom <code>mod2</code> assertion that tests if the provided numbers are equivalent in modulo 2.</desc>
 		<code><![CDATA[
-test('QUnit.extend', function( assert ) {
+test( "QUnit.extend", function( assert ) {
 	var base = {
 		a: 1,
 		b: 2,
@@ -34,7 +34,7 @@ test('QUnit.extend', function( assert ) {
 	assert.equal( base.a, 1, "Unspecified values are not modified" );
 	assert.equal( base.b, 2.5, "Existing values are updated" );
 	assert.equal( base.c, 3, "New values are defined" );
-	assert.ok( !('z' in base), "Values specified as `undefined` are removed" );
+	assert.ok( !( "z" in base ), "Values specified as `undefined` are removed" );
 });
 ]]></code>
 	</example>
