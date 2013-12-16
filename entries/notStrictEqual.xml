@@ -25,7 +25,7 @@
 		<desc>The simplest assertion example:</desc>
 <code><![CDATA[
 test( "a test", function() {
-	notStrictEqual( 1, "1", "String '1' and number 1 don't have the same value" );
+	notStrictEqual( 1, "1", "String '1' and number 1 have the same value but not the same type" );
 });
 ]]></code>
 	</example>
