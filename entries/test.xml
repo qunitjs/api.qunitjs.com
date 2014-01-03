@@ -3,7 +3,7 @@
 <entry type="method" name="test">
 	<title>test()</title>
 	<signature>
-		<argument name="title" type="String">
+		<argument name="name" type="String">
 			<desc>Title of unit being tested</desc>
 		</argument>
 		<argument name="test">
