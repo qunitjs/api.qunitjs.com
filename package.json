@@ -2,7 +2,7 @@
   "name": "api.qunitjs.com",
   "title": "QUnit API Docs",
   "description": "API reference documentation for QUnit",
-  "version": "1.11.3",
+  "version": "1.11.4",
   "homepage": "http://api.qunitjs.com",
   "author": {
     "name": "jQuery Foundation (http://jquery.org/)"
