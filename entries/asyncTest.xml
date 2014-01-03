@@ -6,9 +6,6 @@
 		<argument name="name" type="String">
 			<desc>Title of unit being tested</desc>
 		</argument>
-		<argument name="expected" type="Number">
-			<desc>Number of assertions in this test</desc>
-		</argument>
 		<argument name="test" type="Function">
 			<desc>Function to close over assertions</desc>
 		</argument>
@@ -18,6 +15,7 @@
 	</desc>
 	<longdesc>
 		<p>For testing asynchronous code, <code>asyncTest</code> will automatically stop the test runner and wait for your code to call <a href="/start/"><code>start()</code></a> to continue.</p>
+		<p>This method used to have an optional second argument called <code>expected</code>. This argument is deprecated and its usage will start throwing errors in 2.0.0. If you're using it, use <a href="/expect"><code>expect()</code></a> instead.</p>
 	</longdesc>
 	<example height="250">
 		<desc>The following illustrates an asynchronous test that waits 1 second before resuming</desc>
