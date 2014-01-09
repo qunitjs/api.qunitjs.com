@@ -36,7 +36,7 @@ test( "throws", function() {
 		function() {
 			throw "error"
 		},
-		"throws with just a message, no expected"
+		"throws with just a message, not using the 'expected' argument"
 	);
 
 	throws(
