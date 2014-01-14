@@ -19,6 +19,11 @@
 				This object isn't actually a configuration property, but is listed here anyway, as its exported through <code>QUnit.config</code>. This gives you access to some QUnit internals at runtime. See below for an example.
 			</desc>
 		</property>
+		<property name="module" type="String" default="undefined">
+			<desc>
+				Specify a single module to run by declaring it's name. By default, QUnit will run all the loaded modules when this property is not specified. This property value must match (case insensitive) the module name or QUnit won't run any module.   
+			</desc>
+		</property>
 		<property name="reorder" type="Boolean" default="true">
 			<desc>
 				By default, QUnit will run tests first that failed on a previous run. In a large testsuite, this can speed up testing a lot.
