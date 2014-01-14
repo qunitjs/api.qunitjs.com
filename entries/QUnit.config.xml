@@ -31,6 +31,11 @@
 				<p>Enabling this option will cause tests to fail, if they don't call <code>expect()</code> at all.</p>
 			</desc>
 		</property>
+		<property name="testNumber" type="Array" default="undefined">
+			<desc>
+				This property allows QUnit to run specific test blocks by their order number. The order is set as the tests blocks are loaded. You can specify one or multiple tests to run.
+			</desc>
+		</property>
 		<property name="testTimeout" type="Number" default="undefined">
 			<desc>
 				Specify a global timeout in milliseconds after which all tests will fail with an appropiate message. Useful when async tests aren't finishing, to prevent the testrunner getting stuck. Set to something high, e.g. 30000 (30 seconds) to avoid slow tests to time out by accident.
