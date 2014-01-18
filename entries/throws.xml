@@ -6,10 +6,10 @@
 		<argument name="block" type="Function">
 			<desc>Function to execute</desc>
 		</argument>
-		<argument name="expected" type="Error">
-			<desc>Error Object to compare</desc>
+		<argument name="expected" type="Object" optional="true">
+			<desc>Error Object, String or partial matching RegExp to compare</desc>
 		</argument>
-		<argument name="message" type="String">
+		<argument name="message" type="String" optional="true">
 			<desc>A short description of the assertion</desc>
 		</argument>
 	</signature>
