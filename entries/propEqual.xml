@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
+<entry type="method" name="propEqual">
+	<title>propEqual()</title>
+	<signature>
+		<argument name="actual" type="Object">
+			<desc>Object being tested</desc>
+		</argument>
+		<argument name="expected" type="Object">
+			<desc>Known comparison value</desc>
+		</argument>
+		<argument name="message" type="String">
+			<desc>A short description of the assertion</desc>
+		</argument>
+	</signature>
+	<desc>
+		A strict type and value comparison of an object own properties assertion.
+	</desc>
+	<longdesc>
+		<p>The <code>propEqual()</code> assertion provides strictly (<code>===</code>) comparison of Object properties. Unline <code>deepEqual()</code>, this assertion can be used to compare two objects made with different constructors and prototype.</p>
+		<p><a href="/strictEqual"><code>strictEqual()</code></a> can be used to test strict equality.</p>
+		<p><a href="/notpropEqual"><code>notpropEqual()</code></a> can be used to explicitly test strict inequality of Object properties.</p>
+	</longdesc>
+	<example>
+		<desc>Compare the properties values of two objects.</desc>
+<code><![CDATA[
+test( "propEqual test", function() {
+	function Foo( x, y, z ) {
+		this.x = x;
+		this.y = y;
+		this.z = z;
+	}
+	Foo.prototype.doA = function () {};
+	Foo.prototype.doB = function () {};
+	Foo.prototype.bar = 'prototype';
+
+    var foo = new Foo( 1, "2", [] );
+    var bar = {
+    	x : 1,
+    	y : "2",
+		z : []
+    };
+	propEqual( foo, bar, "Strictly the same properties without comparing objects constructors." );
+});
+]]></code>
+	</example>
+	<category slug="assert"/>
+</entry>
