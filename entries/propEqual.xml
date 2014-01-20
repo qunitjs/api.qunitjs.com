@@ -14,7 +14,7 @@
 		</argument>
 	</signature>
 	<desc>
-		A strict type and value comparison of an object own properties assertion.
+		A strict type and value comparison of an object's own properties.
 	</desc>
 	<longdesc>
 		<p>The <code>propEqual()</code> assertion provides strictly (<code>===</code>) comparison of Object properties. Unline <code>deepEqual()</code>, this assertion can be used to compare two objects made with different constructors and prototype.</p>

@@ -14,7 +14,7 @@
 		</argument>
 	</signature>
 	<desc>
-		A non-strict comparison assertion, roughly equivalent to JUnit <code>assertEquals</code>.
+		A non-strict comparison, roughly equivalent to JUnit's <code>assertEquals</code>.
 	</desc>
 	<longdesc>
 		<p>The <code>equal</code> assertion uses the simple comparison operator (<code>==</code>) to compare the actual and expected arguments. When they are equal, the assertion passes; otherwise, it fails. When it fails, both actual and expected values are displayed in the test result, in addition to a given message.</p>

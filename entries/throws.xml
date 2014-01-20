@@ -14,7 +14,7 @@
 		</argument>
 	</signature>
 	<desc>
-		Assertion to test if a callback throws an exception when run.
+		Test if a callback throws an exception, and optionally compare the thrown error.
 	</desc>
 	<longdesc>
 		<p>When testing code that is expected to throw an exception based on a specific set of circumstances, use <code>throws()</code> to catch the error object for testing and comparison.</p>
