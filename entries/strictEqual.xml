@@ -14,7 +14,7 @@
 		</argument>
 	</signature>
 	<desc>
-		A strict type and value comparison assertion.
+		A strict type and value comparison.
 	</desc>
 	<longdesc>
 		<p>The <code>strictEqual()</code> assertion provides the most rigid comparison of type and value with the strict equality operator (<code>===</code>).</p>

@@ -14,7 +14,7 @@
 		</argument>
 	</signature>
 	<desc>
-		A strict comparison of an object own properties assertion, checking for inequality.
+		A strict comparison of an object's own properties, checking for inequality.
 	</desc>
 	<longdesc>
 		<p>The <code>notPropEqual</code> assertion uses the strict inverted comparison operator (<code>!==</code>) to compare the actual and expected arguments as Objects regarding only their properties but not their constructors.</p>

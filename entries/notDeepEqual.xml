@@ -14,7 +14,7 @@
 		</argument>
 	</signature>
 	<desc>
-		An inverted deep recursive comparison assertion, working on primitive types, arrays, objects, regular expressions, dates and functions.
+		An inverted deep recursive comparison, working on primitive types, arrays, objects, regular expressions, dates and functions.
 	</desc>
 	<longdesc>
 		<p>The <code>notDeepEqual()</code> assertion can be used just like <code>equal()</code> when comparing the value of objects, such that <code>{ key: value }</code> is equal to <code>{ key: value }</code>. For non-scalar values, identity will be disregarded by <code>notDeepEqual</code>.</p>
