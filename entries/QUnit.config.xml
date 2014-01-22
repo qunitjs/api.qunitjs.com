@@ -19,6 +19,11 @@
 				This object isn't actually a configuration property, but is listed here anyway, as its exported through <code>QUnit.config</code>. This gives you access to some QUnit internals at runtime. See below for an example.
 			</desc>
 		</property>
+		<property name="hidepassed" type="Boolean" default="false">
+			<desc>
+				By default, the HTML Reporter will show all the tests results. Enabling this option will make it show only the failing tests, hiding all that pass. This can also be managed by the HTML interface.
+			</desc>
+		</property>
 		<property name="module" type="String" default="undefined">
 			<desc>
 				Specify a single module to run by declaring it's name. By default, QUnit will run all the loaded modules when this property is not specified. This property value must match (case insensitive) the module name or QUnit won't run any module.   
