@@ -26,7 +26,7 @@
 		</property>
 		<property name="module" type="String" default="undefined">
 			<desc>
-				Specify a single module to run by declaring it's name. By default, QUnit will run all the loaded modules when this property is not specified. This property value must match (case insensitive) the module name or QUnit won't run any module.   
+				Specify a single module to run by declaring it's name. By default, QUnit will run all the loaded modules when this property is not specified. This property value must match (case insensitive) the module name or QUnit won't run any module.
 			</desc>
 		</property>
 		<property name="reorder" type="Boolean" default="true">
@@ -58,8 +58,13 @@
 		</property>
 		<property name="urlConfig" type="Array">
 			<desc>
-				This property controls which checkboxes to put into the QUnit toolbar element (below the header). By default, the "noglobals" and "notrycatch" checkboxes are there. By extending this array, you can add your own checkboxes.
-				<p>Each element should have three properties: <code>id</code> will be used as the config and query-string key, <code>label</code> will be used as the display propery (text in the UI), <code>tooltip</code> will be used as the title attribute, and should explain what the checkbox does.</p>
+				This property controls which form controls to put into the QUnit toolbar element (below the header). By default, the "noglobals" and "notrycatch" checkboxes are there. By extending this array, you can add your own checkboxes and select lists.
+				<p>Each element should be an object with an <code>id</code> property (used as the config and query-string key) and a <code>label</code> property (used as text in the UI), and optionally a <code>tooltip</code> property (used as the 	title attribute to explain what the control does). Each element should also have a <code>value</code> property controlling available options and rendering.</p>
+				<p>If <code>value</code> is undefined, the option will render as a checkbox. The corresponding URL parameter will be set to "true" when the checkbox is checked, and otherwise will be absent.</p>
+				<p>If <code>value</code> is a string, the option will render as a checkbox. The corresponding URL parameter will be set to the string when the checkbox is checked, and otherwise will be absent.</p>
+				<p>If <code>value</code> is an array, the option will render as a select-one with an empty first option, followed by an option for each element of the array, with text and value matching the element. The corresponding URL parameter will be absent when the empty option is selected, and otherwise will be set to the value of the selected array element.</p>
+				<p>If <code>value</code> is an object, the option will render as a select-one with an empty first option, followed by an option for each property of the object, with text and value matching the name and value (respectively) of the property. The corresponding URL parameter will be absent when the empty option is selected, and otherwise will be set to the value of the selected object property.</p>
+				<p>See also the two examples below.</p>
 			</desc>
 		</property>
 	</signature>
@@ -96,6 +101,17 @@ QUnit.config.urlConfig.push({
 	id: "min",
 	label: "Minified source",
 	tooltip: "Load minified source files instead of the regular unminified ones."
+});
+]]></code>
+	</example>
+	<example>
+		<desc>Add a dropdown to the toolbar, using the <code>urlConfig</code> property. This assumes there's other code on the page that will check the <code>QUnit.config.jquery</code> property to react to the selection, loading the appropiate jQuery Core version.</desc>
+<code><![CDATA[
+QUnit.config.urlConfig.push({
+	id: "jquery",
+	label: "jQuery version",
+	value: [ "1.7.2", "1.8.3", "1.9.1" ],
+	tooltip: "What jQuery Core version to test against"
 });
 ]]></code>
 	</example>
