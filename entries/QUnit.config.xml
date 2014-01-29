@@ -51,6 +51,11 @@
 				Specify a global timeout in milliseconds after which all tests will fail with an appropiate message. Useful when async tests aren't finishing, to prevent the testrunner getting stuck. Set to something high, e.g. 30000 (30 seconds) to avoid slow tests to time out by accident.
 			</desc>
 		</property>
+		<property name="scrolltop" type="Boolean" default="true">
+			<desc>
+				By default, scroll to top of the page when suite is done. Setting this to false will leave the page scroll alone.
+			</desc>
+		</property>
 		<property name="urlConfig" type="Array">
 			<desc>
 				This property controls which checkboxes to put into the QUnit toolbar element (below the header). By default, the "noglobals" and "notrycatch" checkboxes are there. By extending this array, you can add your own checkboxes.
