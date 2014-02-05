@@ -5,7 +5,6 @@
 	<category name="Callbacks" slug="callbacks">
 		<desc><![CDATA[
 			When integrating QUnit into other tools like CI servers, use these callbacks as an API to read test results.
-			<p>QUnit bundles two addons that both use these callbacks: The JUnit logger and the PhantomJS runner.</p>
 		]]></desc>
 	</category>
 	<category name="Async Control" slug="async-control"></category>
