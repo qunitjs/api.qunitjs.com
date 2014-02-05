@@ -8,6 +8,12 @@
 		]]></desc>
 	</category>
 	<category name="Async Control" slug="async-control"></category>
-	<category name="Configuration" slug="config"></category>
+	<category name="Configuration" slug="config">
+		<desc>
+			<![CDATA[
+			These methods and properties are used to configure QUnit: to adjust the runtime behaviour directly or extend the QUnit API via custom assertions.
+		]]>
+		</desc>
+	</category>
 	<category name="All" slug="all"></category>
 </categories>
