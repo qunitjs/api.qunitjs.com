@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
+<entry type="property" name="QUnit.jsDump.parse">
+	<title>QUnit.jsDump.parse()</title>
+	<signature>
+		<argument name="data" type="Object">
+			<desc>Data structure or Object to parse.</desc>
+		</argument>
+	</signature>
+	<desc>Advanced and extensible data dumping for JavaScript</desc>
+	<longdesc>
+		<p>
+			It does a string serialization by parsing data structures and objects.
+		</p>
+		<p>
+			It also does parse DOM elements to a string representation of their outer HTML.
+		</p>
+	</longdesc>
+	<example>
+		<desc>
+			The following example is used on <a href="https://github.com/gruntjs/grunt-contrib-qunit/blob/7568f3ba04a5790b2c92f44da3ce5c7bdc1c7491/phantomjs/bridge.js#L24-L33">grunt-contrib-qunit</a> to send messages from QUnit to PhantomJS.
+		</desc>
+		<code><![CDATA[
+QUnit.log(function( obj ) {
+
+	// Parse some stuff before sending it.
+	var actual = QUnit.jsDump.parse( obj.actual );
+	var expected = QUnit.jsDump.parse( obj.expected );
+
+	// Send it.
+	sendMessage( "qunit.log", obj.result, actual, expected, obj.message, obj.source );
+});
+]]></code>
+	</example>
+	<example>
+		<desc>This example shows the parsed output of a simple JS object with a DOM reference.</desc>
+		<code><![CDATA[
+var qHeader = document.getElementById( "qunit-header" ),
+	parsed = QUnit.jsDump.parse( qHeader ); 
+
+console.log( parsed );
+
+// Logs: "<h1 id=\"qunit-header\"></h1>"
+]]></code>
+	</example>
+	<category slug="config"/>
+</entry>
