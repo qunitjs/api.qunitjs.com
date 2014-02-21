@@ -23,6 +23,12 @@
 			<property name="source" type="String">
 				<desc>The associated stacktrace, either from an exception or pointing to the source of the assertion. Depends on browser support for providing stacktraces, so can be undefined.</desc>
 			</property>
+			<property name="module" type="String">
+				<desc>The test module name of the assertion. If the assertion is not connected to any module, the property's value will be <code>undefined</code>.</desc>
+			</property>
+			<property name="name" type="String">
+				<desc>The test block name of the assertion.</desc>
+			</property>
 		</argument>
 	</signature>
 	<desc>Register a callback to fire whenever an assertion completes.</desc>
@@ -35,6 +41,26 @@
 		<code><![CDATA[
 QUnit.log(function( details ) {
 	console.log( "Log: ", details.result, details.message );
+});
+]]></code>
+	</example>
+	<example>
+		<desc>Logs the module and test block whenever an assertion fails.</desc>
+		<code><![CDATA[
+QUnit.log(function( details ) {
+	if ( details.result ) {
+		return;
+	}
+	var loc = details.module + ": " + details.name + ": ",
+		output = "FAILED: " + loc + ( details.message ? details.message + ", " : "" );
+
+	if ( details.actual ) {
+		output += "expected: " + details.expected + ", actual: " + details.actual;
+	}
+	if ( details.source ) {
+		output += ", " + details.source;
+	}
+	console.log( output );
 });
 ]]></code>
 	</example>
