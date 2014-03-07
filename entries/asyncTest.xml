@@ -33,7 +33,8 @@ asyncTest( "asynchronous test: one second later!", function() {
 	<example height="250">
 		<desc>A more practical example that must wait for a video element to be loaded before running any assertions.</desc>
 <code><![CDATA[
-asyncTest( "asynchronous test: video ready to play", 1, function() {
+asyncTest( "asynchronous test: video ready to play", function() {
+	expect( 1 );
 	var $video = $( "video" );
 
 	$video.on( "canplaythrough", function() {
