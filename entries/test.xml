@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type="method" name="test">
-	<title>test()</title>
+	<title>QUnit.test()</title>
 	<signature>
 		<argument name="name" type="String">
 			<desc>Title of unit being tested</desc>
@@ -17,18 +17,10 @@
 		Add a test to run.
 	</desc>
 	<longdesc>
-		<p>When testing the most common, synchronous code, use <code>test()</code></p>
-		<p>The <code>assert</code> argument to the callback contains all of QUnit's assertion methods. If you are avoiding using any of QUnit's globals, you can use the assert argument instead.</p>
+		<p>When testing the most common, synchronous code, use <code>QUnit.test()</code></p>
+		<p>The <code>assert</code> argument to the callback contains all of QUnit's assertion methods. You should use this argument to call your test assertions</p>
 		<p>This method used to have an optional second argument called <code>expected</code>. This argument is deprecated and its usage will start throwing errors in 2.0.0. If you're using it, use <a href="/expect"><code>expect()</code></a> instead.</p>
 	</longdesc>
-	<example height="250">
-		<desc>Simple, synchronous code test.</desc>
-<code><![CDATA[
-	test( "hello test", function() {
-		ok( 1 == "1", "Passed!" );
-	});
-]]></code>
-	</example>
 	<example height="250">
 		<desc>A more practical example, using the assert argument and no globals.</desc>
 <code><![CDATA[

@@ -1,27 +1,27 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type="method" name="start">
-	<title>start()</title>
+	<title>QUnit.start()</title>
 	<signature>
 		<argument name="decrement" type="Integer" optional="true">
-			<desc>Optional argument to merge multiple start() calls into one. Use with multiple corrsponding stop() calls.</desc>
+			<desc>Optional argument to merge multiple start() calls into one. Use with multiple corresponding stop() calls.</desc>
 		</argument>
 	</signature>
 	<desc>
-		Start running tests again after the testrunner was stopped. See <a href="/stop/"><code>stop()</code></a>.
+		Start running tests again after the testrunner was stopped. See <a href="/stop/"><code>QUnit.stop()</code></a>.
 	</desc>
 	<longdesc>
-		<p>When your async test has multiple exit points, call <code>start()</code> for the corresponding number of <a href="/stop/"><code>stop()</code></a> increments.</p>
+		<p>When your async test has multiple exit points, call <code>QUnit.start()</code> for the corresponding number of <a href="/stop/"><code>QUnit.stop()</code></a> increments.</p>
 	</longdesc>
 	<example height="250">
 		<desc>A test that waits 150ms for an async operation to finish, then asserts the result.</desc>
 <code><![CDATA[
-test( "a test", function() {
-	stop();
+QUnit.test( "a test", function( assert ) {
+	QUnit.stop();
 	asyncOp();
 	setTimeout(function() {
-		equals( asyncOp.result, "someExpectedValue" );
-		start();
+		assert.equals( asyncOp.result, "someExpectedValue" );
+		QUnit.start();
 	}, 150 );
 });
 ]]></code>

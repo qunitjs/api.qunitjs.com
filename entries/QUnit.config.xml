@@ -87,7 +87,7 @@ require(
 	<example>
 		<desc>Access <code>QUnit.config.current.testName</code> to pass the current test's name on to another tool</desc>
 <code><![CDATA[
-test("some test", function() {
+QUnit.test("some test", function() {
 	// a few regular assertions
 	// then a call to another tool
 	speedTest( QUnit.config.current.testName, codeUnderTest );

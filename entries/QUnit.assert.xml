@@ -8,11 +8,9 @@
 		<p>This object has properties for each of <a href="/category/assert/">QUnit's built-in assertion methods</a>.</p>
 	</longdesc>
 	<example>
-		<desc>Use the <code>ok</code> assertion in any of three ways:</desc>
+		<desc>Use the <code>ok</code> assertion through the test callback parameter:</desc>
 <code><![CDATA[
-test( "`ok` assertion is defined in three places", function( assert ) {
-	ok( true, "Globally" );
-	QUnit.assert.ok( true, "on the `QUnit.assert` object" );
+QUnit.test( "`ok` assertion defined in the callback parameter", function( assert ) {
 	assert.ok( true, "on the object passed to the `test` function" );
 });
 ]]></code>

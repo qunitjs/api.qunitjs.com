@@ -24,8 +24,8 @@
 	<example>
 		<desc>The simplest assertion example:</desc>
 <code><![CDATA[
-test( "a test", function() {
-	notEqual( 1, "2", "String '2' and number 1 don't have the same value" );
+QUnit.test( "a test", function( assert ) {
+	assert.notEqual( 1, "2", "String '2' and number 1 don't have the same value" );
 });
 ]]></code>
 	</example>

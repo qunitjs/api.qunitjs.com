@@ -17,12 +17,12 @@
 		Test if a callback throws an exception, and optionally compare the thrown error.
 	</desc>
 	<longdesc>
-		<p>When testing code that is expected to throw an exception based on a specific set of circumstances, use <code>throws()</code> to catch the error object for testing and comparison.</p>
+		<p>When testing code that is expected to throw an exception based on a specific set of circumstances, use <code>assert.throws()</code> to catch the error object for testing and comparison.</p>
 	</longdesc>
 	<example height="250">
 		<desc>Assert the correct error message is received for a custom error object.</desc>
 <code><![CDATA[
-test( "throws", function() {
+QUnit.test( "throws", function( assert ) {
 
 	function CustomError( message ) {
 		this.message = message;
@@ -32,14 +32,14 @@ test( "throws", function() {
 		return this.message;
 	};
 
-	throws(
+	assert.throws(
 		function() {
 			throw "error"
 		},
 		"throws with just a message, not using the 'expected' argument"
 	);
 
-	throws(
+	assert.throws(
 		function() {
 			throw new CustomError();
 		},
@@ -47,7 +47,7 @@ test( "throws", function() {
 		"raised error is an instance of CustomError"
 	);
 
-	throws(
+	assert.throws(
 		function() {
 			throw new CustomError("some error description");
 		},

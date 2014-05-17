@@ -24,21 +24,21 @@
 	<example>
 		<desc>The simplest assertion example:</desc>
 <code><![CDATA[
-test( "a test", function() {
-	equal( 1, "1", "String '1' and number 1 have the same value" );
+QUnit.test( "a test", function( assert ) {
+	assert.equal( 1, "1", "String '1' and number 1 have the same value" );
 });
 ]]></code>
 	</example>
 	<example>
 		<desc>A slightly more thorough set of assertions:</desc>
 <code><![CDATA[
-	test( "equal test", function() {
-		equal( 0, 0, "Zero, Zero; equal succeeds" );
-		equal( "", 0, "Empty, Zero; equal succeeds" );
-		equal( "", "", "Empty, Empty; equal succeeds" );
+	QUnit.test( "equal test", function( assert ) {
+		assert.equal( 0, 0, "Zero, Zero; equal succeeds" );
+		assert.equal( "", 0, "Empty, Zero; equal succeeds" );
+		assert.equal( "", "", "Empty, Empty; equal succeeds" );
 
-		equal( "three", 3, "Three, 3; equal fails" );
-		equal( null, false, "null, false; equal fails" );
+		assert.equal( "three", 3, "Three, 3; equal fails" );
+		assert.equal( null, false, "null, false; equal fails" );
 	});
 ]]></code>
 	</example>

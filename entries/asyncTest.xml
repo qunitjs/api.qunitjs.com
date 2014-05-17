@@ -6,26 +6,29 @@
 		<argument name="name" type="String">
 			<desc>Title of unit being tested</desc>
 		</argument>
-		<argument name="test" type="Function">
+		<argument name="test">
 			<desc>Function to close over assertions</desc>
+			<type name="Function">
+				<argument name="assert" type="QUnit.assert"></argument>
+			</type>
 		</argument>
 	</signature>
 	<desc>
-		Add an asynchronous test to run. The test must include a call to start().
+		Add an asynchronous test to run. The test must include a call to QUnit.start().
 	</desc>
 	<longdesc>
-		<p>For testing asynchronous code, <code>asyncTest</code> will automatically stop the test runner and wait for your code to call <a href="/start/"><code>start()</code></a> to continue.</p>
+		<p>For testing asynchronous code, <code>QUnit.asyncTest</code> will automatically stop the test runner and wait for your code to call <a href="/start/"><code>QUnit.start()</code></a> to continue.</p>
 		<p>This method used to have an optional second argument called <code>expected</code>. This argument is deprecated and its usage will start throwing errors in 2.0.0. If you're using it, use <a href="/expect"><code>expect()</code></a> instead.</p>
 	</longdesc>
 	<example height="250">
 		<desc>The following illustrates an asynchronous test that waits 1 second before resuming</desc>
 <code><![CDATA[
-asyncTest( "asynchronous test: one second later!", function() {
+QUnit.asyncTest( "asynchronous test: one second later!", function( assert ) {
 	expect( 1 );
 
 	setTimeout(function() {
-		ok( true, "Passed and ready to resume!" );
-		start();
+		assert.ok( true, "Passed and ready to resume!" );
+		QUnit.start();
 	}, 1000);
 });
 ]]></code>
@@ -33,18 +36,17 @@ asyncTest( "asynchronous test: one second later!", function() {
 	<example height="250">
 		<desc>A more practical example that must wait for a video element to be loaded before running any assertions.</desc>
 <code><![CDATA[
-asyncTest( "asynchronous test: video ready to play", function() {
+QUnit.asyncTest( "asynchronous test: video ready to play", function( assert ) {
 	expect( 1 );
 	var $video = $( "video" );
 
 	$video.on( "canplaythrough", function() {
-		ok( true, "video has loaded and is ready to play" );
-		start();
+		assert.ok( true, "video has loaded and is ready to play" );
+		QUnit.start();
 	});
 });
 ]]></code>
 	</example>
-
 
 	<category slug="async-control"/>
 	<category slug="test"/>

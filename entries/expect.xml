@@ -16,7 +16,7 @@
 	<example height="250">
 		<desc>Establish an expected assertion count</desc>
 <code><![CDATA[
-test( "a test", function() {
+QUnit.test( "a test", function( assert ) {
 	expect( 2 );
 
 	function calc( x, operation ) {
@@ -24,11 +24,11 @@ test( "a test", function() {
 	}
 
 	var result = calc( 2, function( x ) {
-		ok( true, "calc() calls operation function" );
+		assert.ok( true, "calc() calls operation function" );
 		return x * x;
 	});
 
-	equal( result, 4, "2 squared equals 4" );
+	assert.equal( result, 4, "2 squared equals 4" );
 });
 ]]></code>
 	</example>

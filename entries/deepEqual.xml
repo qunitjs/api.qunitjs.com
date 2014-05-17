@@ -23,10 +23,10 @@
 	<example>
 		<desc>Compare the value of two objects.</desc>
 <code><![CDATA[
-test( "deepEqual test", function() {
+QUnit.test( "deepEqual test", function( assert ) {
 	var obj = { foo: "bar" };
 
-	deepEqual( obj, { foo: "bar" }, "Two objects can be the same in value" );
+	assert.deepEqual( obj, { foo: "bar" }, "Two objects can be the same in value" );
 });
 ]]></code>
 	</example>

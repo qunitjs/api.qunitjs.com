@@ -15,21 +15,20 @@
 	</desc>
 	<longdesc>
 		<p>The most basic assertion in QUnit, <code>ok()</code> requires just one argument. If the argument evaluates to true, the assertion passes; otherwise, it fails. If a second message argument is provided, it will be displayed in place of the result.</p>
-
 	</longdesc>
 	<example height="250">
 
 <code><![CDATA[
-test( "ok test", function() {
-	ok( true, "true succeeds" );
-	ok( "non-empty", "non-empty string succeeds" );
+QUnit.test( "ok test", function( assert ) {
+	assert.ok( true, "true succeeds" );
+	assert.ok( "non-empty", "non-empty string succeeds" );
 
-	ok( false, "false fails" );
-	ok( 0, "0 fails" );
-	ok( NaN, "NaN fails" );
-	ok( "", "empty string fails" );
-	ok( null, "null fails" );
-	ok( undefined, "undefined fails" );
+	assert.ok( false, "false fails" );
+	assert.ok( 0, "0 fails" );
+	assert.ok( NaN, "NaN fails" );
+	assert.ok( "", "empty string fails" );
+	assert.ok( null, "null fails" );
+	assert.ok( undefined, "undefined fails" );
 });
 ]]></code>
 	</example>

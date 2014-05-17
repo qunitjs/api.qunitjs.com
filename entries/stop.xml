@@ -1,25 +1,25 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type="method" name="stop">
-	<title>stop()</title>
+	<title>QUnit.stop()</title>
 	<signature>
 		<argument name="increment" type="Integer" optional="true" default="1">
 			<desc>Optional argument to increase the async test depth with multiple steps at once.</desc>
 		</argument>
 	</signature>
-	<desc>Increase the number of <a href="/start/"><code>start()</code></a> calls the testrunner should wait for before continuing.</desc>
+	<desc>Increase the number of <a href="/start/"><code>QUnit.start()</code></a> calls the testrunner should wait for before continuing.</desc>
 	<longdesc>
-		<p>When your async test has multiple exit points, call <code>stop()</code> multiple times or use the increment argument.</p>
+		<p>When your async test has multiple exit points, call <code>QUnit.stop()</code> multiple times or use the increment argument.</p>
 	</longdesc>
 	<example height="250">
 		<desc>A test that waits 150ms for an async operation to finish, then asserts the result.</desc>
 <code><![CDATA[
-test( "a test", function() {
-	stop();
+QUnit.test( "a test", function( assert ) {
+	QUnit.stop();
 	asyncOp();
 	setTimeout(function() {
-		equals( asyncOp.result, "someExpectedValue" );
-		start();
+		assert.equals( asyncOp.result, "someExpectedValue" );
+		QUnit.start();
 	}, 150 );
 });
 ]]></code>

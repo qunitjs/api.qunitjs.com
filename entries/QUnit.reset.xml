@@ -11,7 +11,7 @@
 			<li>Use testStart or testDone for custom cleanup.</li>
 			<li>This method will throw an error in 2.0, and will be removed in 2.1</li>
 		</ul>
-		<p>Automatically called by QUnit after each test. Can be called by test code, though usually its better to seperate test code with multiple calls to <code><a href="/test/">test()</a></code>.</p>
+		<p>Automatically called by QUnit after each test. Can be called by test code, though usually its better to seperate test code with multiple calls to <code><a href="/test/">QUnit.test()</a></code>.</p>
 		<p>When QUnit is run in a browser, it looks for <code>#qunit-fixture</code> element. If found, QUnit will store the contained markup before running any test, then restoring that markup after each test. If tests manipulate elements only within one of those elements, they won't affect each other.</p>
 	</longdesc>
 	<category slug="config"/>

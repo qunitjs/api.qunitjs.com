@@ -24,7 +24,7 @@
 	<example>
 		<desc>Compare the properties values of two objects.</desc>
 <code><![CDATA[
-test( "propEqual test", function() {
+QUnit.test( "propEqual test", function( assert ) {
 	function Foo( x, y, z ) {
 		this.x = x;
 		this.y = y;
@@ -40,7 +40,7 @@ test( "propEqual test", function() {
 		y : "2",
 		z : []
 	};
-	propEqual( foo, bar, "Strictly the same properties without comparing objects constructors." );
+	assert.propEqual( foo, bar, "Strictly the same properties without comparing objects constructors." );
 });
 ]]></code>
 	</example>

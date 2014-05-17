@@ -25,7 +25,7 @@
 	<example>
 		<desc>Compare the values of two objects properties.</desc>
 <code><![CDATA[
-test( "notPropEqual test", function() {
+QUnit.test( "notPropEqual test", function( assert ) {
 	function Foo( x, y, z ) {
 		this.x = x;
 		this.y = y;
@@ -37,7 +37,7 @@ test( "notPropEqual test", function() {
 
     var foo = new Foo( 1, "2", [] );
     var bar = new Foo( "1", 2, {} );
-	notPropEqual( foo, bar, "Properties values are strictly compared." );
+	assert.notPropEqual( foo, bar, "Properties values are strictly compared." );
 });
 ]]></code>
 	</example>

@@ -19,7 +19,7 @@
 	<example>
 		<desc>Define a custom <code>mod2</code> assertion that tests if the provided numbers are equivalent in modulo 2.</desc>
 		<code><![CDATA[
-test( "QUnit.extend", function( assert ) {
+QUnit.test( "QUnit.extend", function( assert ) {
 	var base = {
 		a: 1,
 		b: 2,
