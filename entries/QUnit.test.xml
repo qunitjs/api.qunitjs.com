@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
-<entry type="method" name="test">
+<entry type="method" name="QUnit.test">
 	<title>QUnit.test()</title>
 	<signature>
 		<argument name="name" type="String">

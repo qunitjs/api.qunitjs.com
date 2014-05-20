@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
-<entry type="method" name="start">
+<entry type="method" name="QUnit.start">
 	<title>QUnit.start()</title>
 	<signature>
 		<argument name="decrement" type="Integer" optional="true">
@@ -8,10 +8,10 @@
 		</argument>
 	</signature>
 	<desc>
-		Start running tests again after the testrunner was stopped. See <a href="/stop/"><code>QUnit.stop()</code></a>.
+		Start running tests again after the testrunner was stopped. See <a href="/QUnit.stop/"><code>QUnit.stop()</code></a>.
 	</desc>
 	<longdesc>
-		<p>When your async test has multiple exit points, call <code>QUnit.start()</code> for the corresponding number of <a href="/stop/"><code>QUnit.stop()</code></a> increments.</p>
+		<p>When your async test has multiple exit points, call <code>QUnit.start()</code> for the corresponding number of <a href="/QUnit.stop/"><code>QUnit.stop()</code></a> increments.</p>
 	</longdesc>
 	<example height="250">
 		<desc>A test that waits 150ms for an async operation to finish, then asserts the result.</desc>
