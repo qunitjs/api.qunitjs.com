@@ -28,18 +28,5 @@
 			Invoking <code>QUnit.push</code> allows to create a readable expectation that is not defined by any of QUnit's built-in assertions.
 		</p>
 	</longdesc>
-	<example>
-		<desc>Define a custom <code>mod2</code> assertion that tests if the provided numbers are equivalent in modulo 2.</desc>
-		<code><![CDATA[
-QUnit.assert.mod2 = function( value, expected, message ) {
-	var actual = value % 2;
-	QUnit.push( actual === expected, actual, expected, message );
-};
-QUnit.test( "mod2", function( assert ) {
-	assert.mod2( 2, 0, "2 % 2 == 0" );
-	assert.mod2( 3, 1, "3 % 2 == 1" );
-});
-]]></code>
-	</example>
 	<category slug="config"/>
 </entry>
