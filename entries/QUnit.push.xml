@@ -16,13 +16,16 @@
 			<desc>A short description of the assertion</desc>
 		</argument>
 	</signature>
-	<desc>Report the result of a custom assertion</desc>
+	<desc>DEPRECATED: Report the result of a custom assertion</desc>
 	<longdesc>
-		<p>
-			Some test suites may need to express an expectation that is not defined by any of QUnit's built-in assertions. This need may be met by encapsulating the expectation in a JavaScript function which returns a <code>Boolean</code> value representing the result; this value can then be passed into QUnit's <code>ok</code> assertion.
+		<p class="warning">
+			This method is <strong>deprecated</strong> and it's recommended to use it through its direct reference in the assertion context.
 		</p>
 		<p>
-			A more readable solution would involve defining a custom assertion. If the expectation function invokes <code>QUnit.push</code>, QUnit will be notified of the result and report it accordingly.
+			<code>QUnit.push</code> reflects to the current running test, and it may leak assertions in asynchronous mode. Checkout <a href="/push/">assert.push()</a> to set a proper custom assertion.
+		</p>
+		<p>
+			Invoking <code>QUnit.push</code> allows to create a readable expectation that is not defined by any of QUnit's built-in assertions.
 		</p>
 	</longdesc>
 	<example>
