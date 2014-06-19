@@ -7,7 +7,7 @@
 			<desc>Function to execute</desc>
 		</argument>
 		<argument name="expected" type="Object" optional="true">
-			<desc>Error Object, String or partial matching RegExp to compare</desc>
+			<desc>Error Object (instance), Error Function (constructor), a RegExp that matches (or partially matches) the String representation, or a callback Function that must return <code>true</code> to pass the assertion check.</desc>
 		</argument>
 		<argument name="message" type="String" optional="true">
 			<desc>A short description of the assertion</desc>
@@ -41,6 +41,14 @@ QUnit.test( "throws", function( assert ) {
 
 	assert.throws(
 		function() {
+			throw new CustomError("some error description");
+		},
+		/description/,
+		"raised error message contains 'description'"
+	);
+
+	assert.throws(
+		function() {
 			throw new CustomError();
 		},
 		CustomError,
@@ -51,8 +59,18 @@ QUnit.test( "throws", function( assert ) {
 		function() {
 			throw new CustomError("some error description");
 		},
-		/description/,
-		"raised error message contains 'description'"
+		new CustomError("some error description"),
+		"raised error instance matches the CustomError instance"
+	);
+
+	assert.throws(
+		function() {
+			throw new CustomError("some error description");
+		},
+		function( err ) {
+			return err.toString() === "some error description";
+		},
+		"raised error instance satisfies the callback function"
 	);
 });
 ]]></code>
