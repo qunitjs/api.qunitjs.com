@@ -18,6 +18,7 @@
 	</desc>
 	<longdesc>
 		<p>For testing asynchronous code, <code>QUnit.asyncTest</code> will automatically stop the test runner and wait for your code to call <a href="/QUnit.start/"><code>QUnit.start()</code></a> to continue.</p>
+		<p>The <a href="/QUnit.assert/"><code>assert</code></a> argument to the callback contains all of QUnit's <a href="/category/assert/">assertion methods</a>. Use this argument to call your test assertions.</p>
 		<p>This method used to have an optional second argument called <code>expected</code>. This argument is deprecated and its usage will start throwing errors in 2.0.0. If you're using it, use <a href="/expect"><code>expect()</code></a> instead.</p>
 	</longdesc>
 	<example height="250">
