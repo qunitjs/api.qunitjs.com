@@ -26,7 +26,7 @@
 		</property>
 		<property name="module" type="String" default="undefined">
 			<desc>
-				Specify a single module to run by declaring it's name. By default, QUnit will run all the loaded modules when this property is not specified. This property value must match (case insensitive) the module name or QUnit won't run any module.
+				Specify a single module to run by declaring its name. By default, QUnit will run all the loaded modules when this property is not specified. This property value must match (case insensitive) the module name or QUnit won't run any module.
 			</desc>
 		</property>
 		<property name="reorder" type="Boolean" default="true">
@@ -48,7 +48,7 @@
 		</property>
 		<property name="testTimeout" type="Number" default="undefined">
 			<desc>
-				Specify a global timeout in milliseconds after which all tests will fail with an appropiate message. Useful when async tests aren't finishing, to prevent the testrunner getting stuck. Set to something high, e.g. 30000 (30 seconds) to avoid slow tests to time out by accident.
+				Specify a global timeout in milliseconds after which all tests will fail with an appropriate message. Useful when async tests aren't finishing, to prevent the testrunner getting stuck. Set to something high, e.g. 30000 (30 seconds) to avoid slow tests to time out by accident.
 			</desc>
 		</property>
 		<property name="scrolltop" type="Boolean" default="true">
