@@ -48,7 +48,7 @@
 		</property>
 		<property name="testTimeout" type="Number" default="undefined">
 			<desc>
-				Specify a global timeout in milliseconds after which all tests will fail with an appropiate message. Useful when async tests aren't finishing, to prevent the testrunner getting stuck. Set to something high, e.g. 30000 (30 seconds) to avoid slow tests to time out by accident.
+				Specify a global timeout in milliseconds after which all tests will fail with an appropriate message. Useful when async tests aren't finishing, to prevent the testrunner getting stuck. Set to something high, e.g. 30000 (30 seconds) to avoid slow tests to time out by accident.
 			</desc>
 		</property>
 		<property name="scrolltop" type="Boolean" default="true">
