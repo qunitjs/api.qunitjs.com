@@ -26,7 +26,7 @@
 		</property>
 		<property name="module" type="String" default="undefined">
 			<desc>
-				Specify a single module to run by declaring it's name. By default, QUnit will run all the loaded modules when this property is not specified. This property value must match (case insensitive) the module name or QUnit won't run any module.
+				Specify a single module to run by declaring its name. By default, QUnit will run all the loaded modules when this property is not specified. This property value must match (case insensitive) the module name or QUnit won't run any module.
 			</desc>
 		</property>
 		<property name="reorder" type="Boolean" default="true">
