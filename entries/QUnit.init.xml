@@ -3,10 +3,11 @@
 <entry type="method" name="QUnit.init">
 	<title>QUnit.init()</title>
 	<signature/>
-	<desc>Initialize the test runner.</desc>
+	<desc>DEPRECATED: Re-initialize the test runner.</desc>
 	<longdesc>
+		<p class="warning"><strong>Note:</strong> This methods is DEPRECATED. Don't use it!</p>
+		<p>This method will throw an error in 2.0, and will be removed in 2.1</p>
 		<p>If the runner has already run, calling <code>QUnit.init()</code> will re-initialize the runner, effectively resetting it. This method does not need to be called in the normal use of QUnit.</p>
-		<p>This is useful for being able to use the test runner for multiple batches of dynamically-loaded tests (load a batch of tests, get the results, re-init, load a new batch, etc.).</p>
 	</longdesc>
 	<category slug="config"/>
 </entry>
