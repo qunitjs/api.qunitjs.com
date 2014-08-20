@@ -9,7 +9,7 @@
 		<argument name="expected" type="Object">
 			<desc>Known comparison value</desc>
 		</argument>
-		<argument name="message" type="String">
+		<argument name="message" type="String" optional="true">
 			<desc>A short description of the assertion</desc>
 		</argument>
 	</signature>
