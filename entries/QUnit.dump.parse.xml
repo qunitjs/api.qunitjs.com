@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
-<entry type="property" name="QUnit.jsDump.parse">
-	<title>QUnit.jsDump.parse()</title>
+<entry type="method" name="QUnit.dump.parse">
+	<title>QUnit.dump.parse()</title>
 	<signature>
 		<argument name="data" type="Object">
 			<desc>Data structure or Object to parse.</desc>
@@ -15,6 +15,7 @@
 		<p>
 			It also does parse DOM elements to a string representation of their outer HTML.
 		</p>
+		<p><em>Note: This method used to be in <code>QUnit.jsDump</code>, which was changed to <code>QUnit.dump</code>. The old property will be removed in QUnit 2.0.</em></p>
 	</longdesc>
 	<example>
 		<desc>
@@ -24,8 +25,8 @@
 QUnit.log(function( obj ) {
 
 	// Parse some stuff before sending it.
-	var actual = QUnit.jsDump.parse( obj.actual );
-	var expected = QUnit.jsDump.parse( obj.expected );
+	var actual = QUnit.dump.parse( obj.actual );
+	var expected = QUnit.dump.parse( obj.expected );
 
 	// Send it.
 	sendMessage( "qunit.log", obj.result, actual, expected, obj.message, obj.source );
@@ -36,7 +37,7 @@ QUnit.log(function( obj ) {
 		<desc>This example shows the parsed output of a simple JS object with a DOM reference.</desc>
 		<code><![CDATA[
 var qHeader = document.getElementById( "qunit-header" ),
-	parsed = QUnit.jsDump.parse( qHeader ); 
+	parsed = QUnit.dump.parse( qHeader );
 
 console.log( parsed );
 
