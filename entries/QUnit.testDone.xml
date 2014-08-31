@@ -23,8 +23,8 @@
 			<property name="total" type="Number">
 				<desc>The total number of assertions</desc>
 			</property>
-			<property name="duration" type="Number">
-				<desc>The total runtime, including setup and teardown</desc>
+			<property name="runtime" type="Number">
+				<desc>The total runtime in millseconds of the test, including setup and teardown</desc>
 			</property>
 		</argument>
 	</signature>
