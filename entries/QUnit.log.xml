@@ -29,6 +29,9 @@
 			<property name="name" type="String">
 				<desc>The test block name of the assertion.</desc>
 			</property>
+			<property name="runtime" type="Number">
+				<desc>The time elapsed in milliseconds since the start of the containing <code><a href="/QUnit.test/">QUnit.test()</a></code>, including setup.</desc>
+			</property>
 		</argument>
 	</signature>
 	<desc>Register a callback to fire whenever an assertion completes.</desc>
