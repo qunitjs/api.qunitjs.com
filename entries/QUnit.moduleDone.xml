@@ -20,6 +20,9 @@
 			<property name="total" type="Number">
 				<desc>The total number of assertions</desc>
 			</property>
+			<property name="runtime" type="Number">
+				<desc>The total runtime in millseconds of this module</desc>
+			</property>
 		</argument>
 	</signature>
 	<desc>Register a callback to fire whenever a module ends.</desc>
