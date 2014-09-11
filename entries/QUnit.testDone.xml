@@ -24,7 +24,7 @@
 				<desc>The total number of assertions</desc>
 			</property>
 			<property name="runtime" type="Number">
-				<desc>The total runtime in millseconds of the test, including setup and teardown</desc>
+				<desc>The total runtime in millseconds of the test, including beforeEach and afterEach</desc>
 			</property>
 		</argument>
 	</signature>

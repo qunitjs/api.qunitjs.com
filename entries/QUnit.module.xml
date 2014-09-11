@@ -8,10 +8,10 @@
 		</argument>
 		<argument name="lifecycle" type="PlainObject">
 			<desc>Callbacks to run before and after each test</desc>
-			<property name="setup" type="Function">
+			<property name="beforeEach" type="Function">
 				<desc>Runs before each test</desc>
 			</property>
-			<property name="teardown" type="Function">
+			<property name="afterEach" type="Function">
 				<desc>Runs after each test</desc>
 			</property>
 		</argument>
@@ -48,13 +48,13 @@ QUnit.test( "a basic test example 4", function() {
 ]]></code>
 	</example>
 	<example>
-		<desc>A sample for using the setup and teardown callbacks</desc>
+		<desc>A sample for using the beforeEach and afterEach callbacks</desc>
 <code><![CDATA[
 QUnit.module( "module A", {
-	setup: function() {
+	beforeEach: function() {
 		// prepare something for all following tests
 	},
-	teardown: function() {
+	afterEach: function() {
 		// clean up after each test
 	}
 });
@@ -64,7 +64,7 @@ QUnit.module( "module A", {
 		<desc>Lifecycle properties are shared on respective test context</desc>
 <code><![CDATA[
 QUnit.module( "Machine Maker", {
-    setup: function() {
+    beforeEach: function() {
         this.maker = new Maker();
     },
     parts: [ "wheels", "motor", "chassis" ]
