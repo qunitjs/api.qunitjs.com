@@ -6,7 +6,7 @@
 		<argument name="name" type="String">
 			<desc>Label for this group of tests</desc>
 		</argument>
-		<argument name="lifecycle" type="PlainObject">
+		<argument name="hooks" type="PlainObject">
 			<desc>Callbacks to run before and after each test</desc>
 			<property name="beforeEach" type="Function">
 				<desc>Runs before each test</desc>
@@ -24,7 +24,7 @@
 			All tests that occur after a call to <code>QUnit.module()</code> will be grouped into that module, until other <code>QUnit.module()</code> is called. The test names will all be preceded by the module name in the test results. You can then use that module name to select tests to run.
 		</p>
 		<p>
-			You can specify code to run before and after each test using the lifecycle argument, and also to create properties that will be shared on the context of each test. Any additional properties on the lifecycle object will be added to that context. The callbacks can also be used to add properties.
+			You can specify code to run before and after each test using the hooks argument, and also to create properties that will be shared on the context of each test. Any additional properties on the hooks object will be added to that context. The callbacks can also be used to add properties.
 		</p>
 	</longdesc>
 	<example>
@@ -61,7 +61,7 @@ QUnit.module( "module A", {
 ]]></code>
 	</example>
 	<example>
-		<desc>Lifecycle properties are shared on respective test context</desc>
+		<desc>Hooks properties are shared on respective test context</desc>
 <code><![CDATA[
 QUnit.module( "Machine Maker", {
     beforeEach: function() {
