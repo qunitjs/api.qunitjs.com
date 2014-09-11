@@ -3,6 +3,11 @@
 <entry type="property" name="QUnit.config">
 	<title>QUnit.config</title>
 	<signature>
+		<property name="afterEach" type="Function" default="undefined">
+			<desc>
+				This property works as a global hook to run every test block in the suite case. If a function is set, it will be called after the test block and its respective module <code>afterEach</code> hook.
+			</desc>
+		</property>
 		<property name="altertitle" type="Boolean" default="true">
 			<desc>
 				By default, QUnit updates document.title to add a checkmark or x-mark to indicate if a testsuite passed or failed. This makes it easy to see a suites result even without looking at a tab's content.
@@ -12,6 +17,11 @@
 		<property name="autostart" type="Boolean" default="true">
 			<desc>
 				By default, QUnit runs tests when <code>load</code> event is triggered on the <code>window</code>. If you're loading tests asynchronsly, you can set this property to <code>false</code>, then call <code>QUnit.start()</code> once everything is loaded. See below for an example.
+			</desc>
+		</property>
+		<property name="beforeEach" type="Function" default="undefined">
+			<desc>
+				This property works as a global hook to run every test block in the suite case. If a function is set, it will be called before the test block and its respective module <code>beforeEach</code> hook.
 			</desc>
 		</property>
 		<property name="current" type="Object">
