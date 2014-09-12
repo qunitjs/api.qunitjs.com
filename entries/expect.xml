@@ -11,13 +11,13 @@
 		Specify how many assertions are expected to run within a test.
 	</desc>
 	<longdesc>
-		<p>To ensure that an explicit number of assertions are run within any test, use <code>expect( number )</code> to register an expected count. If the number of assertions run does not match the expected count, the test will fail.</p>
+		<p>To ensure that an explicit number of assertions are run within any test, use <code>assert.expect( number )</code> to register an expected count. If the number of assertions run does not match the expected count, the test will fail.</p>
 	</longdesc>
 	<example height="250">
 		<desc>Establish an expected assertion count</desc>
 <code><![CDATA[
 QUnit.test( "a test", function( assert ) {
-	expect( 2 );
+	assert.expect( 2 );
 
 	function calc( x, operation ) {
 		return operation( x );
@@ -32,5 +32,5 @@ QUnit.test( "a test", function( assert ) {
 });
 ]]></code>
 	</example>
-	<category slug="test"/>
+	<category slug="assert"/>
 </entry>
