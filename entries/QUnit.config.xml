@@ -5,7 +5,7 @@
 	<signature>
 		<property name="afterEach" type="Function" default="undefined">
 			<desc>
-				This property works as a global hook to run every test block in the suite case. If a function is set, it will be called after the test block and its respective module <code>afterEach</code> hook.
+				This global hook, if set, runs after all test blocks and their respective module's <code>afterEach</code> hook.
 			</desc>
 		</property>
 		<property name="altertitle" type="Boolean" default="true">
@@ -21,7 +21,7 @@
 		</property>
 		<property name="beforeEach" type="Function" default="undefined">
 			<desc>
-				This property works as a global hook to run every test block in the suite case. If a function is set, it will be called before the test block and its respective module <code>beforeEach</code> hook.
+				This global hook, if set, runs before all test blocks and their respective module's <code>beforeEach</code> hook.
 			</desc>
 		</property>
 		<property name="current" type="Object">
