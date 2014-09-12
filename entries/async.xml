@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
+<entry type="method" name="async">
+  <title>async()</title>
+  <desc>
+    Request a new resolution callback for an asynchronous operation.
+  </desc>
+  <longdesc>
+    <p>When your test has any asynchronous exit points, call <code>assert.async()</code> to get a unique resolution callback for each async operation. The callback returned from <code>assert.async()</code> will throw an Error if is invoked more than once.</p>
+    <p>This replaces functionality previously provided by <a href="/QUnit.stop/"><code>QUnit.stop()</code></a> and <a href="/QUnit.start/"><code>QUnit.start()</code></a>.</p>
+  </longdesc>
+  <example height="250">
+
+<code><![CDATA[
+QUnit.test( "assert.async test", function( assert ) {
+  assert.expect( 2 );
+
+  var done1 = assert.async();
+  var done2 = assert.async();
+  setTimeout(function() {
+    assert.ok( true, "test resumed from async operation 1" );
+    done1();
+  }, 500 );
+  setTimeout(function() {
+    assert.ok( true, "test resumed from async operation 2" );
+    done2();
+  }, 150);
+});
+]]></code>
+  </example>
+
+  <category slug="assert"/>
+  <category slug="async-control"/>
+</entry>
