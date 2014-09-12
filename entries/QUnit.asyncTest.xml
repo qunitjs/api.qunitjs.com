@@ -6,7 +6,7 @@
 		<argument name="name" type="String">
 			<desc>Title of unit being tested</desc>
 		</argument>
-		<argument name="test">
+		<argument name="callback">
 			<desc>Function to close over assertions</desc>
 			<type name="Function">
 				<argument name="assert" type="Object"></argument>
