@@ -26,6 +26,9 @@
 		<p>
 			You can specify code to run before and after each test using the hooks argument, and also to create properties that will be shared on the context of each test. Any additional properties on the hooks object will be added to that context. The callbacks can also be used to add properties.
 		</p>
+		<p class="warning">
+			<strong>DEPRECATION Note:</strong> <code>beforeEach</code> and <code>afterEach</code> were previously named <code>setup</code> and <code>teardown</code>, which still exist and will be removed in QUnit 2.0.0.
+		</p>
 	</longdesc>
 	<example>
 		<desc>Use the <code>QUnit.module()</code> function to group tests together:</desc>
@@ -61,7 +64,7 @@ QUnit.module( "module A", {
 ]]></code>
 	</example>
 	<example>
-		<desc>Hooks properties are shared on respective test context</desc>
+		<desc>Hooks share the same context as their respective test</desc>
 <code><![CDATA[
 QUnit.module( "Machine Maker", {
     beforeEach: function() {
