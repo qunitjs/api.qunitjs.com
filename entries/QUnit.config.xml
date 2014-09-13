@@ -125,5 +125,38 @@ QUnit.config.urlConfig.push({
 });
 ]]></code>
 	</example>
+	<example>
+		<desc>Add global hooks to a test suite.</desc>
+<code><![CDATA[
+QUnit.config.beforeEach = function() {
+	this.app = new myMVC();
+};
+
+QUnit.config.afterEach = function() {
+	this.app.end();
+};
+
+QUnit.module( "models" );
+
+QUnit.test( "create", function( assert ) {
+	this.app.model.create( "Person", [ "name" ] );
+	this.app.model.insert( "Person", {
+		name: "Leonardo"
+	});
+
+	assert.deepEqual( this.app.model.get( "Person", [{
+		name: "Leonardo"
+	}]);
+});
+
+QUnit.module( "views" );
+
+QUnit.test( "set", function( assert ) {
+	this.app.view.create( "Person", ".person" );
+
+	assert.strictEqual( this.app.view.list.length, 1 );
+});
+]]></code>
+	</example>
 	<category slug="config"/>
 </entry>
