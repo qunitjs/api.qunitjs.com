@@ -15,7 +15,7 @@
 		<p>This test's prototype will be listed on the suite as a skipped test, ignoring the callback argument and the respective global and module's hooks.</p>
 	</longdesc>
 	<example>
-		<desc>How to use skip as a placeholder for future or temporarily broken tests.</desc>
+		<desc>How to use <code>skip</code> as a placeholder for future or temporarily broken tests.</desc>
 <code><![CDATA[
 QUnit.module( "robot", {
 	beforeEach: function() {
