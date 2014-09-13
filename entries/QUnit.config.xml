@@ -41,9 +41,9 @@
 				<p>Enabling this option will cause tests to fail, if they don't call <code>expect()</code> at all.</p>
 			</desc>
 		</property>
-		<property name="testNumber" type="Array" default="undefined">
+		<property name="testId" type="Array" default="undefined">
 			<desc>
-				This property allows QUnit to run specific test blocks by their order number. The order is set as the tests blocks are loaded. You can specify one or multiple tests to run.
+				This property allows QUnit to run specific test blocks by a hashed string combining their module name and test name. You can specify one or multiple tests to run.
 			</desc>
 		</property>
 		<property name="testTimeout" type="Number" default="undefined">
