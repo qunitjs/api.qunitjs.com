@@ -38,7 +38,7 @@ QUnit.test( "a test", function( assert ) {
 ]]></code>
 	</example>
 	<example height="250">
-		<desc>An example of handling an asynchronous <code>then</code>able Promise result. This example uses a ES6 Promise interface that is fulfilled after waiting 500ms.</desc>
+		<desc>An example of handling an asynchronous <code>then</code>able Promise result. This example uses an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">ES6 Promise</a> interface that is fulfilled after waiting 500ms.</desc>
 <code><![CDATA[
 QUnit.test( "a Promise-returning test", function( assert ) {
 	assert.expect( 0 );
