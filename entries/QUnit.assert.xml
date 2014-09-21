@@ -4,7 +4,7 @@
 	<title>QUnit.assert</title>
 	<desc>Namespace for QUnit assertions</desc>
 	<longdesc>
-		<p>QUnit's built-in assertions are defined on the <code>QUnit.assert</code> object. A copy of this object is passed as the only argument to the <code>QUnit.test</code> and <code>QUnit.asyncTest</code> function callbacks.</p>
+		<p>QUnit's built-in assertions are defined on the <code>QUnit.assert</code> object. An instance of this object is passed as the only argument to the <code>QUnit.test</code> function callbacks.</p>
 		<p>This object has properties for each of <a href="/category/assert/">QUnit's built-in assertion methods</a>.</p>
 	</longdesc>
 	<example>
