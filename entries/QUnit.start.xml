@@ -11,25 +11,12 @@
 		PARTIALLY DEPRECATED: Start running tests again after the testrunner was stopped. See <a href="/QUnit.stop/"><code>QUnit.stop()</code></a> and <code><a href="/QUnit.config/">QUnit.config</a>.autostart</code>.
 	</desc>
 	<longdesc>
+		<p><code>QUnit.start()</code> must be used to start a test run that has <code><a href="/QUnit.config/">QUnit.config</a>.autostart</code> set to <code>false</code>.</p>
 		<p class="warning">
-			This method is <strong><em>partially</em> deprecated</strong>. For use within tests, it is recommended to use <a href="/async/"><code>assert.async</code></a> instead.
+			This method is <strong><em>partially</em> deprecated</strong>. For use within tests, use <a href="/async/"><code>assert.async</code></a> instead.
 		</p>
 		<p>When your async test has multiple exit points, call <code>QUnit.start()</code> for the corresponding number of <a href="/QUnit.stop/"><code>QUnit.stop()</code></a> increments.</p>
-		<p>Additionally, <code>QUnit.start()</code> must be used to start a test run that has <code><a href="/QUnit.config/">QUnit.config</a>.autostart</code> set to <code>false</code>.</p>
 	</longdesc>
-	<example height="250">
-		<desc>DEPRECATED: A test that waits 150ms for an async operation to finish, then asserts the result.</desc>
-<code><![CDATA[
-QUnit.test( "a test", function( assert ) {
-	QUnit.stop();
-	asyncOp();
-	setTimeout(function() {
-		assert.equals( asyncOp.result, "someExpectedValue" );
-		QUnit.start();
-	}, 150 );
-});
-]]></code>
-	</example>
 	<example>
 		<desc>A test run that does not begin when the page is done loading. This example uses an Asynchronous Module Definition (AMD) loader-style <code>require</code> call.</desc>
 <code><![CDATA[
