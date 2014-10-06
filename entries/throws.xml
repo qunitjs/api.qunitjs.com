@@ -18,6 +18,7 @@
 	</desc>
 	<longdesc>
 		<p>When testing code that is expected to throw an exception based on a specific set of circumstances, use <code>assert.throws()</code> to catch the error object for testing and comparison.</p>
+		<p class="note">In very few environments, like Closure Compiler, <code>throws</code> is considered a reserved word and will cause an error. For that case, an alias is bundled called <code>raises</code>. It has the same signature and behaviour, just a different name.</p>
 	</longdesc>
 	<example height="250">
 		<desc>Assert the correct error message is received for a custom error object.</desc>
