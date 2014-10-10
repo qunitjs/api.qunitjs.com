@@ -9,7 +9,7 @@
 		<argument name="test">
 			<desc>Function to close over assertions</desc>
 			<type name="Function">
-				<argument name="assert" type="Object"></argument>
+				<argument name="assert" type="Assert"></argument>
 			</type>
 		</argument>
 	</signature>
