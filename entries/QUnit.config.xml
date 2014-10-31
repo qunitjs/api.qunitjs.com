@@ -3,11 +3,6 @@
 <entry type="property" name="QUnit.config">
 	<title>QUnit.config</title>
 	<signature>
-		<property name="afterEach" type="Function" default="undefined">
-			<desc>
-				This global hook, if set, runs after all test blocks and their respective module's <code>afterEach</code> hook.
-			</desc>
-		</property>
 		<property name="altertitle" type="Boolean" default="true">
 			<desc>
 				By default, QUnit updates document.title to add a checkmark or x-mark to indicate if a testsuite passed or failed. This makes it easy to see a suites result even without looking at a tab's content.
@@ -17,11 +12,6 @@
 		<property name="autostart" type="Boolean" default="true">
 			<desc>
 				By default, QUnit runs tests when <code>load</code> event is triggered on the <code>window</code>. If you're loading tests asynchronsly, you can set this property to <code>false</code>, then call <code>QUnit.start()</code> once everything is loaded. See below for an example.
-			</desc>
-		</property>
-		<property name="beforeEach" type="Function" default="undefined">
-			<desc>
-				This global hook, if set, runs before all test blocks and their respective module's <code>beforeEach</code> hook.
 			</desc>
 		</property>
 		<property name="current" type="Object">
@@ -122,39 +112,6 @@ QUnit.config.urlConfig.push({
 	label: "jQuery version",
 	value: [ "1.7.2", "1.8.3", "1.9.1" ],
 	tooltip: "What jQuery Core version to test against"
-});
-]]></code>
-	</example>
-	<example>
-		<desc>Add global hooks to a test suite.</desc>
-<code><![CDATA[
-QUnit.config.beforeEach = function() {
-	this.app = new myMVC();
-};
-
-QUnit.config.afterEach = function() {
-	this.app.end();
-};
-
-QUnit.module( "models" );
-
-QUnit.test( "create", function( assert ) {
-	this.app.model.create( "Person", [ "name" ] );
-	this.app.model.insert( "Person", {
-		name: "Leonardo"
-	});
-
-	assert.deepEqual( this.app.model.get( "Person", [{
-		name: "Leonardo"
-	}]);
-});
-
-QUnit.module( "views" );
-
-QUnit.test( "set", function( assert ) {
-	this.app.view.create( "Person", ".person" );
-
-	assert.strictEqual( this.app.view.list.length, 1 );
 });
 ]]></code>
 	</example>
