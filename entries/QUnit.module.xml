@@ -6,12 +6,12 @@
 		<argument name="name" type="String">
 			<desc>Label for this group of tests</desc>
 		</argument>
-		<argument name="lifecycle" type="PlainObject">
+		<argument name="hooks" type="PlainObject">
 			<desc>Callbacks to run before and after each test</desc>
-			<property name="setup" type="Function">
+			<property name="beforeEach" type="Function">
 				<desc>Runs before each test</desc>
 			</property>
-			<property name="teardown" type="Function">
+			<property name="afterEach" type="Function">
 				<desc>Runs after each test</desc>
 			</property>
 		</argument>
@@ -24,7 +24,10 @@
 			All tests that occur after a call to <code>QUnit.module()</code> will be grouped into that module, until other <code>QUnit.module()</code> is called. The test names will all be preceded by the module name in the test results. You can then use that module name to select tests to run.
 		</p>
 		<p>
-			You can specify code to run before and after each test using the lifecycle argument, and also to create properties that will be shared on the context of each test. Any additional properties on the lifecycle object will be added to that context. The callbacks can also be used to add properties.
+			You can specify code to run before and after each test using the hooks argument, and also to create properties that will be shared on the context of each test. Any additional properties on the hooks object will be added to that context. The callbacks can also be used to add properties.
+		</p>
+		<p class="warning">
+			<strong>DEPRECATION Note:</strong> <code>beforeEach</code> and <code>afterEach</code> were previously named <code>setup</code> and <code>teardown</code>, which still exist and will be removed in QUnit 2.0.0.
 		</p>
 	</longdesc>
 	<example>
@@ -48,23 +51,23 @@ QUnit.test( "a basic test example 4", function() {
 ]]></code>
 	</example>
 	<example>
-		<desc>A sample for using the setup and teardown callbacks</desc>
+		<desc>A sample for using the beforeEach and afterEach callbacks</desc>
 <code><![CDATA[
 QUnit.module( "module A", {
-	setup: function() {
+	beforeEach: function() {
 		// prepare something for all following tests
 	},
-	teardown: function() {
+	afterEach: function() {
 		// clean up after each test
 	}
 });
 ]]></code>
 	</example>
 	<example>
-		<desc>Lifecycle properties are shared on respective test context</desc>
+		<desc>Hooks share the same context as their respective test</desc>
 <code><![CDATA[
 QUnit.module( "Machine Maker", {
-    setup: function() {
+    beforeEach: function() {
         this.maker = new Maker();
     },
     parts: [ "wheels", "motor", "chassis" ]
