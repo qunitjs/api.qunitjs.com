@@ -13,7 +13,7 @@
 	<longdesc>
 		<p>To ensure that an explicit number of assertions are run within any test, use <code>assert.expect( number )</code> to register an expected count. If the number of assertions run does not match the expected count, the test will fail.</p>
 		<p class="warning">
-			<strong>DEPRECATION Note:</strong> <code>assert.expect</code> was previously provided as <code>QUnit.expect</code> and the global <code>expect</code>, which still exist, but will be removed in QUnit 2.0.0.
+			<strong>DEPRECATION Note:</strong> <code>assert.expect</code> was previously provided as <code>QUnit.expect</code> and the global <code>expect</code>. The global property still exist, but will be removed in QUnit 2.0.0.
 		</p>
 	</longdesc>
 	<example height="250">
