@@ -9,9 +9,8 @@
 	</signature>
 	<desc>Advanced and extensible data dumping for JavaScript</desc>
 	<longdesc>
-		<p>It does string serialization by parsing data structures and objects.</p>
-		<p>It deals with DOM elements, including their outer HTML in the serialized form.</p>
-		<p>By default, nested structures will be displayed up to five levels deep. Anything beyond that is replaced by <code>[object Object]</code> and <code>[object Array]</code> placeholders. If you need more or less output, change <code>QUnit.dump.maxDepth</code>.</p>
+		<p>This method does string serialization by parsing data structures and objects. It parses DOM elements to a string representation of their outer HTML. By default, nested structures will be displayed up to five levels deep. Anything beyond that is replaced by <code>[object Object]</code> and <code>[object Array]</code> placeholders.</p>
+		<p>If you need more or less output, change the value of <code>QUnit.dump.maxDepth</code>, representing how deep the elements should be parsed.</p>
 		<p><em>Note: This method used to be in <code>QUnit.jsDump</code>, which was changed to <code>QUnit.dump</code>. The old property will be removed in QUnit 2.0.</em></p>
 	</longdesc>
 	<example>
