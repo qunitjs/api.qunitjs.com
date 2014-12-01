@@ -64,20 +64,20 @@ QUnit.module( "module A", {
 		<desc>Lifecycle properties are shared on respective test context</desc>
 <code><![CDATA[
 QUnit.module( "Machine Maker", {
-    setup: function() {
-        this.maker = new Maker();
-    },
-    parts: [ "wheels", "motor", "chassis" ]
+	setup: function() {
+		this.maker = new Maker();
+		this.parts = [ "wheels", "motor", "chassis" ];
+	}
 });
 
 QUnit.test( "makes a robot", function( assert ) {
 	this.parts.push( "arduino" );
-	assert.equal( this.maker( this.parts ), "robot" );
+	assert.equal( this.maker.build( this.parts ), "robot" );
 	assert.deepEqual( this.maker.made, [ "robot" ] );
 });
 
 QUnit.test( "makes a car", function( assert ) {
-	assert.equal( this.maker( this.parts ), "car" );
+	assert.equal( this.maker.build( this.parts ), "car" );
 	this.maker.duplicate();
 	assert.deepEqual( this.maker.made, [ "car", "car" ] );
 });
