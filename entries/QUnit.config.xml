@@ -11,7 +11,7 @@
 		</property>
 		<property name="autostart" type="Boolean" default="true">
 			<desc>
-				By default, QUnit runs tests when <code>load</code> event is triggered on the <code>window</code>. If you're loading tests asynchronsly, you can set this property to <code>false</code>, then call <code>QUnit.start()</code> once everything is loaded. See below for an example.
+				By default, QUnit runs tests when <code>load</code> event is triggered on the <code>window</code>. If you're loading tests asynchronously, you can set this property to <code>false</code>, then call <code>QUnit.start()</code> once everything is loaded. See below for an example.
 			</desc>
 		</property>
 		<property name="current" type="Object">
