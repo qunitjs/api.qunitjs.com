@@ -34,6 +34,7 @@
 			<desc>
 				By default, QUnit will run tests first that failed on a previous run. In a large testsuite, this can speed up testing a lot.
 				<p>It can also lead to random errors, in case your testsuite has non-atomic tests, where the order is important. You should fix those issues, instead of disabling reordering!</p>
+				<p>When a failed test is running first, <code>Rerunning previously failed test</code> is displayed in the summary whereas just <code>Running</code> is displayed otherwise.</p>
 			</desc>
 		</property>
 		<property name="requireExpects" type="Boolean" default="false">
