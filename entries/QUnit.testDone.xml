@@ -9,7 +9,7 @@
 				<argument name="details" type="Object"/>
 			</type>
 			<property name="name" type="String">
-				<desc>Name of the next test to run</desc>
+				<desc>Name of the current test</desc>
 			</property>
 			<property name="module" type="String">
 				<desc>Name of the current module</desc>
