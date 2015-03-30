@@ -19,8 +19,8 @@
 	<longdesc>
 		<p>The <code>notPropEqual</code> assertion uses the strict inverted comparison operator (<code>!==</code>) to compare the actual and expected arguments as Objects regarding only their properties but not their constructors.</p>
 		<p>When they aren't equal, the assertion passes; otherwise, it fails. When it fails, both actual and expected values are displayed in the test result, in addition to a given message.</p>
-		<p><a href="/equal"><code>equal()</code></a> can be used to test equality.</p>
-		<p><a href="/propEqual"><code>propEqual()</code></a> can be used to test strict equality of an Object properties.</p>
+		<p><a href="/equal/"><code>equal()</code></a> can be used to test equality.</p>
+		<p><a href="/propEqual/"><code>propEqual()</code></a> can be used to test strict equality of an Object properties.</p>
 	</longdesc>
 	<example>
 		<desc>Compare the values of two objects properties.</desc>

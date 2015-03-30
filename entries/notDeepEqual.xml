@@ -18,7 +18,7 @@
 	</desc>
 	<longdesc>
 		<p>The <code>notDeepEqual()</code> assertion can be used just like <code>equal()</code> when comparing the value of objects, such that <code>{ key: value }</code> is equal to <code>{ key: value }</code>. For non-scalar values, identity will be disregarded by <code>notDeepEqual</code>.</p>
-		<p><a href="/deepEqual"><code>deepEqual()</code></a> can be used to explicitly test deep, strict equality.</p>
+		<p><a href="/deepEqual/"><code>deepEqual()</code></a> can be used to explicitly test deep, strict equality.</p>
 	</longdesc>
 	<example>
 		<desc>Compare the value of two objects.</desc>

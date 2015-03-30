@@ -19,7 +19,7 @@
 	<longdesc>
 		<p>The <code>propEqual()</code> assertion provides strictly (<code>===</code>) comparison of Object properties. Unlike <code>deepEqual()</code>, this assertion can be used to compare two objects made with different constructors and prototype.</p>
 		<p><a href="/strictEqual"><code>strictEqual()</code></a> can be used to test strict equality.</p>
-		<p><a href="/notPropEqual"><code>notPropEqual()</code></a> can be used to explicitly test strict inequality of Object properties.</p>
+		<p><a href="/notPropEqual/"><code>notPropEqual()</code></a> can be used to explicitly test strict inequality of Object properties.</p>
 	</longdesc>
 	<example>
 		<desc>Compare the properties values of two objects.</desc>

@@ -18,8 +18,8 @@
 	</desc>
 	<longdesc>
 		<p>The <code>notEqual</code> assertion uses the simple inverted comparison operator (<code>!=</code>) to compare the actual and expected arguments. When they aren't equal, the assertion passes; otherwise, it fails. When it fails, both actual and expected values are displayed in the test result, in addition to a given message.</p>
-		<p><a href="/equal"><code>equal()</code></a> can be used to test equality.</p>
-		<p><a href="/notStrictEqual"><code>notStrictEqual()</code></a> can be used to test strict inequality.</p>
+		<p><a href="/equal/"><code>equal()</code></a> can be used to test equality.</p>
+		<p><a href="/notStrictEqual/"><code>notStrictEqual()</code></a> can be used to test strict inequality.</p>
 	</longdesc>
 	<example>
 		<desc>The simplest assertion example:</desc>
