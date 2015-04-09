@@ -8,10 +8,10 @@
 		]]></desc>
 	</category>
 	<category name="Async Control" slug="async-control"></category>
-	<category name="Configuration" slug="config">
+	<category name="Configuration and Utilities" slug="config">
 		<desc>
 			<![CDATA[
-			These methods and properties are used to configure QUnit: to adjust the runtime behaviour directly or extend the QUnit API via custom assertions.
+			These methods and properties are used as utility helpers and to configure QUnit: to adjust the runtime behaviour directly, extend the QUnit API via custom assertions, etc.
 		]]>
 		</desc>
 	</category>
