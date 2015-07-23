@@ -1,0 +1,9 @@
+{
+	"/api/": "/resources/api.xml",
+	"/asyncTest/": "/QUnit.asyncTest/",
+	"/module/": "/QUnit.module/",
+	"/start/": "/QUnit.start/",
+	"/stop/": "/QUnit.stop/",
+	"/test/": "/QUnit.test/",
+	"/QUnit.jsDump.parse/": "/QUnit.dump.parse/"
+}
