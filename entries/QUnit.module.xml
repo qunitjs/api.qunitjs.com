@@ -6,7 +6,7 @@
 		<argument name="name" type="String">
 			<desc>Label for this group of tests</desc>
 		</argument>
-		<argument name="hooks" type="PlainObject">
+		<argument name="hooks" type="PlainObject" optional="true">
 			<desc>Callbacks to run before and after each test</desc>
 			<property name="beforeEach" type="Function">
 				<desc>Runs before each test</desc>
@@ -15,16 +15,28 @@
 				<desc>Runs after each test</desc>
 			</property>
 		</argument>
+		<argument name="contained_suite" optional="true">
+			<desc>A function with contained tests</desc>
+			<type name="Function">
+				<argument name="test" type="Test"></argument>
+			</type>
+		</argument>
 	</signature>
 	<desc>
 		Group related tests under a single label.
 	</desc>
 	<longdesc>
 		<p>
-			All tests that occur after a call to <code>QUnit.module()</code> will be grouped into that module, until other <code>QUnit.module()</code> is called. The test names will all be preceded by the module name in the test results. You can then use that module name to select tests to run.
+			All tests inside a contained suite function will be grouped into that module. The test names will all be preceded by the module name in the test results. If <code>QUnit.module</code> is called without a contained suite argument, the module name will be applied to the consecutive tests calls until another module is defined in the same way.
 		</p>
 		<p>
-			You can specify code to run before and after each test using the hooks argument, and also to create properties that will be shared on the context of each test. Any additional properties on the hooks object will be added to that context. The callbacks can also be used to add properties.
+			You can then use that module name to organize, select and filter tests to run.
+		</p>
+		<p>
+ 			Contained suites allow calling nested modules, and QUnit will run tests on the parent module before going deep on the nested ones, even if they're declared first. A new hooks argument with a <code>beforeEach</code> and <code>afterEach</code> callbacks will stack the parent hooks.
+		</p>
+		<p>
+			You can specify code to run before and after each test using the hooks argument, and also to create properties that will be shared on the context of each test. Any additional properties on the hooks object will be added to that context. The hooks parameter is argument is still optional if you call <code>QUnit.module</code> with a contained suite argument.
 		</p>
 		<p class="warning">
 			<strong>DEPRECATION Note:</strong> <code>beforeEach</code> and <code>afterEach</code> were previously named <code>setup</code> and <code>teardown</code>, which still exist and will be removed in QUnit 2.0.0.
@@ -45,8 +57,30 @@ QUnit.module( "group b" );
 QUnit.test( "a basic test example 3", function( assert ) {
 	assert.ok( true, "this test is fine" );
 });
-QUnit.test( "a basic test example 4", function() {
+QUnit.test( "a basic test example 4", function( assert ) {
 	assert.ok( true, "this test is fine" );
+});
+]]></code>
+	</example>
+		<example>
+		<desc>Use the <code>QUnit.module()</code> function to group tests together:</desc>
+<code><![CDATA[
+QUnit.module( "contained module a", function( test ) {
+	test( "a basic test example", function( assert ) {
+		assert.ok( true, "this test is fine" );
+	});
+});
+
+QUnit.module( "contained module b", function( test ) {
+	test( "a basic test example 2", function( assert ) {
+		assert.ok( true, "this test is fine" );
+	});
+
+	QUnit.module( "nested module b.1", function( test ) {
+		test( "a basic test example 3", function( assert ) {
+			assert.ok( true, "this test is fine" );
+		});
+	});
 });
 ]]></code>
 	</example>
@@ -85,6 +119,44 @@ QUnit.test( "makes a car", function( assert ) {
 	assert.deepEqual( this.maker.made, [ "car", "car" ] );
 });
 
+]]></code>
+	</example>
+	<example>
+		<desc>Hooks stack on nested modules</desc>
+<code><![CDATA[
+QUnit.module( "contained suite argument hooks", function( test, hooks ) {
+	var beforeEach = hooks.beforeEach;
+	var afterEach = hooks.afterEach;
+
+	beforeEach( function( assert ) {
+		assert.ok( true, "beforeEach called" );
+	} );
+
+	afterEach( function( assert ) {
+		assert.ok( true, "afterEach called" );
+	} );
+
+	test( "call hooks", function( assert ) {
+		assert.expect( 2 );
+	} );
+
+	QUnit.module( "stacked hooks", function( test, hooks ) {
+		var beforeEach = hooks.beforeEach;
+		var afterEach = hooks.afterEach;
+
+		beforeEach( function( assert ) {
+			assert.ok( true, "nested beforeEach called" );
+		} );
+
+		afterEach( function( assert ) {
+			assert.ok( true, "nested afterEach called" );
+		} );
+
+		test( "call hooks", function( assert ) {
+			assert.expect( 4 );
+		} );
+	} );
+} );
 ]]></code>
 	</example>
 	<category slug="test"/>
