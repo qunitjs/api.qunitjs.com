@@ -3,7 +3,7 @@
 <entry type="method" name="async">
   <title>async()</title>
   <signature>
-    <argument name="acceptCallCount" type="Number" default="1">
+    <argument name="acceptCallCount" type="Number" optional="true" default="1">
       <desc>Number accept a call count of callback of assert.async().</desc>
     </argument>
   </signature>
