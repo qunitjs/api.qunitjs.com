@@ -30,7 +30,10 @@
 			You can then use the module name to organize, select and filter tests to run.
 		</p>
 		<p>
-			All tests inside a module callback function will be grouped into that module. The test names will all be preceded by the module name in the test results. If <code>QUnit.module</code> is defined without a function argument, All subsequently defined tests will be grouped into the module until another module is defined.
+			All tests inside a module callback function will be grouped into that module. The test names will all be preceded by the module name in the test results. Other modules can be nested inside this callback function, where their tests names will be labeled by their names recursively prefixed by their parent modules.
+		</p>
+		<p>
+			If <code>QUnit.module</code> is defined without a <code>nested</code> callback argument, all subsequently defined tests will be grouped into the module until another module is defined.
 		</p>
 		<p>
 			Modules with grouped tests functions allow defining nested modules, and QUnit will run tests on the parent module before going deep on the nested ones, even if they're declared first. <code>beforeEach</code> and <code>afterEach</code> callbacks on a nested module call will stack to the parent hooks.
