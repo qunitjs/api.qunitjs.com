@@ -15,8 +15,8 @@
 				<desc>Runs after each test</desc>
 			</property>
 		</argument>
-		<argument name="grouped_tests" optional="true">
-			<desc>A function with grouped tests</desc>
+		<argument name="nested" optional="true">
+			<desc>A callback with grouped tests and nested modules to run under the current module label.</desc>
 			<type name="Function">
 				<argument name="hooks" type="Object"></argument>
 			</type>
