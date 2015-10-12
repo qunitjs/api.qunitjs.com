@@ -134,14 +134,11 @@ QUnit.test( "makes a car", function( assert ) {
 		<desc>Hooks stack on nested modules</desc>
 <code><![CDATA[
 QUnit.module( "grouped tests argument hooks", function( hooks ) {
-	var beforeEach = hooks.beforeEach;
-	var afterEach = hooks.afterEach;
-
-	beforeEach( function( assert ) {
+	hooks.beforeEach( function( assert ) {
 		assert.ok( true, "beforeEach called" );
 	} );
 
-	afterEach( function( assert ) {
+	hooks.afterEach( function( assert ) {
 		assert.ok( true, "afterEach called" );
 	} );
 
@@ -150,14 +147,11 @@ QUnit.module( "grouped tests argument hooks", function( hooks ) {
 	} );
 
 	QUnit.module( "stacked hooks", function( hooks ) {
-		var beforeEach = hooks.beforeEach;
-		var afterEach = hooks.afterEach;
-
-		beforeEach( function( assert ) {
+		hooks.beforeEach( function( assert ) {
 			assert.ok( true, "nested beforeEach called" );
 		} );
 
-		afterEach( function( assert ) {
+		hooks.afterEach( function( assert ) {
 			assert.ok( true, "nested afterEach called" );
 		} );
 
