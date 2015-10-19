@@ -147,10 +147,13 @@ QUnit.module( "grouped tests argument hooks", function( hooks ) {
 	} );
 
 	QUnit.module( "stacked hooks", function( hooks ) {
+
+		// This will run after the parent module's beforehook
 		hooks.beforeEach( function( assert ) {
 			assert.ok( true, "nested beforeEach called" );
 		} );
 
+		// This will run before the parent module's afterEach
 		hooks.afterEach( function( assert ) {
 			assert.ok( true, "nested afterEach called" );
 		} );
