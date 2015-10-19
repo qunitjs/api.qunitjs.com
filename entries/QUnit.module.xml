@@ -36,7 +36,7 @@
 			If <code>QUnit.module</code> is defined without a <code>nested</code> callback argument, all subsequently defined tests will be grouped into the module until another module is defined.
 		</p>
 		<p>
-			Modules with grouped tests functions allow defining nested modules, and QUnit will run tests on the parent module before going deep on the nested ones, even if they're declared first. <code>beforeEach</code> and <code>afterEach</code> callbacks on a nested module call will stack to the parent hooks.
+			Modules with grouped tests functions allow defining nested modules, and QUnit will run tests on the parent module before going deep on the nested ones, even if they're declared first. <code>beforeEach</code> and <code>afterEach</code> callbacks on a nested module call will stack (<a href="https://en.wikipedia.org/wiki/Stack_%28abstract_data_type%29">LIFO - last in, first out</a>) to the parent hooks.
 		</p>
 		<p>
 			You can specify code to run before and after each test using the hooks argument, and also to create properties that will be shared on the context of each test. Any additional properties on the hooks object will be added to that context. The hooks parameter is argument is still optional if you call <code>QUnit.module</code> with a callback argument.
