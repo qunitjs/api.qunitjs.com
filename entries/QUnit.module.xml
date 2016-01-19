@@ -4,15 +4,21 @@
 	<title>QUnit.module()</title>
 	<signature>
 		<argument name="name" type="String">
-			<desc>Label for this group of tests</desc>
+			<desc>Label for this group of tests.</desc>
 		</argument>
 		<argument name="hooks" type="PlainObject" optional="true">
-			<desc>Callbacks to run before and after each test</desc>
+			<desc>Callbacks to run during test execution.</desc>
+			<property name="before" type="Function">
+				<desc>Runs before the first test.</desc>
+			</property>
 			<property name="beforeEach" type="Function">
-				<desc>Runs before each test</desc>
+				<desc>Runs before each test.</desc>
 			</property>
 			<property name="afterEach" type="Function">
-				<desc>Runs after each test</desc>
+				<desc>Runs after each test.</desc>
+			</property>
+			<property name="after" type="Function">
+				<desc>Runs after the last test. If additional tests are defined after the module's queue has emptied, it will not run this hook again.</desc>
 			</property>
 		</argument>
 		<argument name="nested" optional="true">
@@ -36,13 +42,13 @@
 			If <code>QUnit.module</code> is defined without a <code>nested</code> callback argument, all subsequently defined tests will be grouped into the module until another module is defined.
 		</p>
 		<p>
-			Modules with grouped test functions allow defining nested modules, and QUnit will run tests on the parent module before going deep on the nested ones, even if they're declared first. The <code>beforeEach</code> and <code>afterEach</code> callbacks on a nested module call will stack (<a href="https://en.wikipedia.org/wiki/Stack_%28abstract_data_type%29">LIFO - last in, first out</a>) to the parent hooks.
+			Modules with test group functions allow you to define nested modules, and QUnit will run tests on the parent module before going deep on the nested ones, even if they're declared first. Additionally, any hook callbacks on a parent module will wrap the hooks on a nested module. In other words, <code>before</code> and <code>beforeEach</code> callbacks will form a <a href="https://en.wikipedia.org/wiki/Queue_%28abstract_data_type%29">queue</a> while the <code>afterEach</code> and <code>after</code> callbacks will form a <a href="https://en.wikipedia.org/wiki/Stack_%28abstract_data_type%29">stack</a>.
 		</p>
 		<p>
-			You can specify code to run before and after each test using the hooks argument, and also to create properties that will be shared on the context of each test. Any additional properties on the <code>hooks</code> object will be added to that context. The <code>hooks</code> argument is still optional if you call <code>QUnit.module</code> with a callback argument.
+			You can specify code to run before and after tests using the hooks argument, and also to create properties that will be shared on the testing context. Any additional properties on the <code>hooks</code> object will be added to that context. The <code>hooks</code> argument is still optional if you call <code>QUnit.module</code> with a callback argument.
 		</p>
 		<p>
-			The module's callback is invoked with the test environment as its <code>this</code> context, with the environment's properties copied to the module's tests, hooks, and nested modules. Note that changes on tests' <code>this</code> won't affect sibling tests, where <code>this</code> will be reset to the same value for each test.
+			The module's callback is invoked with the test environment as its <code>this</code> context, with the environment's properties copied to the module's tests, hooks, and nested modules. Note that changes on tests' <code>this</code> are not preserved between sibling tests, where <code>this</code> will be reset to the initial value for each test.
 		</p>
 		<p class="warning">
 			<strong>DEPRECATION Note:</strong> <code>beforeEach</code> and <code>afterEach</code> were previously named <code>setup</code> and <code>teardown</code>, which still exist and will be removed in QUnit 2.0.0.
@@ -94,14 +100,20 @@ QUnit.module( "module b", function() {
 ]]></code>
 	</example>
 	<example>
-		<desc>A sample for using the beforeEach and afterEach callbacks</desc>
+		<desc>A sample for using the before, beforeEach, afterEach, and after callbacks</desc>
 <code><![CDATA[
 QUnit.module( "module A", {
+	before: function() {
+		// prepare something once for all tests
+	}
 	beforeEach: function() {
-		// prepare something for all following tests
+		// prepare something before each test
 	},
 	afterEach: function() {
 		// clean up after each test
+	},
+	after: function() {
+		// clean up once after all tests are done
 	}
 });
 ]]></code>
