@@ -35,6 +35,13 @@
 				<p>Prior to version 1.16.0, this property was called <code>module</code>.</p>
 			</desc>
 		</property>
+		<property name="seed" type="String" default="undefined">
+			<desc>
+				This property tells QUnit to run tests in a seeded-random order. The value provided will be used as the seed in a pseudo-random number generator to ensure that results are reproducible. The randomization will also respect the `reorder` option if enabled and re-run failed tests first without randomizing them.
+				<p>Randomly ordering your tests can help identify non-atomic tests which either depend on a previous test or are leaking state to following tests. This is particularly beneficial in a development CI or post-commit process.</p>
+				<p>If <code>seed</code> is specified in the page's url parameters, but no value is specified, then QUnit will generate a random value to use as the seed. You can access the value from this property and use it to repeat the same sequence in another run.</p>
+			</desc>
+		</property>
 		<property name="reorder" type="Boolean" default="true">
 			<desc>
 				By default, QUnit will run tests first that failed on a previous run. In a large testsuite, this can speed up testing a lot.
