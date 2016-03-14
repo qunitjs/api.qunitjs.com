@@ -35,6 +35,11 @@
 				<p>Prior to version 1.16.0, this property was called <code>module</code>.</p>
 			</desc>
 		</property>
+		<property name="moduleId" type="Array" default="undefined">
+			<desc>
+				This property allows QUnit to run specific modules identified by the hashed version of their module name. You can specify one or multiple modules to run.
+			</desc>
+		</property>
 		<property name="reorder" type="Boolean" default="true">
 			<desc>
 				By default, QUnit will run tests first that failed on a previous run. In a large testsuite, this can speed up testing a lot.
@@ -50,7 +55,7 @@
 		</property>
 		<property name="testId" type="Array" default="undefined">
 			<desc>
-				This property allows QUnit to run specific test blocks by a hashed string combining their module name and test name. You can specify one or multiple tests to run.
+				This property allows QUnit to run specific tests identified by the hashed version of their module name and test name. You can specify one or multiple tests to run.
 			</desc>
 		</property>
 		<property name="testTimeout" type="Number" default="undefined">
