@@ -1,28 +1,28 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
-<entry type="method" name="push">
-    <title>push()</title>
+<entry type="method" name="pushResult">
+    <title>pushResult()</title>
     <signature>
-        <argument name="result" type="Boolean">
-            <desc>Result of the assertion</desc>
-        </argument>
-        <argument name="actual" type="Object">
-            <desc>Expression being tested</desc>
-        </argument>
-        <argument name="expected" type="Object">
-            <desc>Known comparison value</desc>
-        </argument>
-        <argument name="message" type="String">
-            <desc>A short description of the assertion</desc>
+        <argument name="assertionResult" type="PlainObject">
+            <desc>The assertion result</desc>
+            <propery name="result" type="Boolean">
+                <desc>Result of the assertion</desc>
+            </propery>
+            <propery name="actual" type="Object">
+                <desc>Expression being tested</desc>
+            </propery>
+            <propery name="expected" type="Object">
+                <desc>Known comparison value</desc>
+            </propery>
+            <propery name="message" type="String">
+                <desc>A short description of the assertion</desc>
+            </propery>
         </argument>
     </signature>
     <desc>
-        DEPRECATED: Report the result of a custom assertion
+        Report the result of a custom assertion
     </desc>
     <longdesc>
-        <p class="warning">
-            This method is <strong>deprecated</strong> and will be removed in QUnit 2.0.0. Use <a href="/pushResult/"><code>assert.pushResult()</code></a> instead.
-        </p>
         <p>
             Some test suites may need to express an expectation that is not defined by any of QUnit's built-in assertions. This need may be met by encapsulating the expectation in a JavaScript function which returns a <code>Boolean</code> value representing the result; this value can then be passed into QUnit's <code>ok</code> assertion.
         </p>
@@ -35,7 +35,12 @@
 <code><![CDATA[
 QUnit.assert.mod2 = function( value, expected, message ) {
     var actual = value % 2;
-    this.push( actual === expected, actual, expected, message );
+    this.pushResult( {
+        result: actual === expected,
+        actual: actual,
+        expected: expected,
+        message: message
+    } );
 };
 
 QUnit.test( "mod2", function( assert ) {

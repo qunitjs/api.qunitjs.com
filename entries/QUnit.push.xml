@@ -22,7 +22,7 @@
 			This method is <strong>deprecated</strong> and it's recommended to use it through its direct reference in the assertion context.
 		</p>
 		<p>
-			<code>QUnit.push</code> reflects to the current running test, and it may leak assertions in asynchronous mode. Checkout <a href="/push/">assert.push()</a> to set a proper custom assertion.
+			<code>QUnit.push</code> reflects to the current running test, and it may leak assertions in asynchronous mode. Checkout <a href="/pushResult/">assert.pushResult()</a> to set a proper custom assertion.
 		</p>
 		<p>
 			Invoking <code>QUnit.push</code> allows to create a readable expectation that is not defined by any of QUnit's built-in assertions.
