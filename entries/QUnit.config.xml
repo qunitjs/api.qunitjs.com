@@ -31,7 +31,7 @@
 		</property>
 		<property name="module" type="String" default="undefined">
 			<desc>
-			Specify a single module to run by name (exact case-insensitive match required). By default, QUnit will run all the loaded modules when this property is not specified.
+				Specify a single module to run by name (exact case-insensitive match required). By default, QUnit will run all the loaded modules when this property is not specified.
 				<p>This property was absent in versions 1.16.0 through 1.22.0.</p>
 			</desc>
 		</property>
