@@ -29,10 +29,10 @@
 				By default, the HTML Reporter will show all the tests results. Enabling this option will make it show only the failing tests, hiding all that pass. This can also be managed by the HTML interface.
 			</desc>
 		</property>
-		<property name="moduleFilter" type="String" default="undefined">
+		<property name="module" type="String" default="undefined">
 			<desc>
-				Specify a single module to run by declaring its name. By default, QUnit will run all the loaded modules when this property is not specified. This property value must match (case insensitive) the module name or QUnit won't run any module.
-				<p>Prior to version 1.16.0, this property was called <code>module</code>.</p>
+				Specify a single module to run by name (exact case-insensitive match required). By default, QUnit will run all the loaded modules when this property is not specified.
+				<p>This property was absent in versions 1.16.0 through 1.22.0.</p>
 			</desc>
 		</property>
 		<property name="moduleId" type="Array" default="undefined">
