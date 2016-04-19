@@ -5,18 +5,18 @@
     <signature>
         <argument name="assertionResult" type="PlainObject">
             <desc>The assertion result</desc>
-            <propery name="result" type="Boolean">
+            <property name="result" type="Boolean">
                 <desc>Result of the assertion</desc>
-            </propery>
-            <propery name="actual" type="Object">
+            </property>
+            <property name="actual" type="Object">
                 <desc>Expression being tested</desc>
-            </propery>
-            <propery name="expected" type="Object">
+            </property>
+            <property name="expected" type="Object">
                 <desc>Known comparison value</desc>
-            </propery>
-            <propery name="message" type="String">
+            </property>
+            <property name="message" type="String">
                 <desc>A short description of the assertion</desc>
-            </propery>
+            </property>
         </argument>
     </signature>
     <desc>
@@ -27,7 +27,7 @@
             Some test suites may need to express an expectation that is not defined by any of QUnit's built-in assertions. This need may be met by encapsulating the expectation in a JavaScript function which returns a <code>Boolean</code> value representing the result; this value can then be passed into QUnit's <code>ok</code> assertion.
         </p>
         <p>
-            A more readable solution would involve defining a custom assertion. If the expectation function invokes <code>push</code>, QUnit will be notified of the result and report it accordingly.
+            A more readable solution would involve defining a custom assertion. If the expectation function invokes <code>pushResult</code>, QUnit will be notified of the result and report it accordingly.
         </p>
     </longdesc>
     <example>
