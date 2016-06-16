@@ -19,7 +19,7 @@
 	<desc>DEPRECATED: Report the result of a custom assertion</desc>
 	<longdesc>
 		<p class="warning">
-			This method is <strong>deprecated</strong> and it's recommended to use it through its direct reference in the assertion context.
+			This method is <strong>deprecated</strong> and it's recommended to use <a href="/pushResult/"><code>pushResult</code></a> on its direct reference in the assertion context.
 		</p>
 		<p>
 			<code>QUnit.push</code> reflects to the current running test, and it may leak assertions in asynchronous mode. Checkout <a href="/pushResult/">assert.pushResult()</a> to set a proper custom assertion.
