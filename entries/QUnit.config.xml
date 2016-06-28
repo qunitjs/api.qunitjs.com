@@ -63,6 +63,11 @@
 				<p>Enabling this flag will run tests without the `try-catch` to allow exceptions to remain uncaught for easier debugging in certain environments.</p>
 			</desc>
 		</property>
+		<property name="noglobals" type="Boolean" default="false">
+			<desc>
+				<p>Enabling this flag will cause QUnit to check if any new properties have been added to the global context after each test.</p>
+			</desc>
+		</property>
 		<property name="seed" type="String" default="undefined">
 			<desc>
 				<p>This property tells QUnit to run tests in a seeded-random order. The value provided will be used as the seed in a pseudo-random number generator to ensure that results are reproducible. The randomization will also respect the `reorder` option if enabled and re-run failed tests first without randomizing them.</p>
