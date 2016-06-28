@@ -24,6 +24,12 @@
 				This object isn't actually a configuration property, but is listed here anyway, as its exported through <code>QUnit.config</code>. This gives you access to some QUnit internals at runtime. See below for an example.
 			</desc>
 		</property>
+		<property name="filter" type="String" default="undefined">
+			<desc>
+				<p>Allows you to filter which tests are run by matching the module name and test title against the provided string. You can do an inverse filter, matching all tests that don't contain the string, by prefixing a <code>!</code> to the value.</p>
+				<p>You can also match via a regular expression by passing in a string version of the regular expression literal, such as <code>/(this|that)/i</code>.</p>
+			</desc>
+		</property>
 		<property name="hidepassed" type="Boolean" default="false">
 			<desc>
 				By default, the HTML Reporter will show all the tests results. Enabling this option will make it show only the failing tests, hiding all that pass. This can also be managed by the HTML interface.
