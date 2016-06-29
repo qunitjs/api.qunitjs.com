@@ -24,6 +24,12 @@
 				This object isn't actually a configuration property, but is listed here anyway, as its exported through <code>QUnit.config</code>. This gives you access to some QUnit internals at runtime. See below for an example.
 			</desc>
 		</property>
+		<property name="fixture" type="String" default="undefined">
+			<desc>
+				<p>Defines the HTML content to use in the fixture container which is reset at the start of each test.</p>
+				<p>By default QUnit will use whatever the starting content of <code>#quint-fixture</code> is as the fixture reset. If you do not want the fixture to be reset in between tests, set the value to <code>null</code>.</p>
+			</desc>
+		</property>
 		<property name="hidepassed" type="Boolean" default="false">
 			<desc>
 				By default, the HTML Reporter will show all the tests results. Enabling this option will make it show only the failing tests, hiding all that pass. This can also be managed by the HTML interface.
