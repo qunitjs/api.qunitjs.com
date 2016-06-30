@@ -65,7 +65,7 @@
 		</property>
 		<property name="noglobals" type="Boolean" default="false">
 			<desc>
-				<p>Enabling this flag will cause QUnit to check if any new properties have been added to the global context after each test.</p>
+				<p>Enabling this flag will cause QUnit to check if any new properties have been added to the global context after each test. New global properties being found will result in test failures to help ensure your tests are not leaking state.</p>
 			</desc>
 		</property>
 		<property name="seed" type="String" default="undefined">
