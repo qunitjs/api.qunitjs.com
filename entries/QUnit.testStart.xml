@@ -14,6 +14,12 @@
 			<property name="module" type="String">
 				<desc>Name of the current module</desc>
 			</property>
+			<property name="testId" type="String">
+				<desc>Id of the next test to run</desc>
+			</property>
+			<property name="previousFailure" type="Boolean">
+				<desc>Whether the next test failed on a previous run</desc>
+			</property>
 		</argument>
 	</signature>
 	<desc>Register a callback to fire whenever a test begins.</desc>
