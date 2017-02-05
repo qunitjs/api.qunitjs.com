@@ -9,15 +9,19 @@
 		<argument name="hooks" type="PlainObject" optional="true">
 			<desc>Callbacks to run during test execution.</desc>
 			<property name="before" type="Function">
+				<argument name="assert" type="Assert"></argument>
 				<desc>Runs before the first test.</desc>
 			</property>
 			<property name="beforeEach" type="Function">
+				<argument name="assert" type="Assert"></argument>
 				<desc>Runs before each test.</desc>
 			</property>
 			<property name="afterEach" type="Function">
+				<argument name="assert" type="Assert"></argument>
 				<desc>Runs after each test.</desc>
 			</property>
 			<property name="after" type="Function">
+				<argument name="assert" type="Assert"></argument>
 				<desc>Runs after the last test. If additional tests are defined after the module's queue has emptied, it will not run this hook again.</desc>
 			</property>
 		</argument>
