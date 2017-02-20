@@ -10,6 +10,9 @@
 			<desc>Function to close over assertions</desc>
 			<type name="Function">
 				<argument name="assert" type="Assert"></argument>
+				<argument name="done" type="Function">
+					<desc>Optional parameter for async tests.</desc>
+				</argument>
 			</type>
 		</argument>
 	</signature>
@@ -20,6 +23,7 @@
 		<p>Add a test to run using <code>QUnit.test()</code>.</p>
 		<p>The <a href="/QUnit.assert/"><code>assert</code></a> argument to the callback contains all of QUnit's <a href="/category/assert/">assertion methods</a>. Use this argument to call your test assertions.</p>
 		<p><code>QUnit.test()</code> can automatically handle the asynchronous resolution of a Promise on your behalf if you return a <code>then</code>able Promise as the result of your callback function.</p>
+		<p>The test callback function can be declared with a an optional flag parameter <code>done</code> to turn the test into async mode. This way, the parameter will receive a function that should be called when the async tests are done, as in <code>var done = assert.async();</code>.</p>
 	</longdesc>
 	<example height="250">
 		<desc>A practical example, using the assert argument and no globals.</desc>
@@ -48,6 +52,16 @@ QUnit.test( "a Promise-returning test", function( assert ) {
 		}, 500 );
 	});
 	return thenable;
+});
+]]></code>
+	</example><example height="250">
+		<desc>The following example shows an async test call defined by the callback parameters.</desc>
+<code><![CDATA[
+QUnit.test( "a Promise-returning test", function( assert, done ) {
+	setTimetout(function() {
+		assert.ok( this );
+		done();
+	}, 500 );
 });
 ]]></code>
 	</example>
