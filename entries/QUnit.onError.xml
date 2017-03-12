@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
+<entry type="method" name="QUnit.onError">
+	<title>QUnit.onError()</title>
+	<signature>
+		<argument name="error">
+			<desc>Error or error-like object.</desc>
+			<type name="Object" />
+		</argument>
+	</signature>
+	<desc>Handle an unrecoverable error thrown by an asynchronous test.</desc>
+	<longdesc>
+		<p>
+      <code>QUnit.onError()</code> should be called whenever an error is thrown asynchronously and a test needs to be abandoned. QUnit will log the error as an assertion failure and proceed to the next test (abandoning any asynchronous holds that may have been invoked via <a href="/async"><code>assert.async</code></a>).
+		</p>
+		<p>
+			Note that synchronous test errors are caught by default (unless <code><a href="/QUnit.config">QUnit.config</a>.notrycatch</code> is enabled). In addition, for browser environments, QUnit implements a <code>window.onerror</code> handler which will call this method by default. Therefore, this method only needs to be called by custom test runners or by code that integrates with error handling mechanisms in other libraries.
+		</p>
+	</longdesc>
+	<example>
+		<desc>
+			Libraries like RequireJS provide an error handler for failed module loads. This example uses <code>require.onError</code> to call <code>QUnit.onError</code> and ensure those errors are reported as test failures.
+		</desc>
+		<code><![CDATA[
+require.onError = function( error ) {
+	// Modify error as necessary
+	QUnit.onError( error );
+};
+		]]></code>
+	</example>
+
+	<category slug="config" />
+</entry>
