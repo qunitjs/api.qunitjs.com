@@ -19,6 +19,11 @@
 				<p>By default, QUnit's HTML reporter collapses consecutive failing tests showing only the details for the first failed test. The other tests can be expanded manually with a single click on the test title. Setting this value to <code>false</code> will expand the details for every failing test.</p>
 			</desc>
 		</property>
+		<property name="collapse" type="Boolean" default="true">
+			<desc>
+				By default, QUnit's HTML reporter collapses consecutive failing tests showing only the details for the first failed test. The other tests can be expanded manually with a single click on the test title. Setting this value to <code>false</code> will expand the details for every failing test.
+			</desc>
+		</property>
 		<property name="current" type="Object">
 			<desc>
 				<p>This object isn't actually a configuration property, but is listed here anyway, as its exported through <code>QUnit.config</code>. This gives you access to some QUnit internals at runtime. See below for an example.</p>
