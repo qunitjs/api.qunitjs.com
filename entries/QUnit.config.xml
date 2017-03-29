@@ -46,6 +46,11 @@
 				<p>Specifies the depth up-to which an object will be dumped during a diff. To run without a max depth, use a value of <code>-1</code>.</p>
 			</desc>
 		</property>
+		<property name="maxDepth" type="Number" default="5">
+			<desc>
+				<p>Specifies the depth up-to which an object will be dumped during a diff. To run without a max depth, use a value of <code>-1</code>.</p>
+			</desc>
+		</property>
 		<property name="module" type="String" default="undefined">
 			<desc>
 				<p>Specify a single module to run by name (exact case-insensitive match required). By default, QUnit will run all the loaded modules when this property is not specified.</p>
