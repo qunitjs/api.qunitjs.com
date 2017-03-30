@@ -40,7 +40,7 @@ QUnit.module( "robot", {
   }
 });
 
-test( "say", function( assert ) {
+QUnit.test( "say", function( assert ) {
   assert.ok( false, "I'm not quite ready yet" );
 });
 

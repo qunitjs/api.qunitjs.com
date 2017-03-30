@@ -39,8 +39,8 @@ QUnit.test( "notPropEqual test", function( assert ) {
   Foo.prototype.doB = function () {};
   Foo.prototype.bar = 'prototype';
 
-    var foo = new Foo( 1, "2", [] );
-    var bar = new Foo( "1", 2, {} );
+  var foo = new Foo( 1, "2", [] );
+  var bar = new Foo( "1", 2, {} );
   assert.notPropEqual( foo, bar, "Properties values are strictly compared." );
 });
 ```

@@ -25,7 +25,7 @@ By default, QUnit's HTML reporter collapses consecutive failing tests showing on
 
 ### `QUnit.config.current` (object)
 
-This object isn't actually a configuration property, but is listed here anyway, as its exported through `QUnit.config`. This gives you access to some QUnit internals at runtime. See below for an example.
+This object isn't actually a configuration property, but is listed here anyway, as it's exported through `QUnit.config`. This gives you access to some QUnit internals at runtime. See below for an example.
 
 ### `QUnit.config.filter` (string) | default: `undefined`
 
@@ -37,7 +37,7 @@ You can also match via a regular expression by passing in a string version of th
 
 Defines the HTML content to use in the fixture container which is reset at the start of each test.
 
-By default QUnit will use whatever the starting content of `#quint-fixture` is as the fixture reset. If you do not want the fixture to be reset in between tests, set the value to `null`.
+By default QUnit will use whatever the starting content of `#qunit-fixture` is as the fixture reset. If you do not want the fixture to be reset in between tests, set the value to `null`.
 
 ### `QUnit.config.hidepassed` (boolean) | default: `false`
 
