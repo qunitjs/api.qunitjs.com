@@ -1,33 +1,34 @@
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
-<entry type="method" name="notEqual">
-	<title>notEqual()</title>
-	<signature>
-		<argument name="actual" type="Object">
-			<desc>Expression being tested</desc>
-		</argument>
-		<argument name="expected" type="Object">
-			<desc>Known comparison value</desc>
-		</argument>
-		<argument name="message" type="String" optional="true">
-			<desc>A short description of the assertion</desc>
-		</argument>
-	</signature>
-	<desc>
-		A non-strict comparison, checking for inequality.
-	</desc>
-	<longdesc>
-		<p>The <code>notEqual</code> assertion uses the simple inverted comparison operator (<code>!=</code>) to compare the actual and expected arguments. When they aren't equal, the assertion passes; otherwise, it fails. When it fails, both actual and expected values are displayed in the test result, in addition to a given message.</p>
-		<p><a href="/equal/"><code>equal()</code></a> can be used to test equality.</p>
-		<p><a href="/notStrictEqual/"><code>notStrictEqual()</code></a> can be used to test strict inequality.</p>
-	</longdesc>
-	<example>
-		<desc>The simplest assertion example:</desc>
-<code><![CDATA[
+---
+layout: default
+title: notEqual
+categories:
+  - assert
+---
+
+## `notEqual( actual, expected [, message ] )`
+
+A non-strict comparison, checking for inequality.
+
+| name               | description                          |
+|--------------------|--------------------------------------|
+| `actual`           | Expression being tested              |
+| `expected`         | Known comparison value               |
+| `message` (string) | A short description of the assertion |
+
+### Description
+
+The `notEqual` assertion uses the simple inverted comparison operator (`!=`) to compare the actual and expected arguments. When they aren't equal, the assertion passes; otherwise, it fails. When it fails, both actual and expected values are displayed in the test result, in addition to a given message.
+
+<a href="/equal/">`equal()`</a> can be used to test equality.
+
+<a href="/notStrictEqual/">`notStrictEqual()`</a> can be used to test strict inequality.
+
+### Examples
+
+The simplest assertion example:
+
+```js
 QUnit.test( "a test", function( assert ) {
 	assert.notEqual( 1, "2", "String '2' and number 1 don't have the same value" );
 });
-]]></code>
-	</example>
-	<category slug="assert"/>
-</entry>
+```

@@ -22,11 +22,12 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: qunitjs
 github_username:  qunitjs
 
-# Build settings
+
+highlighter: rouge
 markdown: kramdown
-theme: minima
-gems:
-  - jekyll-feed
+kramdown:
+  input: GFM
+
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -34,8 +35,4 @@ exclude:
   - CONTRIBUTING.md
   - CNAME
 
-collections:
-    methods:
-        output: true
-        permalink: /methods/:path/
 permalink: title

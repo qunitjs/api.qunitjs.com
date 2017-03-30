@@ -1,29 +1,33 @@
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
-<entry type="method" name="propEqual">
-	<title>propEqual()</title>
-	<signature>
-		<argument name="actual" type="Object">
-			<desc>Object being tested</desc>
-		</argument>
-		<argument name="expected" type="Object">
-			<desc>Known comparison value</desc>
-		</argument>
-		<argument name="message" type="String" optional="true">
-			<desc>A short description of the assertion</desc>
-		</argument>
-	</signature>
-	<desc>
-		A strict type and value comparison of an object's own properties.
-	</desc>
-	<longdesc>
-		<p>The <code>propEqual()</code> assertion provides strictly (<code>===</code>) comparison of Object properties. Unlike <code>deepEqual()</code>, this assertion can be used to compare two objects made with different constructors and prototype.</p>
-		<p><a href="/strictEqual/"><code>strictEqual()</code></a> can be used to test strict equality.</p>
-		<p><a href="/notPropEqual/"><code>notPropEqual()</code></a> can be used to explicitly test strict inequality of Object properties.</p>
-	</longdesc>
-	<example>
-		<desc>Compare the properties values of two objects.</desc>
-<code><![CDATA[
+---
+layout: default
+title: propEqual
+categories:
+  - assert
+---
+
+## `propEqual( actual, expected [, message ] )`
+
+A strict type and value comparison of an object's own properties.
+
+| name               | description                          |
+|--------------------|--------------------------------------|
+| `actual`           | Expression being tested              |
+| `expected`         | Known comparison value               |
+| `message` (string) | A short description of the assertion |
+	
+### Description
+
+The `propEqual()` assertion provides strictly (`===`) comparison of Object properties. Unlike `deepEqual()`, this assertion can be used to compare two objects made with different constructors and prototype.
+
+<a href="/strictEqual/">`strictEqual()`</a> can be used to test strict equality.
+
+<a href="/notPropEqual/">`notPropEqual()`</a> can be used to explicitly test strict inequality of Object properties.
+
+### Example
+
+Compare the properties values of two objects.
+
+```js
 QUnit.test( "propEqual test", function( assert ) {
 	function Foo( x, y, z ) {
 		this.x = x;
@@ -42,7 +46,4 @@ QUnit.test( "propEqual test", function( assert ) {
 	};
 	assert.propEqual( foo, bar, "Strictly the same properties without comparing objects constructors." );
 });
-]]></code>
-	</example>
-	<category slug="assert"/>
-</entry>
+```

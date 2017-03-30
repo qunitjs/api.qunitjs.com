@@ -1,8 +1,7 @@
 ---
 layout: default
+title: Home
 ---
-
-<h2>This is the QUnit API Documentation</h2>
 
 <p>QUnit is a powerful, easy-to-use JavaScript unit test suite.
 	If you're new to QUnit or even just new to unit testing, you might
@@ -12,3 +11,37 @@ layout: default
 	<a href="http://qunitjs.com/">main site</a>.</p>
 
 <p>QUnit has no dependencies and works in all browsers.</p>
+
+<h2>Assertions:</h2>
+
+<ul>
+{% assign assertions = site.pages | where:'categories', 'assert' %}
+{% for page in assertions %}
+	<li class="item">
+		<a href="{{page.url}}">{{page.title}}</a>
+	</li>
+{% endfor %}
+</ul>
+
+<h2>Config:</h2>
+
+<ul>
+{% assign config = site.pages | where:'categories', 'config' %}
+{% for page in config %}
+	<li class="item">
+		<a href="{{page.url}}">{{page.title}}</a>
+	</li>
+{% endfor %}
+</ul>
+
+<h2>Callbacks:</h2>
+
+<ul>
+{% assign callbacks = site.pages | where:'categories', 'callbacks' %}
+{% for page in callbacks %}
+	<li class="item">
+		<a href="{{page.url}}">{{page.title}}</a>
+	</li>
+{% endfor %}
+</ul>
+

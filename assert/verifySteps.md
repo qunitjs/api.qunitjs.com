@@ -1,24 +1,26 @@
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
-<entry type="method" name="verifySteps">
-	<title>verifySteps()</title>
-	<signature>
-		<argument name="steps" type="Array">
-			<desc>Array of strings representing steps to verify</desc>
-		</argument>
-		<argument name="message" type="String" optional="true">
-			<desc>A short description of the assertion</desc>
-		</argument>
-	</signature>
-	<desc>
-		A helper assertion to verify the order and number of steps in a test.
-	</desc>
-	<longdesc>
-		<p>The <code>verifySteps()</code> assertion compares a given array of string values (representing steps) and compares them with the order and values of previous <code>step()</code> calls. This assertion is helpful for verifying the order of execution for asynchronous flows.</p>
-	</longdesc>
-	<example>
+---
+layout: default
+title: verifySteps
+categories:
+  - assert
+---
 
-<code><![CDATA[
+## `verifySteps( steps [, message ] )`
+
+A helper assertion to verify the order and number of steps in a test.
+
+| name               | description                          |
+|--------------------|--------------------------------------|
+| `steps` (array)    | Array of strings representing steps to verify |
+| `message` (string) | A short description of the assertion |
+	
+### Description
+
+The `verifySteps()` assertion compares a given array of string values (representing steps) and compares them with the order and values of previous `step()` calls. This assertion is helpful for verifying the order of execution for asynchronous flows.
+
+### Examples
+
+```js
 QUnit.test( "step test", function( assert ) {
 	obj.start = function() {
 		assert.step('start');
@@ -34,8 +36,4 @@ QUnit.test( "step test", function( assert ) {
 		assert.verifySteps(['start', 'middle', 'end']);
 	});
 });
-]]></code>
-	</example>
-
-	<category slug="assert"/>
-</entry>
+```

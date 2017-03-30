@@ -1,30 +1,33 @@
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
-<entry type="method" name="notPropEqual">
-	<title>notPropEqual()</title>
-	<signature>
-		<argument name="actual" type="Object">
-			<desc>Object being tested</desc>
-		</argument>
-		<argument name="expected" type="Object">
-			<desc>Known comparison value</desc>
-		</argument>
-		<argument name="message" type="String" optional="true">
-			<desc>A short description of the assertion</desc>
-		</argument>
-	</signature>
-	<desc>
-		A strict comparison of an object's own properties, checking for inequality.
-	</desc>
-	<longdesc>
-		<p>The <code>notPropEqual</code> assertion uses the strict inverted comparison operator (<code>!==</code>) to compare the actual and expected arguments as Objects regarding only their properties but not their constructors.</p>
-		<p>When they aren't equal, the assertion passes; otherwise, it fails. When it fails, both actual and expected values are displayed in the test result, in addition to a given message.</p>
-		<p><a href="/equal/"><code>equal()</code></a> can be used to test equality.</p>
-		<p><a href="/propEqual/"><code>propEqual()</code></a> can be used to test strict equality of an Object properties.</p>
-	</longdesc>
-	<example>
-		<desc>Compare the values of two objects properties.</desc>
-<code><![CDATA[
+---
+layout: default
+title: notPropEqual
+categories:
+  - assert
+---
+
+## `notPropEqual( actual, expected [, message ] )`
+
+A strict comparison of an object's own properties, checking for inequality.
+
+| name               | description                          |
+|--------------------|--------------------------------------|
+| `actual`           | Expression being tested              |
+| `expected`         | Known comparison value               |
+| `message` (string) | A short description of the assertion |
+
+The `notPropEqual` assertion uses the strict inverted comparison operator (`!==`) to compare the actual and expected arguments as Objects regarding only their properties but not their constructors.
+
+When they aren't equal, the assertion passes; otherwise, it fails. When it fails, both actual and expected values are displayed in the test result, in addition to a given message.
+
+<a href="/equal/">`equal()`</a> can be used to test equality.
+
+<a href="/propEqual/">`propEqual()`</a> can be used to test strict equality of an Object properties.
+
+### Examples
+
+Compare the values of two objects properties.
+
+```js
 QUnit.test( "notPropEqual test", function( assert ) {
 	function Foo( x, y, z ) {
 		this.x = x;
@@ -39,7 +42,4 @@ QUnit.test( "notPropEqual test", function( assert ) {
     var bar = new Foo( "1", 2, {} );
 	assert.notPropEqual( foo, bar, "Properties values are strictly compared." );
 });
-]]></code>
-	</example>
-	<category slug="assert"/>
-</entry>
+```

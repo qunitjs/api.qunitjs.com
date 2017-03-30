@@ -1,0 +1,253 @@
+//--------------------------------------------------
+// Reset
+// -------------------------------------------------
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, menu, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+ins {
+  text-decoration: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+article, aside, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+.skip,
+.a11y {
+  left: -1000em;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 0;
+}
+
+/*---------------------------*/
+/*-------- Site styles ------*/
+/*---------------------------*/
+
+* {
+    moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', Helvetica, serif;
+    font-weight: normal;
+    margin: 0;
+    min-height: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+a:link,
+a:active {
+    border-bottom: 2px solid #e6008c;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:active {
+    bottom: -1px;
+    position: relative;
+}
+
+a:hover,
+a:visited {
+    background-color: rgba(230, 0, 140, .1);
+    border-bottom: 2px solid #e6008c;
+    color: #000;
+    text-decoration: none;
+}
+
+a:focus {
+    background-color: rgba(230, 0, 140, .1)
+}
+
+p {
+    font-size: .875rem;
+    line-height: 1.5;
+}
+
+.center {
+    text-align: center;
+}
+
+/*-------------------------------*/
+/*---------Site wide header -----*/
+/*-------------------------------*/
+
+.site-header {
+    align-items: center;
+    background: rgb(57, 15, 57);
+    padding: 2em 1em;
+}
+
+.site-header-wrapper {
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+@media (min-width: 40em) {
+    .site-header-wrapper {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+}
+
+.site-logo {
+    flex: 1 0 auto;
+
+}
+
+.logo {
+    margin: 0;
+    padding: 0;
+}
+
+a.logo-link:link,
+a.logo-link:visited {
+    background: url('/img/logo-qunit@2x.png') no-repeat 0 0;
+    background-size: cover;
+    border: none;
+    display: block;
+    height: 66px;
+    text-indent: -99999px;
+    width: 243px;
+}
+
+a.logo-link:hover {
+    background-color: transparent;
+    border: none;
+}
+
+a.logo-link:focus {
+    background-color: none;
+}
+
+.site-nav {
+    flex: 1 0 auto;
+}
+
+.site-nav-list {
+    margin: 1em 0 0 0;
+    padding: 0;
+}
+
+@media (min-width: 40em) {
+    .site-nav-list {
+        margin: 0;
+        text-align: right;
+    }
+}
+
+.site-nav-list-item {
+    display: inline-block;
+}
+
+a.site-nav-list-link:link,
+a.site-nav-list-link:active {
+    border-bottom: none;
+    color: #fff;
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    padding: 1em 2em 1em 0;
+}
+
+a.site-nav-list-link:hover,
+a.site-nav-list-link:visited {
+    background-color: transparent;
+    color: #fff;
+    text-decoration: underline;
+}
+
+a.site-nav-list-link:focus {
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+@media (min-width: 40em) {
+    a.site-nav-list-link:link {
+        padding: 0 2em;
+    }
+}
+
+.site-tag {
+    color: #fff;
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+}
+
+/*--------------------------------------------*/
+/*---------- Home page ----------------*/
+/*--------------------------------------------*/
+
+.main {
+    background-color: #403B6E;
+}
+
+.main-content {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+@media (min-width: 65em) {
+    .main-content {
+        padding: 0;
+    }
+}

@@ -1,21 +1,27 @@
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
-<entry type="method" name="expect">
-	<title>expect()</title>
-	<signature>
-		<argument name="amount" type="Number">
-			<desc>Number of assertions in this test.</desc>
-		</argument>
-	</signature>
-	<desc>
-		Specify how many assertions are expected to run within a test.
-	</desc>
-	<longdesc>
-		<p>To ensure that an explicit number of assertions are run within any test, use <code>assert.expect( number )</code> to register an expected count. If the number of assertions run does not match the expected count, the test will fail.</p>
-	</longdesc>
-	<example height="250">
-		<desc>Establish an expected assertion count</desc>
-<code><![CDATA[
+---
+layout: default
+title: expect
+categories:
+  - assert
+---
+
+## `expect( amount )`
+
+Specify how many assertions are expected to run within a test.
+
+| name | description |
+|------|-------------|
+| `amount` | Number of assertions in this test. |
+
+### Description
+
+To ensure that an explicit number of assertions are run within any test, use `assert.expect( number )` to register an expected count. If the number of assertions run does not match the expected count, the test will fail.
+	
+### Examples
+
+Establish an expected assertion count
+
+```js
 QUnit.test( "a test", function( assert ) {
 	assert.expect( 2 );
 
@@ -30,7 +36,4 @@ QUnit.test( "a test", function( assert ) {
 
 	assert.equal( result, 4, "2 squared equals 4" );
 });
-]]></code>
-	</example>
-	<category slug="assert"/>
-</entry>
+```

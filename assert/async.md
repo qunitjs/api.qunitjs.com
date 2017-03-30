@@ -1,22 +1,30 @@
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
-<entry type="method" name="async">
-  <title>async()</title>
-  <signature>
-    <argument name="acceptCallCount" type="Number" optional="true" default="1">
-      <desc>Number of expected callbacks before the test is done.</desc>
-    </argument>
-  </signature>
-  <desc>
-    Instruct QUnit to wait for an asynchronous operation.
-  </desc>
-  <longdesc>
-    <p>The callback returned from <code>assert.async()</code> will throw an Error if it is invoked more than once (or more often than the accepted call count, if provided).</p>
-    <p>This replaces functionality previously provided by <a href="/QUnit.stop/"><code>QUnit.stop()</code></a> and <a href="/QUnit.start/"><code>QUnit.start()</code></a>.</p>
-  </longdesc>
-  <example height="250">
-  <desc>Tell QUnit to wait for the <code>done()</code> call inside the timeout.</desc>
-<code><![CDATA[
+---
+layout: default
+title: async
+categories:
+  - assert
+  - async-control
+---
+
+## `async( [ acceptCallCount = 1 ] )`
+
+Instruct QUnit to wait for an asynchronous operation.
+
+| name | description |
+|------|-------------|
+| `acceptCallCount` (Number) | Number of expected callbacks before the test is done. Defaults to `1`. |
+
+### Description
+
+The callback returned from `assert.async()` will throw an Error if it is invoked more than once (or more often than the accepted call count, if provided).
+
+This replaces functionality previously provided by [`QUnit.stop()`](/QUnit.stop) and [`QUnit.start()`](/QUnit.start).
+
+### Examples
+
+Tell QUnit to wait for the `done()` call inside the timeout.
+
+```js
 QUnit.test( "assert.async() test", function( assert ) {
   var done = assert.async();
   var input = $( "#test-input" ).focus();
@@ -25,11 +33,11 @@ QUnit.test( "assert.async() test", function( assert ) {
     done();
   });
 });
-]]></code>
-  </example>
-  <example height="250">
-  <desc>Call <code>assert.async()</code> for each operation. Each <code>done</code> callback can be called at most once.</desc>
-<code><![CDATA[
+```
+
+Call `assert.async()` for each operation. Each `done` callback can be called at most once.
+
+```js
 QUnit.test( "two async calls", function( assert ) {
   assert.expect( 2 );
 
@@ -44,11 +52,11 @@ QUnit.test( "two async calls", function( assert ) {
     done2();
   }, 150);
 });
-]]></code>
-  </example>
-    <example height="250">
-  <desc>Set up an async test three exit points. Each <code>done()</code> call adds up to the <code>acceptCallCount</code>. After three calls, the test is done.</desc>
-<code><![CDATA[
+```
+
+Set up an async test three exit points. Each `done()` call adds up to the `acceptCallCount`. After three calls, the test is done.
+
+```js
 QUnit.test( "multiple call done()", function( assert ) {
   assert.expect( 3 );
   var done = assert.async( 3 );
@@ -68,8 +76,4 @@ QUnit.test( "multiple call done()", function( assert ) {
     done();
   }, 500 );
 });
-]]></code>
-  </example>
-  <category slug="assert"/>
-  <category slug="async-control"/>
-</entry>
+```

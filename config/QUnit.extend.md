@@ -1,24 +1,25 @@
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
-<entry type="method" name="QUnit.extend">
-	<title>QUnit.extend()</title>
-	<signature>
-		<argument name="target" type="Object">
-			<desc>An object whose properties are to be modified</desc>
-		</argument>
-		<argument name="mixin" type="String">
-			<desc>An object describing which properties should be modified</desc>
-		</argument>
-	</signature>
-	<desc>Copy the properties defined by the <code>mixin</code> object into the <code>target</code> object</desc>
-	<longdesc>
-		<p>
-			This method will modify the <code>target</code> object to contain the "own" properties defined by the <code>mixin</code>. If the <code>mixin</code> object specifies the value of any attribute as <code>undefined</code>, this property will instead be removed from the <code>target</code> object.
-		</p>
-	</longdesc>
-	<example>
-		<desc>Define a custom <code>mod2</code> assertion that tests if the provided numbers are equivalent in modulo 2.</desc>
-		<code><![CDATA[
+---
+layout: default
+categories: [config]
+title: QUnit.extend
+---
+
+## `QUnit.extend( target, mixin )`
+
+Copy the properties defined by the `mixin` object into the `target` object
+
+| name               | description                          |
+|--------------------|--------------------------------------|
+| `target`           | An object whose properties are to be modified |
+| `mixin`            | An object describing which properties should be modified |
+
+This method will modify the `target` object to contain the "own" properties defined by the `mixin`. If the `mixin` object specifies the value of any attribute as `undefined`, this property will instead be removed from the `target` object.
+
+### Example
+
+Define a custom `mod2` assertion that tests if the provided numbers are equivalent in modulo 2.
+
+```js
 QUnit.test( "QUnit.extend", function( assert ) {
 	var base = {
 		a: 1,
@@ -36,7 +37,4 @@ QUnit.test( "QUnit.extend", function( assert ) {
 	assert.equal( base.c, 3, "New values are defined" );
 	assert.ok( !( "z" in base ), "Values specified as `undefined` are removed" );
 });
-]]></code>
-	</example>
-	<category slug="config"/>
-</entry>
+```
