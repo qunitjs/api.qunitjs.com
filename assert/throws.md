@@ -1,6 +1,7 @@
 ---
 layout: default
 title: throws
+description: Test if a callback throws an exception, and optionally compare the thrown error.
 categories:
   - assert
 ---

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: strictEqual
+description: A strict type and value comparison.
 categories:
   - assert
 ---
@@ -19,9 +20,9 @@ A strict type and value comparison.
 
 The `strictEqual()` assertion provides the most rigid comparison of type and value with the strict equality operator (`===`).
 
-<a href="/equal/">`equal()`</a> can be used to test non-strict equality.
+[`equal()`](/assert/equal/) can be used to test non-strict equality.
 
-<a href="/notStrictEqual/">`notStrictEqual()`</a> can be used to explicitly test strict inequality.
+[`notStrictEqual()`](/assert/notStrictEqual/) can be used to explicitly test strict inequality.
 
 ### Example
 

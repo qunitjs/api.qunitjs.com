@@ -2,6 +2,7 @@
 layout: default
 categories: [config]
 title: QUnit.config
+description: General configuration for QUnit. Check the description of each option for details.
 ---
 
 ## `QUnit.config`
@@ -76,7 +77,9 @@ If `seed` is specified in the page's url parameters, but no value is specified, 
 
 ### `QUnit.config.storage` (object) | default: `sessionStorage`
 
-Defines the storage object used to record failed tests between runs. The object must implement <a href="https://html.spec.whatwg.org/multipage/webstorage.html#the-storage-interface">the `Storage` interface</a> of the Web Storage API.
+Defines the storage object used to record failed tests between runs. The object must implement [the `Storage` interface][Storage] of the Web Storage API.
+
+[Storage]: https://html.spec.whatwg.org/multipage/webstorage.html#the-storage-interface
 
 Defaults to the global `sessionStorage` if defined.
 

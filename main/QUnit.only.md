@@ -12,14 +12,14 @@ Adds a test to exclusively run, preventing all other tests from running.
 
 | parameter | description |
 |-----------|-------------|
-| name (string) | Title of unit being tested |
-| callback (function) | Function to close over assertions |
+| `name` (string) | Title of unit being tested |
+| `callback` (function) | Function to close over assertions |
 
 #### Callback parameters: `callback( assert )`:
 
 | parameter | description |
 |-----------|-------------|
-| assert (object) | A new instance object with the [assertion methods](/assert) |
+| `assert` (object) | A new instance object with the [assertion methods](/assert) |
 
 ### Description
 

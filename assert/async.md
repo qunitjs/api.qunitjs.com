@@ -1,6 +1,7 @@
 ---
 layout: default
 title: async
+description: Instruct QUnit to wait for an asynchronous operation.
 categories:
   - assert
   - async
@@ -18,7 +19,7 @@ Instruct QUnit to wait for an asynchronous operation.
 
 The callback returned from `assert.async()` will throw an Error if it is invoked more than once (or more often than the accepted call count, if provided).
 
-This replaces functionality previously provided by [`QUnit.stop()`](/QUnit.stop) and [`QUnit.start()`](/QUnit.start).
+This replaces functionality previously provided by [`QUnit.stop()`](/main/QUnit.stop) and [`QUnit.start()`](/main/QUnit.start).
 
 ### Examples
 

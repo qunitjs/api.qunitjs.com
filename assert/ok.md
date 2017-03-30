@@ -1,6 +1,7 @@
 ---
 layout: default
 title: ok
+description: A boolean check, equivalent to CommonJS's assert.ok() and JUnit's assertTrue(). Passes if the first argument is truthy.
 categories:
   - assert
 ---

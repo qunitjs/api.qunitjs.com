@@ -1,6 +1,7 @@
 ---
 layout: default
 title: notOk
+description: A boolean check. Passes if the first argument is falsy.
 categories:
   - assert
 ---

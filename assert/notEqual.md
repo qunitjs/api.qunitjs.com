@@ -1,6 +1,7 @@
 ---
 layout: default
 title: notEqual
+description: A non-strict comparison, checking for inequality.
 categories:
   - assert
 ---
@@ -19,9 +20,9 @@ A non-strict comparison, checking for inequality.
 
 The `notEqual` assertion uses the simple inverted comparison operator (`!=`) to compare the actual and expected arguments. When they aren't equal, the assertion passes; otherwise, it fails. When it fails, both actual and expected values are displayed in the test result, in addition to a given message.
 
-<a href="/equal/">`equal()`</a> can be used to test equality.
+[`equal()`](/assert/equal) can be used to test equality.
 
-<a href="/notStrictEqual/">`notStrictEqual()`</a> can be used to test strict inequality.
+[`notStrictEqual()`](/assert/notStrictEqual) can be used to test strict inequality.
 
 ### Examples
 

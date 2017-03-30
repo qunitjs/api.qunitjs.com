@@ -9,11 +9,11 @@ categories:
 
 ## `QUnit.start()`
 
-`QUnit.start()` must be used to start a test run that has `<a href="/QUnit.config/">QUnit.config</a>.autostart` set to `false`.
+`QUnit.start()` must be used to start a test run that has [`QUnit.config.autostart`](/config/QUnit.config/) set to `false`.
 
-<p class="warning">Warning: This method was previously used to control async tests on text contexts along with `QUnit.stop`. For asynchronous tests, use <a href="/async/">`assert.async`</a> instead.</p>
+<p class="warning">Warning: This method was previously used to control async tests on text contexts along with `QUnit.stop`. For asynchronous tests, use [`assert.async`](/assert/async/) instead.</p>
 
-When your async test has multiple exit points, call `QUnit.start()` for the corresponding number of <a href="/QUnit.stop/">`QUnit.stop()`</a> increments.
+When your async test has multiple exit points, call `QUnit.start()` for the corresponding number of `QUnit.stop()` increments.
 
 ### Example
 

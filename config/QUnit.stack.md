@@ -2,6 +2,7 @@
 layout: default
 categories: [config]
 title: QUnit.stack
+description: Returns a single line string representing the stacktrace (call stack)
 ---
 
 ## `QUnit.stack( [ offset = 0 ] )`
@@ -22,7 +23,7 @@ Not all [browsers support retrieving stracktraces][browsers]. In those, `QUnit.s
 
 ### Example
 
-The stacktrace line can be used on custom assertions and reporters. The following example <a href="/QUnit.log/">logs</a> the line of each passing assertion.
+The stacktrace line can be used on custom assertions and reporters. The following example [logs](/callbacks/QUnit.log/) the line of each passing assertion.
 
 ```js
 QUnit.log( function( details ) {

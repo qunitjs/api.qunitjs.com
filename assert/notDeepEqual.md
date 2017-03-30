@@ -1,6 +1,7 @@
 ---
 layout: default
 title: notDeepEqual
+description: An inverted deep recursive comparison, working on primitive types, arrays, objects, regular expressions, dates and functions.
 categories:
   - assert
 ---
@@ -19,7 +20,7 @@ An inverted deep recursive comparison, working on primitive types, arrays, objec
 
 The `notDeepEqual()` assertion can be used just like `equal()` when comparing the value of objects, such that `{ key: value }` is equal to `{ key: value }`. For non-scalar values, identity will be disregarded by `notDeepEqual`.
 
-[`deepEqual()`](/deepEqual/) can be used to explicitly test deep, strict equality.
+[`deepEqual()`](/assert/deepEqual/) can be used to explicitly test deep, strict equality.
 
 ### Examples
 

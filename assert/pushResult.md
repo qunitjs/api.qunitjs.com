@@ -1,6 +1,7 @@
 ---
 layout: default
 title: pushResult
+description: Report the result of a custom assertion.
 categories:
   - assert
 ---
@@ -17,9 +18,9 @@ Report the result of a custom assertion.
 | `data.message` (string) | A short description of the assertion |
 
 Some test suites may need to express an expectation that is not defined by any of QUnit's built-in assertions. This need may be met by encapsulating the expectation in a JavaScript function which returns a `Boolean` value representing the result; this value can then be passed into QUnit's `ok` assertion.
-        
+
 A more readable solution would involve defining a custom assertion. If the expectation function invokes `pushResult`, QUnit will be notified of the result and report it accordingly.
-        
+
 ### Example
 
 Define a custom `mod2` assertion that tests if the provided numbers are equivalent in modulo 2.

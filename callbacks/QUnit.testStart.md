@@ -1,6 +1,7 @@
 ---
 layout: default
 title: QUnit.testStart
+description: Register a callback to fire whenever a test begins.
 categories:
   - callbacks
 ---

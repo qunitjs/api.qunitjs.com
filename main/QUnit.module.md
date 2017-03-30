@@ -33,7 +33,7 @@ A callback with grouped tests and nested modules to run under the current module
 
 | name | description |
 |-----------|-------------|
-| hooks (object) | Runs before the first test. |
+| `hooks` (object) | Runs before the first test. |
 
 ### Description
 
@@ -43,7 +43,10 @@ All tests inside a module callback function will be grouped into that module. Th
 
 If `QUnit.module` is defined without a `nested` callback argument, all subsequently defined tests will be grouped into the module until another module is defined.
 
-Modules with test group functions allow you to define nested modules, and QUnit will run tests on the parent module before going deep on the nested ones, even if they're declared first. Additionally, any hook callbacks on a parent module will wrap the hooks on a nested module. In other words, `before` and `beforeEach` callbacks will form a <a href="https://en.wikipedia.org/wiki/Queue_%28abstract_data_type%29">queue</a> while the `afterEach` and `after` callbacks will form a <a href="https://en.wikipedia.org/wiki/Stack_%28abstract_data_type%29">stack</a>.
+Modules with test group functions allow you to define nested modules, and QUnit will run tests on the parent module before going deep on the nested ones, even if they're declared first. Additionally, any hook callbacks on a parent module will wrap the hooks on a nested module. In other words, `before` and `beforeEach` callbacks will form a [queue][] while the `afterEach` and `after` callbacks will form a [stack][].
+
+[queue]: https://en.wikipedia.org/wiki/Queue_%28abstract_data_type%29
+[stack]: https://en.wikipedia.org/wiki/Stack_%28abstract_data_type%29
 
 You can specify code to run before and after tests using the hooks argument, and also to create properties that will be shared on the testing context. Any additional properties on the `hooks` object will be added to that context. The `hooks` argument is still optional if you call `QUnit.module` with a callback argument.
 
@@ -233,7 +236,9 @@ QUnit.module( "grouped tests argument hooks", function( hooks ) {
 
 ---
 
-An example of handling an asynchronous `then`able Promise result in hooks. This example uses an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">ES6 Promise</a> interface that is fulfilled after connecting to or disconnecting from database.
+An example of handling an asynchronous `then`able Promise result in hooks. This example uses an [ES6 Promise][] interface that is fulfilled after connecting to or disconnecting from database.
+
+[ES6 Promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
 ```js
 QUnit.module( "Database connection", {

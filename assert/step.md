@@ -1,6 +1,7 @@
 ---
 layout: default
 title: step
+description: A marker for progress in a given test.
 categories:
   - assert
 ---

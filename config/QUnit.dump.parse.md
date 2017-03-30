@@ -2,6 +2,7 @@
 layout: default
 categories: [config]
 title: QUnit.dump.parse
+description: Advanced and extensible data dumping for JavaScript
 ---
 
 ## `QUnit.dump.parse( data )`
