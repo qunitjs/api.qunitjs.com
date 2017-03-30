@@ -1,40 +1,35 @@
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
-<entry type="method" name="QUnit.testDone">
-	<title>QUnit.testDone()</title>
-	<signature>
-		<argument name="callback">
-			<desc>Callback to execute. Provides a single argument with the following properties:</desc>
-			<type name="Function">
-				<argument name="details" type="Object"/>
-			</type>
-			<property name="name" type="String">
-				<desc>Name of the current test</desc>
-			</property>
-			<property name="module" type="String">
-				<desc>Name of the current module</desc>
-			</property>
-			<property name="failed" type="Number">
-				<desc>The number of failed assertions</desc>
-			</property>
-			<property name="passed" type="Number">
-				<desc>The number of passed assertions</desc>
-			</property>
-			<property name="total" type="Number">
-				<desc>The total number of assertions</desc>
-			</property>
-			<property name="runtime" type="Number">
-				<desc>The total runtime in millseconds of the test, including beforeEach and afterEach</desc>
-			</property>
-			<property name="skipped" type="Boolean">
-				<desc>Indicates whether or not the current test was skipped</desc>
-			</property>
-		</argument>
-	</signature>
-	<desc>Register a callback to fire whenever a test ends.</desc>
-	<example>
-		<desc>Register a callback that logs results of a single test</desc>
-		<code><![CDATA[
+---
+layout: default
+title: QUnit.testDone
+categories:
+  - callbacks
+---
+
+## `QUnit.testDone( callback )`
+
+Register a callback to fire whenever a test ends.
+
+| parameter | description |
+|-----------|-------------|
+| callback (function) | Callback to execute. Provides a single argument with the callback details object |
+
+#### Callback details: `callback( details: { name, module, failed, passed, total, runtime, skipped } )`
+
+| parameter | description |
+|-----------|-------------|
+| `name` (string) | Name of the current test |
+| `module` (string) | Name of the current module |
+| `failed` (number) | The number of failed assertions |
+| `passed` (number) | The number of passed assertions |
+| `total` (number) | The total number of assertions |
+| `runtime` (number) | The execution time in millseconds of the test, including beforeEach and afterEach calls |
+| `skipped` (boolean) | Indicates whether or not the current test was skipped |
+
+### Example
+
+Register a callback that logs results of a single test
+
+```js
 QUnit.testDone( function( details ) {
 	var result = {
 		"Module name": details.module,
@@ -50,7 +45,24 @@ QUnit.testDone( function( details ) {
 
 	console.log( JSON.stringify( result, null, 2 ) );
 } );
-]]></code>
-	</example>
-	<category slug="callbacks"/>
-</entry>
+```
+
+Using modern syntax:
+
+```js
+QUnit.testDone( ( { module, name, total, passed, failed, skipped, runtime } ) => {
+	var result = {
+		"Module name": module,
+		"Test name": name,
+		"Assertions": {
+			"Total": total,
+			"Passed": passed,
+			"Failed": failed
+		},
+		"Skipped": skipped,
+		"Runtime": runtime
+	};
+
+	console.log( JSON.stringify( result, null, 2 ) );
+} );
+```

@@ -1,27 +1,26 @@
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
-<entry type="method" name="QUnit.on">
-	<title>QUnit.on()</title>
-	<signature>
-		<argument name="eventName" type="String">
-			<desc>The name of the event for which to execute the provided callback.</desc>
-		</argument>
-		<argument name="callback">
-			<desc>Callback to execute. Receives a single argument representing the data for the event.</desc>
-			<type name="Function">
-				<argument name="data" type="Object"/>
-			</type>
-		</argument>
-	</signature>
-	<desc>Register a callback to fire whenever the specified event is emitted. Conforms to the <a href="https://github.com/js-reporters/js-reporters" target="_blank">js-reporters standard</a>.</desc>
-	<longdesc>
-		<p>
-			<code>QUnit.on()</code> allows you to listen for events related to the test suite's execution. Available event names and corresponding data payloads are defined in the <a href="https://github.com/js-reporters/js-reporters" target="_blank">js-reporters specification</a>.
-		</p>
-	</longdesc>
-	<example>
-		<desc>Printing results of a test suite.</desc>
-		<code><![CDATA[
+---
+layout: default
+title: QUnit.on
+categories:
+  - callbacks
+---
+
+## `QUnit.on( eventName, callback )`
+
+Register a callback to fire whenever the specified event is emitted. Conforms to the [js-reporters standard](https://github.com/js-reporters/js-reporters).
+
+`QUnit.on()` allows you to listen for events related to the test suite's execution. Available event names and corresponding data payloads are defined in the [js-reporters specification](https://github.com/js-reporters/js-reporters).
+
+| parameter | description |
+|-----------|-------------|
+| eventName (string) | The name of the event for which to execute the provided callback. |
+| callback (function) | Callback to execute. Receives a single argument representing the data for the event. |
+
+### Example
+
+Printing results of a test suite.
+
+```js
 QUnit.on( "runEnd", function( data ) {
 	console.log( "Passed: " + data.testCounts.passed );
 	console.log( "Failed: " + data.testCounts.failed );
@@ -29,7 +28,16 @@ QUnit.on( "runEnd", function( data ) {
 	console.log( "Todo: " + data.testCounts.todo );
 	console.log( "Total: " + data.testCounts.total );
 } );
-]]></code>
-	</example>
-	<category slug="callbacks"/>
-</entry>
+```
+
+Using modern syntax:
+
+```js
+QUnit.on( "runEnd", ( { testCounts: { passed, failed, skipped, todo, total } } ) => {
+	console.log( `Passed: ${passed}` );
+	console.log( `Failed: ${failed}` );
+	console.log( `Skipped: ${skipped}` );
+	console.log( `Todo: ${todo}` );
+	console.log( `Total: ${total}` );
+} );
+```

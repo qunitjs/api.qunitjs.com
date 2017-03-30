@@ -1,55 +1,57 @@
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
-<entry type="method" name="QUnit.log">
-	<title>QUnit.log()</title>
-	<signature>
-		<argument name="callback">
-			<desc>Callback to execute. Provides a single argument with the following properties:</desc>
-			<type name="Function">
-				<argument name="details" type="Object"/>
-			</type>
-			<property name="result" type="Boolean">
-				<desc>The boolean result of an assertion, <code>true</code> means passed, <code>false</code> means failed.</desc>
-			</property>
-			<property name="actual" type="Object">
-				<desc>One side of a comparision assertion. Can be undefined when <code>ok()</code> is used.</desc>
-			</property>
-			<property name="expected" type="Object">
-				<desc>One side of a comparision assertion. Can be undefined when <code>ok()</code> is used.</desc>
-			</property>
-			<property name="message" type="String">
-				<desc>A string description provided by the assertion.</desc>
-			</property>
-			<property name="source" type="String">
-				<desc>The associated stacktrace, either from an exception or pointing to the source of the assertion. Depends on browser support for providing stacktraces, so can be undefined.</desc>
-			</property>
-			<property name="module" type="String">
-				<desc>The test module name of the assertion. If the assertion is not connected to any module, the property's value will be <code>undefined</code>.</desc>
-			</property>
-			<property name="name" type="String">
-				<desc>The test block name of the assertion.</desc>
-			</property>
-			<property name="runtime" type="Number">
-				<desc>The time elapsed in milliseconds since the start of the containing <code><a href="/QUnit.test/">QUnit.test()</a></code>, including setup.</desc>
-			</property>
-		</argument>
-	</signature>
-	<desc>Register a callback to fire whenever an assertion completes.</desc>
-	<longdesc>
-		This is one of several callbacks QUnit provides. Its intended for integration scenarios like PhantomJS or Jenkins.
-		<p>The properties of the details argument are listed below as options.</p>
-	</longdesc>
-	<example>
-		<desc>Register a callback that logs the assertion result and its message</desc>
-		<code><![CDATA[
+---
+layout: default
+title: QUnit.log
+categories:
+  - callbacks
+---
+
+## `QUnit.log( callback )`
+
+Register a callback to fire whenever an assertion completes.
+
+This is one of several callbacks QUnit provides. Its intended for integration scenarios like PhantomJS or Jenkins.
+The properties of the details argument are listed below as options.
+
+| parameter | description |
+|-----------|-------------|
+| callback (function) | Callback to execute. Provides a single argument with the callback details object |
+
+#### Callback details: `callback( details: { result, actual, expected, message, source, module, name, runtime } )`
+
+| parameter | description |
+|-----------|-------------|
+| `result` (boolean) | The boolean result of an assertion, `true` means passed, `false` means failed. |
+| `actual` | One side of a comparision assertion. Can be _undefined_ when `ok()` is used. |
+| `expected` | One side of a comparision assertion. Can be _undefined_ when `ok()` is used. |
+| `message` (string) | A string description provided by the assertion. |
+| `source` (string) | The associated stacktrace, either from an exception or pointing to the source of the assertion. Depends on browser support for providing stacktraces, so can be undefined. |
+| `module` (string) | The test module name of the assertion. If the assertion is not connected to any module, the property's value will be _undefined_. |
+| `name` (string) | The test block name of the assertion. |
+| `runtime` (number) | The time elapsed in milliseconds since the start of the containing [`QUnit.test()`](/QUnit.test/), including setup. |
+
+### Examples
+
+Register a callback that logs the assertion result and its message
+
+```js
 QUnit.log(function( details ) {
 	console.log( "Log: ", details.result, details.message );
 });
-]]></code>
-	</example>
-	<example>
-		<desc>Logs the module and test block whenever an assertion fails.</desc>
-		<code><![CDATA[
+```
+
+Using modern syntax:
+
+```js
+QUnit.log( ( { result, message } ) => {
+	console.log( `Log: ${result}, ${message}` );
+});
+```
+
+---
+
+Logs the module and test block whenever an assertion fails.
+
+```js
 QUnit.log(function( details ) {
 	if ( details.result ) {
 		return;
@@ -65,7 +67,28 @@ QUnit.log(function( details ) {
 	}
 	console.log( output );
 });
-]]></code>
-	</example>
-	<category slug="callbacks"/>
-</entry>
+```
+
+Using modern syntax:
+
+```js
+QUnit.log( ( { result, module, name, message, actual, expected, source } ) => {
+	if ( result ) {
+		return;
+	}
+
+	let output = `FAILED: ${module}: ${name}: `;
+
+	if ( message ) {
+		output += `${message}, `;
+	}
+	if ( actual ) {
+		output += `expected: ${expected}, actual: ${actual}`;
+	}
+	if ( source ) {
+		output += `, ${source}`;
+	}
+
+	console.log( output );
+});
+```

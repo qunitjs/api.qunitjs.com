@@ -1,26 +1,38 @@
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
-<entry type="method" name="QUnit.moduleStart">
-	<title>QUnit.moduleStart()</title>
-	<signature>
-		<argument name="callback">
-			<desc>Callback to execute. Provides a single argument with the following property:</desc>
-			<type name="Function">
-				<argument name="details" type="Object"/>
-			</type>
-			<property name="name" type="String">
-				<desc>Name of the next module to run</desc>
-			</property>
-		</argument>
-	</signature>
-	<desc>Register a callback to fire whenever a module begins.</desc>
-	<example>
-		<desc>Register a callback that logs the module name</desc>
-		<code><![CDATA[
+---
+layout: default
+title: QUnit.moduleStart
+categories:
+  - callbacks
+---
+
+## `QUnit.moduleStart( callback )`
+
+Register a callback to fire whenever a module begins.
+
+| parameter | description |
+|-----------|-------------|
+| callback (function) | Callback to execute. Provides a single argument with the callback details object |
+
+#### Callback details: `callback( details: { name } )`
+
+| parameter | description |
+|-----------|-------------|
+| `name` (string) | Name of the next module to run |
+
+### Example
+
+Register a callback that logs the module name
+
+```js
 QUnit.moduleStart(function( details ) {
 	console.log( "Now running: ", details.name );
 });
-]]></code>
-	</example>
-	<category slug="callbacks"/>
-</entry>
+```
+
+Using modern syntax:
+
+```js
+QUnit.moduleStart( ( { name } ) => {
+	console.log( `Now running: ${name}` );
+});
+```
