@@ -1,6 +1,6 @@
 ---
 layout: default
-title: QUnit.skip
+title: skip
 description: Adds a test like object to be skipped
 categories:
   - main

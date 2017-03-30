@@ -1,6 +1,6 @@
 ---
 layout: default
-title: QUnit.todo
+title: todo
 description: Adds a test which expects at least one failing assertion during its run.
 categories:
   - main

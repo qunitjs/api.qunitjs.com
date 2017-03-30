@@ -17,8 +17,8 @@ title: QUnit API Docs
 # email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
   API reference documentation for QUnit
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/api" # the subpath of your site, e.g. /blog
+url: "https://api.qunitjs.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: qunitjs
 github_username:  qunitjs
 

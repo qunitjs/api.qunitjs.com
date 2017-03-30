@@ -1,6 +1,6 @@
 ---
 layout: default
-title: QUnit.test
+title: test
 description: Add a test to run.
 categories:
   - main

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: QUnit.module
+title: module
 description: Group related tests under a single label.
 categories:
   - main

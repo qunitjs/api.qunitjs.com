@@ -1,6 +1,6 @@
 ---
 layout: default
-title: QUnit.only
+title: only
 description: Adds a test to exclusively run, preventing all other tests from running.
 categories:
   - main
