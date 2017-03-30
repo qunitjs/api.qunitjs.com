@@ -20,9 +20,9 @@ The `notPropEqual` assertion uses the strict inverted comparison operator (`!==`
 
 When they aren't equal, the assertion passes; otherwise, it fails. When it fails, both actual and expected values are displayed in the test result, in addition to a given message.
 
-[`equal()`](/assert/equal/) can be used to test equality.
+[`equal()`](/api/assert/equal/) can be used to test equality.
 
-[`propEqual()`](/assert/propEqual/) can be used to test strict equality of an Object properties.
+[`propEqual()`](/api/assert/propEqual/) can be used to test strict equality of an Object properties.
 
 ### Examples
 
