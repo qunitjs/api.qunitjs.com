@@ -1,48 +1,61 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} | QUnit API Docs</title>
-    <link rel="icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/styles.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
-    <meta name="twitter:creator" content="@qunitjs">
-    <meta name="twitter:site" content="@qunitjs">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:description" content="API reference documentation for QUnit">
-    <meta name="twitter:title" content="QUnit API Docs">
-  </head>
-  <body class="{{page.type}}">
-    <a class="a11y" href="#main">skip to content</a>
-    <div class="content">
-        <header class="site-header" role="banner">
-            <div class="site-header-wrapper">
-                <div class="site-logo">
-                    <h1 class="logo"><a class="logo-link" href="/">QUnit API Docs</a></h1>
-                </div>
-                <nav role="navigation" class="site-nav">
-                    <ul class="site-nav-list">
-                        <li class="site-nav-list-item">
-                            <a class="site-nav-list-link" title="Main methods" href="/callbacks">Main methods</a>
-                        </li>
-                        <li class="site-nav-list-item">
-                            <a class="site-nav-list-link" title="Assertions" href="/assert">Assertions</a>
-                        </li>
-                        <li class="site-nav-list-item">
-                            <a class="site-nav-list-link" title="Callback methods" href="/callbacks">Callbacks</a>
-                        </li>
-                        <li class="site-nav-list-item">
-                            <a class="site-nav-list-link" title="Configuration" href="/callbacks">Configuration</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <div id="main">
-            {{ content }}
-        </div>
-    </div>
-  </body>
- </html>
+---
+layout: wrapper
+---
+
+<section class="sidebar">
+    <h2>Main methods:</h2>
+    <ul class="sidebar-list">
+    {% assign methods = site.pages | where:'categories', 'main' %}
+    {% for page in methods %}
+    <li class="sidebar-item">
+        <a href="{{page.url}}">{{page.title}}</a>
+    </li>
+    {% endfor %}
+    </ul>
+
+    <h2>Assertions:</h2>
+    <ul class="sidebar-list">
+    {% assign assertions = site.pages | where:'categories', 'assert' %}
+    {% for page in assertions %}
+    <li class="sidebar-item">
+        <a href="{{page.url}}">{{page.title}}</a>
+    </li>
+    {% endfor %}
+    </ul>
+
+    <h2>Config:</h2>
+
+    <ul class="sidebar-list">
+    {% assign config = site.pages | where:'categories', 'config' %}
+    {% for page in config %}
+    <li class="sidebar-item">
+        <a href="{{page.url}}">{{page.title}}</a>
+    </li>
+    {% endfor %}
+    </ul>
+
+    <h2>Callbacks:</h2>
+
+    <ul class="sidebar-list">
+    {% assign callbacks = site.pages | where:'categories', 'callbacks' %}
+    {% for page in callbacks %}
+    <li class="sidebar-item">
+        <a href="{{page.url}}">{{page.title}}</a>
+    </li>
+    {% endfor %}
+    </ul>
+
+    <h2>Async control:</h2>
+
+    <ul class="sidebar-list">
+    {% assign async = site.pages | where:'categories', 'async' %}
+    {% for page in async %}
+    <li class="sidebar-item">
+        <a href="{{page.url}}">{{page.title}}</a>
+    </li>
+    {% endfor %}
+    </ul>
+</section>
+<div id="main" class="main" role="main">
+    {{ content }}
+</div>

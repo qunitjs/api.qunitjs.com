@@ -1,6 +1,7 @@
 ---
 layout: default
 title: QUnit.module
+description: Group related tests under a single label.
 categories:
   - main
 ---
@@ -11,18 +12,18 @@ Group related tests under a single label.
 
 | parameter | description |
 |-----------|-------------|
-| name (string) | Label for this group of tests. |
-| hooks (object) | Callbacks to run during test execution. |
-| nested (function) | A callback used for nested modules. |
+| `name` (string) | Label for this group of tests. |
+| `hooks` (object) | Callbacks to run during test execution. |
+| `nested` (function) | A callback used for nested modules. |
 
 #### hooks properties: `{ before, beforeEach, afterEach, after }`
 
 | name | description |
 |-----------|-------------|
-| before (function) | Runs before the first test. |
-| beforeEach (function) | Runs before each test. |
-| afterEach (function) | Runs after each test. |
-| after (function) | Runs after the last test. |
+| `before` (function) | Runs before the first test. |
+| `beforeEach` (function) | Runs before each test. |
+| `afterEach` (function) | Runs after each test. |
+| `after` (function) | Runs after the last test. |
 
 > Note: If additional tests are defined after the module's queue has emptied, it will not run the `after` hook again.
 
