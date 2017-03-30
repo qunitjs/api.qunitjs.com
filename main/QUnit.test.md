@@ -3,7 +3,7 @@ layout: default
 title: QUnit.test
 categories:
   - main
-	- async
+  - async
 ---
 
 ## `QUnit.test( name, callback )`
@@ -35,13 +35,13 @@ A practical example, using the assert argument and no globals.
 
 ```js
 function square( x ) {
-	return x * x;
+  return x * x;
 }
 
 QUnit.test( "square()", function( assert ) {
-	var result = square( 2 );
+  var result = square( 2 );
 
-	assert.equal( result, 4, "square(2) equals 4" );
+  assert.equal( result, 4, "square(2) equals 4" );
 });
 ```
 
@@ -49,14 +49,14 @@ Using modern syntax:
 
 ```js
 function square( x ) {
-	return x * x;
+  return x * x;
 }
 
 const { test } = QUnit;
 
 test( "square()", t => {
-	t.equal( square( 2 ), 4, "square(2) equals 4" );
-	t.equal( square( 3 ), 9, "square(3) equals 9" );
+  t.equal( square( 2 ), 4, "square(2) equals 4" );
+  t.equal( square( 3 ), 9, "square(3) equals 9" );
 });
 ```
 
@@ -66,15 +66,15 @@ An example of handling an asynchronous `then`able Promise result. This example u
 
 ```js
 QUnit.test( "a Promise-returning test", function( assert ) {
-	assert.expect( 1 );
+  assert.expect( 1 );
 
-	var thenable = new Promise(function( resolve, reject ) {
-		setTimeout(function() {
-			assert.ok( true );
-			resolve( "result" );
-		}, 500 );
-	});
-	return thenable;
+  var thenable = new Promise(function( resolve, reject ) {
+    setTimeout(function() {
+      assert.ok( true );
+      resolve( "result" );
+    }, 500 );
+  });
+  return thenable;
 });
 ```
 
@@ -96,11 +96,11 @@ function squareAfter1Second(x) {
 const { test } = QUnit;
 
 test( "an async test", async t => {
-	var a = await squareAfter1Second(2);
-	var b = await squareAfter1Second(3);
+  var a = await squareAfter1Second(2);
+  var b = await squareAfter1Second(3);
 
-	t.equal( a, 4 );
-	t.equal( b, 9 );
-	t.equal( await squareAfter1Second(5), 25 );
+  t.equal( a, 4 );
+  t.equal( b, 9 );
+  t.equal( await squareAfter1Second(5), 25 );
 });
 ```

@@ -19,7 +19,7 @@ If you need more or less output, change the value of `QUnit.dump.maxDepth`, repr
 > NOTE: This method used to be in `QUnit.jsDump`, which was changed to `QUnit.dump`. The old property will be removed in QUnit 3.0.
 
 ### Examples
-	
+
 The following example is used on [grunt-contrib-qunit][] to send messages from QUnit to PhantomJS.
 
 [grunt-contrib-qunit]: https://github.com/gruntjs/grunt-contrib-qunit/blob/7568f3ba04a5790b2c92f44da3ce5c7bdc1c7491/phantomjs/bridge.js#L24-L33
@@ -27,12 +27,12 @@ The following example is used on [grunt-contrib-qunit][] to send messages from Q
 ```js
 QUnit.log(function( obj ) {
 
-	// Parse some stuff before sending it.
-	var actual = QUnit.dump.parse( obj.actual );
-	var expected = QUnit.dump.parse( obj.expected );
+  // Parse some stuff before sending it.
+  var actual = QUnit.dump.parse( obj.actual );
+  var expected = QUnit.dump.parse( obj.expected );
 
-	// Send it.
-	sendMessage( "qunit.log", obj.result, actual, expected, obj.message, obj.source );
+  // Send it.
+  sendMessage( "qunit.log", obj.result, actual, expected, obj.message, obj.source );
 });
 ```
 
@@ -42,7 +42,7 @@ This example shows the parsed output of a simple JS object with a DOM reference.
 
 ```js
 var qHeader = document.getElementById( "qunit-header" ),
-	parsed = QUnit.dump.parse( qHeader );
+  parsed = QUnit.dump.parse( qHeader );
 
 console.log( parsed );
 
@@ -55,10 +55,10 @@ Limit output to one or two levels
 
 ```js
 var input = {
-	parts: {
-		front: [],
-		back: []
-	}
+  parts: {
+    front: [],
+    back: []
+  }
 };
 QUnit.dump.maxDepth = 1;
 console.log( QUnit.dump.parse( input ) );

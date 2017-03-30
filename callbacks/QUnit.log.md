@@ -35,7 +35,7 @@ Register a callback that logs the assertion result and its message
 
 ```js
 QUnit.log(function( details ) {
-	console.log( "Log: ", details.result, details.message );
+  console.log( "Log: ", details.result, details.message );
 });
 ```
 
@@ -43,7 +43,7 @@ Using modern syntax:
 
 ```js
 QUnit.log( ( { result, message } ) => {
-	console.log( `Log: ${result}, ${message}` );
+  console.log( `Log: ${result}, ${message}` );
 });
 ```
 
@@ -53,19 +53,19 @@ Logs the module and test block whenever an assertion fails.
 
 ```js
 QUnit.log(function( details ) {
-	if ( details.result ) {
-		return;
-	}
-	var loc = details.module + ": " + details.name + ": ",
-		output = "FAILED: " + loc + ( details.message ? details.message + ", " : "" );
+  if ( details.result ) {
+    return;
+  }
+  var loc = details.module + ": " + details.name + ": ",
+    output = "FAILED: " + loc + ( details.message ? details.message + ", " : "" );
 
-	if ( details.actual ) {
-		output += "expected: " + details.expected + ", actual: " + details.actual;
-	}
-	if ( details.source ) {
-		output += ", " + details.source;
-	}
-	console.log( output );
+  if ( details.actual ) {
+    output += "expected: " + details.expected + ", actual: " + details.actual;
+  }
+  if ( details.source ) {
+    output += ", " + details.source;
+  }
+  console.log( output );
 });
 ```
 
@@ -73,22 +73,22 @@ Using modern syntax:
 
 ```js
 QUnit.log( ( { result, module, name, message, actual, expected, source } ) => {
-	if ( result ) {
-		return;
-	}
+  if ( result ) {
+    return;
+  }
 
-	let output = `FAILED: ${module}: ${name}: `;
+  let output = `FAILED: ${module}: ${name}: `;
 
-	if ( message ) {
-		output += `${message}, `;
-	}
-	if ( actual ) {
-		output += `expected: ${expected}, actual: ${actual}`;
-	}
-	if ( source ) {
-		output += `, ${source}`;
-	}
+  if ( message ) {
+    output += `${message}, `;
+  }
+  if ( actual ) {
+    output += `expected: ${expected}, actual: ${actual}`;
+  }
+  if ( source ) {
+    output += `, ${source}`;
+  }
 
-	console.log( output );
+  console.log( output );
 });
 ```

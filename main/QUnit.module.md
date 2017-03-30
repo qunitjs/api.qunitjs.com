@@ -57,18 +57,18 @@ Use the `QUnit.module()` function to group tests together:
 ```js
 QUnit.module( "group a" );
 QUnit.test( "a basic test example", function( assert ) {
-	assert.ok( true, "this test is fine" );
+  assert.ok( true, "this test is fine" );
 });
 QUnit.test( "a basic test example 2", function( assert ) {
-	assert.ok( true, "this test is fine" );
+  assert.ok( true, "this test is fine" );
 });
 
 QUnit.module( "group b" );
 QUnit.test( "a basic test example 3", function( assert ) {
-	assert.ok( true, "this test is fine" );
+  assert.ok( true, "this test is fine" );
 });
 QUnit.test( "a basic test example 4", function( assert ) {
-	assert.ok( true, "this test is fine" );
+  assert.ok( true, "this test is fine" );
 });
 ```
 
@@ -79,18 +79,18 @@ const { test } = QUnit;
 QUnit.module( "group a" );
 
 test( "a basic test example", t => {
-	t.ok( true, "this test is fine" );
+  t.ok( true, "this test is fine" );
 });
 test( "a basic test example 2", t => {
-	t.ok( true, "this test is fine" );
+  t.ok( true, "this test is fine" );
 });
 
 QUnit.module( "group b" );
 test( "a basic test example 3", t => {
-	t.ok( true, "this test is fine" );
+  t.ok( true, "this test is fine" );
 });
 test( "a basic test example 4", t => {
-	t.ok( true, "this test is fine" );
+  t.ok( true, "this test is fine" );
 });
 ```
 
@@ -100,24 +100,24 @@ Use the `QUnit.module()` function to group tests together:
 
 ```js
 QUnit.module( "module a", function() {
-	QUnit.test( "a basic test example", function( assert ) {
-		assert.ok( true, "this test is fine" );
-	});
+  QUnit.test( "a basic test example", function( assert ) {
+    assert.ok( true, "this test is fine" );
+  });
 });
 
 QUnit.module( "module b", function() {
-	QUnit.test( "a basic test example 2", function( assert ) {
-		assert.ok( true, "this test is fine" );
-	});
+  QUnit.test( "a basic test example 2", function( assert ) {
+    assert.ok( true, "this test is fine" );
+  });
 
-	QUnit.module( "nested module b.1", function() {
+  QUnit.module( "nested module b.1", function() {
 
-		// This test will be prefixed with the following module label:
-		// "module b > nested module b.1"
-		QUnit.test( "a basic test example 3", function( assert ) {
-			assert.ok( true, "this test is fine" );
-		});
-	});
+    // This test will be prefixed with the following module label:
+    // "module b > nested module b.1"
+    QUnit.test( "a basic test example 3", function( assert ) {
+      assert.ok( true, "this test is fine" );
+    });
+  });
 });
 ```
 
@@ -126,24 +126,24 @@ Using modern syntax:
 ```js
 const { test } = QUnit;
 QUnit.module( "module a", () => {
-	test( "a basic test example", t => {
-		t.ok( true, "this test is fine" );
-	});
+  test( "a basic test example", t => {
+    t.ok( true, "this test is fine" );
+  });
 });
 
 QUnit.module( "module b", () => {
-	test( "a basic test example 2", t => {
-		t.ok( true, "this test is fine" );
-	});
+  test( "a basic test example 2", t => {
+    t.ok( true, "this test is fine" );
+  });
 
-	QUnit.module( "nested module b.1", () => {
+  QUnit.module( "nested module b.1", () => {
 
-		// This test will be prefixed with the following module label:
-		// "module b > nested module b.1"
-		test( "a basic test example 3", t => {
-			t.ok( true, "this test is fine" );
-		});
-	});
+    // This test will be prefixed with the following module label:
+    // "module b > nested module b.1"
+    test( "a basic test example 3", t => {
+      t.ok( true, "this test is fine" );
+    });
+  });
 });
 ```
 
@@ -153,18 +153,18 @@ A sample for using the before, beforeEach, afterEach, and after callbacks
 
 ```js
 QUnit.module( "module A", {
-	before: function() {
-		// prepare something once for all tests
-	},
-	beforeEach: function() {
-		// prepare something before each test
-	},
-	afterEach: function() {
-		// clean up after each test
-	},
-	after: function() {
-		// clean up once after all tests are done
-	}
+  before: function() {
+    // prepare something once for all tests
+  },
+  beforeEach: function() {
+    // prepare something before each test
+  },
+  afterEach: function() {
+    // clean up after each test
+  },
+  after: function() {
+    // clean up once after all tests are done
+  }
 });
 ```
 
@@ -174,22 +174,22 @@ Hooks share the same context as their respective test
 
 ```js
 QUnit.module( "Machine Maker", {
-	beforeEach: function() {
-		this.maker = new Maker();
-		this.parts = [ "wheels", "motor", "chassis" ];
-	}
+  beforeEach: function() {
+    this.maker = new Maker();
+    this.parts = [ "wheels", "motor", "chassis" ];
+  }
 });
 
 QUnit.test( "makes a robot", function( assert ) {
-	this.parts.push( "arduino" );
-	assert.equal( this.maker.build( this.parts ), "robot" );
-	assert.deepEqual( this.maker.made, [ "robot" ] );
+  this.parts.push( "arduino" );
+  assert.equal( this.maker.build( this.parts ), "robot" );
+  assert.deepEqual( this.maker.made, [ "robot" ] );
 });
 
 QUnit.test( "makes a car", function( assert ) {
-	assert.equal( this.maker.build( this.parts ), "car" );
-	this.maker.duplicate();
-	assert.deepEqual( this.maker.made, [ "car", "car" ] );
+  assert.equal( this.maker.build( this.parts ), "car" );
+  this.maker.duplicate();
+  assert.deepEqual( this.maker.made, [ "car", "car" ] );
 });
 ```
 
@@ -199,34 +199,34 @@ Hooks stack on nested modules
 
 ```js
 QUnit.module( "grouped tests argument hooks", function( hooks ) {
-	hooks.beforeEach( function( assert ) {
-		assert.ok( true, "beforeEach called" );
-	} );
+  hooks.beforeEach( function( assert ) {
+    assert.ok( true, "beforeEach called" );
+  } );
 
-	hooks.afterEach( function( assert ) {
-		assert.ok( true, "afterEach called" );
-	} );
+  hooks.afterEach( function( assert ) {
+    assert.ok( true, "afterEach called" );
+  } );
 
-	QUnit.test( "call hooks", function( assert ) {
-		assert.expect( 2 );
-	} );
+  QUnit.test( "call hooks", function( assert ) {
+    assert.expect( 2 );
+  } );
 
-	QUnit.module( "stacked hooks", function( hooks ) {
+  QUnit.module( "stacked hooks", function( hooks ) {
 
-		// This will run after the parent module's beforeEach hook
-		hooks.beforeEach( function( assert ) {
-			assert.ok( true, "nested beforeEach called" );
-		} );
+    // This will run after the parent module's beforeEach hook
+    hooks.beforeEach( function( assert ) {
+      assert.ok( true, "nested beforeEach called" );
+    } );
 
-		// This will run before the parent module's afterEach
-		hooks.afterEach( function( assert ) {
-			assert.ok( true, "nested afterEach called" );
-		} );
+    // This will run before the parent module's afterEach
+    hooks.afterEach( function( assert ) {
+      assert.ok( true, "nested afterEach called" );
+    } );
 
-		QUnit.test( "call hooks", function( assert ) {
-			assert.expect( 4 );
-		} );
-	} );
+    QUnit.test( "call hooks", function( assert ) {
+      assert.expect( 4 );
+    } );
+  } );
 } );
 ```
 
@@ -236,27 +236,27 @@ An example of handling an asynchronous `then`able Promise result in hooks. This 
 
 ```js
 QUnit.module( "Database connection", {
-	before: function() {
-		return new Promise( function( resolve, reject ) {
-			DB.connect( function( err ) {
-				if ( err ) {
-					reject( err );
-				} else {
-					resolve();
-				}
-			} );
-		} );
-	},
-	after: function() {
-		return new Promise( function( resolve, reject ) {
-			DB.disconnect( function( err ) {
-				if ( err ) {
-					reject( err );
-				} else {
-					resolve();
-				}
-			} );
-		} );
-	}
+  before: function() {
+    return new Promise( function( resolve, reject ) {
+      DB.connect( function( err ) {
+        if ( err ) {
+          reject( err );
+        } else {
+          resolve();
+        }
+      } );
+    } );
+  },
+  after: function() {
+    return new Promise( function( resolve, reject ) {
+      DB.disconnect( function( err ) {
+        if ( err ) {
+          reject( err );
+        } else {
+          resolve();
+        }
+      } );
+    } );
+  }
 } );
 ```

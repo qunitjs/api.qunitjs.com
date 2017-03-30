@@ -27,8 +27,8 @@ Compare the value of two objects.
 
 ```js
 QUnit.test( "notDeepEqual test", function( assert ) {
-	var obj = { foo: "bar" };
+  var obj = { foo: "bar" };
 
-	assert.notDeepEqual( obj, { foo: "bla" }, "Different object, same key, different value, not equal" );
+  assert.notDeepEqual( obj, { foo: "bla" }, "Different object, same key, different value, not equal" );
 });
 ```

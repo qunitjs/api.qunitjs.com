@@ -25,19 +25,19 @@ How to use `skip` as a placeholder for future or temporarily broken tests.
 
 ```js
 QUnit.module( "robot", {
-	beforeEach: function() {
-		this.robot = new Robot();
-	}
+  beforeEach: function() {
+    this.robot = new Robot();
+  }
 });
 
 QUnit.test( "say", function( assert ) {
-	assert.strictEqual( this.robot.say(), "Exterminate!" );
+  assert.strictEqual( this.robot.say(), "Exterminate!" );
 });
 
 // Robot doesn't have a laser method, yet, skip this test
 // Will show up as skipped in the results
 QUnit.skip( "laser", function( assert ) {
-	assert.ok( this.robot.laser() );
+  assert.ok( this.robot.laser() );
 });
 ```
 
@@ -47,18 +47,18 @@ Using modern syntax:
 const { test, skip } = QUnit;
 
 QUnit.module( "robot", {
-	beforeEach() {
-		this.robot = new Robot();
-	}
+  beforeEach() {
+    this.robot = new Robot();
+  }
 });
 
 test( "say", function( t ) {
-	t.strictEqual( this.robot.say(), "Exterminate!" );
+  t.strictEqual( this.robot.say(), "Exterminate!" );
 });
 
 // Robot doesn't have a laser method, yet, skip this test
 // Will show up as skipped in the results
 skip( "laser", function( t ) {
-	t.ok( this.robot.laser() );
+  t.ok( this.robot.laser() );
 });
 ```

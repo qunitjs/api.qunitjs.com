@@ -9,7 +9,7 @@ title: QUnit.config
 Configuration for QUnit. QUnit has a bunch of internal configuration defaults, some of which are useful to override. Check the description for each option for details.
 
 ### `QUnit.config.altertitle` (boolean) | default: `true`
-		
+
 By default, QUnit updates document.title to add a checkmark or x-mark to indicate if a testsuite passed or failed. This makes it easy to see a suites result even without looking at a tab's content.
 
 If you're dealing with code that tests `document.title` changes or have some other problem with this feature, set this option to false to disable it.
@@ -22,7 +22,7 @@ By default, QUnit runs tests when `load` event is triggered on the `window`. If 
 
 By default, QUnit's HTML reporter collapses consecutive failing tests showing only the details for the first failed test. The other tests can be expanded manually with a single click on the test title. Setting this value to `false` will expand the details for every failing test.
 
-### `QUnit.config.current` (object)	
+### `QUnit.config.current` (object)
 
 This object isn't actually a configuration property, but is listed here anyway, as its exported through `QUnit.config`. This gives you access to some QUnit internals at runtime. See below for an example.
 
@@ -106,11 +106,11 @@ Specify a global timeout in milliseconds after which all tests will fail with an
 
 By default, scroll to top of the page when suite is done. Setting this to false will leave the page scroll alone.
 
-### `QUnit.config.urlConfig` (array)	
+### `QUnit.config.urlConfig` (array)
 
 This property controls which form controls to put into the QUnit toolbar element (below the header). By default, the "noglobals" and "notrycatch" checkboxes are there. By extending this array, you can add your own checkboxes and select lists.
 
-Each element should be an object with an `id` property (used as the config and query-string key) and a `label` property (used as text in the UI), and optionally a `tooltip` property (used as the 	title attribute to explain what the control does). Each element should also have a `value` property controlling available options and rendering.
+Each element should be an object with an `id` property (used as the config and query-string key) and a `label` property (used as text in the UI), and optionally a `tooltip` property (used as the   title attribute to explain what the control does). Each element should also have a `value` property controlling available options and rendering.
 
 If `value` is undefined, the option will render as a checkbox. The corresponding URL parameter will be set to "true" when the checkbox is checked, and otherwise will be absent.
 
@@ -129,10 +129,10 @@ Disable autostart, useful when loading tests asynchronsly, here using requirejs:
 ```js
 QUnit.config.autostart = false;
 require(
-	[ "tests/testModule1", "tests/testModule2" ],
-	function() {
-		QUnit.start();
-	}
+  [ "tests/testModule1", "tests/testModule2" ],
+  function() {
+    QUnit.start();
+  }
 );
 ```
 
@@ -140,9 +140,9 @@ Access `QUnit.config.current.testName` to pass the current test's name on to ano
 
 ```js
 QUnit.test("some test", function() {
-	// a few regular assertions
-	// then a call to another tool
-	speedTest( QUnit.config.current.testName, codeUnderTest );
+  // a few regular assertions
+  // then a call to another tool
+  speedTest( QUnit.config.current.testName, codeUnderTest );
 });
 ```
 
@@ -152,9 +152,9 @@ Add a new checkbox to the toolbar, using the `urlConfig` property. This assumes 
 
 ```js
 QUnit.config.urlConfig.push({
-	id: "min",
-	label: "Minified source",
-	tooltip: "Load minified source files instead of the regular unminified ones."
+  id: "min",
+  label: "Minified source",
+  tooltip: "Load minified source files instead of the regular unminified ones."
 });
 ```
 
@@ -164,25 +164,25 @@ Add a dropdown to the toolbar, using the `urlConfig` property. This assumes ther
 
 ```js
 QUnit.config.urlConfig.push({
-	id: "jquery",
-	label: "jQuery version",
-	value: [ "1.7.2", "1.8.3", "1.9.1" ],
-	tooltip: "What jQuery Core version to test against"
+  id: "jquery",
+  label: "jQuery version",
+  value: [ "1.7.2", "1.8.3", "1.9.1" ],
+  tooltip: "What jQuery Core version to test against"
 });
 ```
 
 ---
-	
+
 Preconfiguring QUnit
-			
+
 If you want to configure QUnit before it is loaded, you can introduce the global variable `QUnit` with the property `config` specified. All other properties of the QUnit object will be ignored. In the config properties you may specify any of the allowed QUnit.config values.
-		
+
 ```js
 // QUnit is not yet loaded here
 window.QUnit = {
-	config: {
-		autoStart: false,
-		noGlobals: true,
-	}
+  config: {
+    autoStart: false,
+    noGlobals: true,
+  }
 };
 ```

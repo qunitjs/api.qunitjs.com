@@ -3,7 +3,7 @@ layout: default
 title: QUnit.start
 categories:
   - main
-	- async
+  - async
 ---
 
 ## `QUnit.start()`
@@ -22,6 +22,6 @@ A test run that does not begin when the page is done loading. This example uses 
 QUnit.config.autostart = false;
 
 require(["test/tests1.js", "test/tests2.js"], function() {
-	QUnit.start();
+  QUnit.start();
 });
 ```

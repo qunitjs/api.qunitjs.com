@@ -29,6 +29,6 @@ The simplest assertion example:
 
 ```js
 QUnit.test( "a test", function( assert ) {
-	assert.notStrictEqual( 1, "1", "String '1' and number 1 have the same value but not the same type" );
+  assert.notStrictEqual( 1, "1", "String '1' and number 1 have the same value but not the same type" );
 });
 ```

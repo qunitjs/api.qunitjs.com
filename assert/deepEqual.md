@@ -26,8 +26,8 @@ The `deepEqual()` assertion can be used just like `equal()` when comparing the v
 Compare the value of two objects.
 ```js
 QUnit.test( "deepEqual test", function( assert ) {
-	var obj = { foo: "bar" };
+  var obj = { foo: "bar" };
 
-	assert.deepEqual( obj, { foo: "bar" }, "Two objects can be the same in value" );
+  assert.deepEqual( obj, { foo: "bar" }, "Two objects can be the same in value" );
 });
 ```

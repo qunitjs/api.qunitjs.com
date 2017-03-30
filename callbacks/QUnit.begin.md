@@ -27,7 +27,7 @@ Get total amount of tests.
 
 ```js
 QUnit.begin(function( details ) {
-	console.log( "Test amount:", details.totalTests );
+  console.log( "Test amount:", details.totalTests );
 });
 ```
 
@@ -35,6 +35,6 @@ Using modern syntax:
 
 ```js
 QUnit.begin( ( { totalTests } ) => {
-	console.log( `Test amount: ${totalTests}` );
+  console.log( `Test amount: ${totalTests}` );
 });
 ```

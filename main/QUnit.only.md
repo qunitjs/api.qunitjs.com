@@ -34,22 +34,22 @@ How to use `QUnit.only` to filter your test suite.
 
 ```js
 QUnit.module( "robot", {
-	beforeEach: function() {
-		this.robot = new Robot();
-	}
+  beforeEach: function() {
+    this.robot = new Robot();
+  }
 });
 
 test( "say", function( assert ) {
-	assert.ok( false, "I'm not quite ready yet" );
+  assert.ok( false, "I'm not quite ready yet" );
 });
 
 QUnit.test( "stomp", function( assert ) {
-	assert.ok( false, "I'm not quite ready yet" );
+  assert.ok( false, "I'm not quite ready yet" );
 });
 
 // You're currently working on the laser feature, so we run only this test
 QUnit.only( "laser", function( assert ) {
-	assert.ok( this.robot.laser() );
+  assert.ok( this.robot.laser() );
 });
 ```
 
@@ -59,21 +59,21 @@ Using modern syntax:
 const { test, only } = QUnit;
 
 QUnit.module( "robot", {
-	beforeEach: function() {
-		this.robot = new Robot();
-	}
+  beforeEach: function() {
+    this.robot = new Robot();
+  }
 });
 
 test( "say", t => {
-	t.ok( false, "I'm not quite ready yet" );
+  t.ok( false, "I'm not quite ready yet" );
 });
 
 test( "stomp", t => {
-	t.ok( false, "I'm not quite ready yet" );
+  t.ok( false, "I'm not quite ready yet" );
 });
 
 // You're currently working on the laser feature, so we run only this test
 only( "laser", function( t ) {
-	t.ok( this.robot.laser() );
+  t.ok( this.robot.laser() );
 });
 ```

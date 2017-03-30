@@ -28,7 +28,7 @@ Register a callback that logs the module and name
 
 ```js
 QUnit.testStart(function( details ) {
-	console.log( "Now running: ", details.module, details.name );
+  console.log( "Now running: ", details.module, details.name );
 });
 ```
 
@@ -36,6 +36,6 @@ Using modern syntax:
 
 ```js
 QUnit.testStart( ( { module, name } ) => {
-	console.log( `Now running: ${module}: ${name}` );
+  console.log( `Now running: ${module}: ${name}` );
 });
 ```

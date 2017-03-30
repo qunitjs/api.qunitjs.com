@@ -21,20 +21,20 @@ Define a custom `mod2` assertion that tests if the provided numbers are equivale
 
 ```js
 QUnit.test( "QUnit.extend", function( assert ) {
-	var base = {
-		a: 1,
-		b: 2,
-		z: 3
-	};
-	QUnit.extend( base, {
-		b: 2.5,
-		c: 3,
-		z: undefined
-	} );
+  var base = {
+    a: 1,
+    b: 2,
+    z: 3
+  };
+  QUnit.extend( base, {
+    b: 2.5,
+    c: 3,
+    z: undefined
+  } );
 
-	assert.equal( base.a, 1, "Unspecified values are not modified" );
-	assert.equal( base.b, 2.5, "Existing values are updated" );
-	assert.equal( base.c, 3, "New values are defined" );
-	assert.ok( !( "z" in base ), "Values specified as `undefined` are removed" );
+  assert.equal( base.a, 1, "Unspecified values are not modified" );
+  assert.equal( base.b, 2.5, "Existing values are updated" );
+  assert.equal( base.c, 3, "New values are defined" );
+  assert.ok( !( "z" in base ), "Values specified as `undefined` are removed" );
 });
 ```

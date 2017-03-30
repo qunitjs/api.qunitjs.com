@@ -28,7 +28,7 @@ Register a callback that logs test results to the console.
 
 ```js
 QUnit.done(function( details ) {
-	console.log( "Total: ", details.total, " Failed: ", details.failed, " Passed: ", details.passed, " Runtime: ", details.runtime );
+  console.log( "Total: ", details.total, " Failed: ", details.failed, " Passed: ", details.passed, " Runtime: ", details.runtime );
 });
 ```
 
@@ -36,6 +36,6 @@ Using modern syntax:
 
 ```js
 QUnit.done( ( { total, failed, passed, runtime } ) => {
-	console.log( `Total: ${total}, Failed: ${failed}, Passed: ${passed}, Runtime: ${runtime}` );
+  console.log( `Total: ${total}, Failed: ${failed}, Passed: ${passed}, Runtime: ${runtime}` );
 });
 ```

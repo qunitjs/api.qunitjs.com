@@ -19,6 +19,6 @@ Use the `ok` assertion through the test callback parameter:
 
 ```js
 QUnit.test( "`ok` assertion defined in the callback parameter", function( assert ) {
-	assert.ok( true, "on the object passed to the `test` function" );
+  assert.ok( true, "on the object passed to the `test` function" );
 });
 ```

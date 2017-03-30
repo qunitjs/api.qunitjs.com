@@ -31,19 +31,19 @@ Register a callback that logs results of a single test
 
 ```js
 QUnit.testDone( function( details ) {
-	var result = {
-		"Module name": details.module,
-		"Test name": details.name,
-		"Assertions": {
-			"Total": details.total,
-			"Passed": details.passed,
-			"Failed": details.failed
-		},
-		"Skipped": details.skipped,
-		"Runtime": details.runtime
-	};
+  var result = {
+    "Module name": details.module,
+    "Test name": details.name,
+    "Assertions": {
+      "Total": details.total,
+      "Passed": details.passed,
+      "Failed": details.failed
+    },
+    "Skipped": details.skipped,
+    "Runtime": details.runtime
+  };
 
-	console.log( JSON.stringify( result, null, 2 ) );
+  console.log( JSON.stringify( result, null, 2 ) );
 } );
 ```
 
@@ -51,18 +51,18 @@ Using modern syntax:
 
 ```js
 QUnit.testDone( ( { module, name, total, passed, failed, skipped, runtime } ) => {
-	var result = {
-		"Module name": module,
-		"Test name": name,
-		"Assertions": {
-			"Total": total,
-			"Passed": passed,
-			"Failed": failed
-		},
-		"Skipped": skipped,
-		"Runtime": runtime
-	};
+  var result = {
+    "Module name": module,
+    "Test name": name,
+    "Assertions": {
+      "Total": total,
+      "Passed": passed,
+      "Failed": failed
+    },
+    "Skipped": skipped,
+    "Runtime": runtime
+  };
 
-	console.log( JSON.stringify( result, null, 2 ) );
+  console.log( JSON.stringify( result, null, 2 ) );
 } );
 ```

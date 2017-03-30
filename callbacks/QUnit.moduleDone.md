@@ -29,7 +29,7 @@ Register a callback that logs the module results
 
 ```js
 QUnit.moduleDone(function( details ) {
-	console.log( "Finished running: ", details.name, "Failed/total: ", details.failed, details.total );
+  console.log( "Finished running: ", details.name, "Failed/total: ", details.failed, details.total );
 });
 ```
 
@@ -37,6 +37,6 @@ Using modern syntax:
 
 ```js
 QUnit.moduleDone( ( { name, failed, total } ) => {
-	console.log( `Finished running: ${name} Failed/total: ${failed}, ${total}` );
+  console.log( `Finished running: ${name} Failed/total: ${failed}, ${total}` );
 });
 ```

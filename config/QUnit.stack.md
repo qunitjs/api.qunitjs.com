@@ -21,21 +21,21 @@ Not all [browsers support retrieving stracktraces][browsers]. In those, `QUnit.s
 [browsers]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/Stack#Browser_compatibility
 
 ### Example
-	
+
 The stacktrace line can be used on custom assertions and reporters. The following example <a href="/QUnit.log/">logs</a> the line of each passing assertion.
-		
+
 ```js
 QUnit.log( function( details ) {
-	if ( details.result ) {
+  if ( details.result ) {
 
-		// 5 is the line reference for the assertion method, not the following line.
-		console.log( QUnit.stack( 5 ) );
-	}
+    // 5 is the line reference for the assertion method, not the following line.
+    console.log( QUnit.stack( 5 ) );
+  }
 } );
 
 QUnit.test( "foo", function( assert ) {
 
-	// the log callback will report the position of the following line.
-	assert.ok( true );
+  // the log callback will report the position of the following line.
+  assert.ok( true );
 } );
 ```

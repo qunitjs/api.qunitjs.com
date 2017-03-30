@@ -22,11 +22,11 @@ Printing results of a test suite.
 
 ```js
 QUnit.on( "runEnd", function( data ) {
-	console.log( "Passed: " + data.testCounts.passed );
-	console.log( "Failed: " + data.testCounts.failed );
-	console.log( "Skipped: " + data.testCounts.skipped );
-	console.log( "Todo: " + data.testCounts.todo );
-	console.log( "Total: " + data.testCounts.total );
+  console.log( "Passed: " + data.testCounts.passed );
+  console.log( "Failed: " + data.testCounts.failed );
+  console.log( "Skipped: " + data.testCounts.skipped );
+  console.log( "Todo: " + data.testCounts.todo );
+  console.log( "Total: " + data.testCounts.total );
 } );
 ```
 
@@ -34,10 +34,10 @@ Using modern syntax:
 
 ```js
 QUnit.on( "runEnd", ( { testCounts: { passed, failed, skipped, todo, total } } ) => {
-	console.log( `Passed: ${passed}` );
-	console.log( `Failed: ${failed}` );
-	console.log( `Skipped: ${skipped}` );
-	console.log( `Todo: ${todo}` );
-	console.log( `Total: ${total}` );
+  console.log( `Passed: ${passed}` );
+  console.log( `Failed: ${failed}` );
+  console.log( `Skipped: ${skipped}` );
+  console.log( `Todo: ${todo}` );
+  console.log( `Total: ${total}` );
 } );
 ```

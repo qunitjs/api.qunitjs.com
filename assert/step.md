@@ -21,10 +21,10 @@ The `step()` assertion registers a passing assertion with a provided message. Th
 
 ```js
 QUnit.test( "step test", function( assert ) {
-	assert.expect( 1 );
-	obj.hook = function() {
-		assert.step('Hook is called!');
-	};
-	obj.invokeHookIndirectly();
+  assert.expect( 1 );
+  obj.hook = function() {
+    assert.step('Hook is called!');
+  };
+  obj.invokeHookIndirectly();
 });
 ```

@@ -29,6 +29,6 @@ Compare the value of two primitives, having the same value and type.
 
 ```js
 QUnit.test( "strictEqual test", function( assert ) {
-	assert.strictEqual( 1, 1, "1 and 1 have the same value and type" );
+  assert.strictEqual( 1, 1, "1 and 1 have the same value and type" );
 });
 ```

@@ -17,7 +17,7 @@ __DEPRECATED__: Report the result of a custom assertion
 | `message` (string) | A short description of the assertion |
 
 <p class="warning">This method is __deprecated__ and it's recommended to use <a href="/pushResult/">`pushResult`</a> on its direct reference in the assertion context.</p>
-		
+
 `QUnit.push` reflects to the current running test, and it may leak assertions in asynchronous mode. Checkout <a href="/pushResult/">assert.pushResult()</a> to set a proper custom assertion.
-		
+
 Invoking `QUnit.push` allows to create a readable expectation that is not defined by any of QUnit's built-in assertions.

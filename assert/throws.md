@@ -15,7 +15,7 @@ Test if a callback throws an exception, and optionally compare the thrown error.
 | `expected`         | Expected Error                       |
 | `message` (string) | A short description of the assertion |
 
-	
+
 ### Description
 
 When testing code that is expected to throw an exception based on a specific set of circumstances, use `assert.throws()` to catch the error object for testing and comparison.
@@ -31,53 +31,53 @@ Assert the correct error message is received for a custom error object.
 ```js
 QUnit.test( "throws", function( assert ) {
 
-	function CustomError( message ) {
-		this.message = message;
-	}
+  function CustomError( message ) {
+    this.message = message;
+  }
 
-	CustomError.prototype.toString = function() {
-		return this.message;
-	};
+  CustomError.prototype.toString = function() {
+    return this.message;
+  };
 
-	assert.throws(
-		function() {
-			throw "error"
-		},
-		"throws with just a message, not using the 'expected' argument"
-	);
+  assert.throws(
+    function() {
+      throw "error"
+    },
+    "throws with just a message, not using the 'expected' argument"
+  );
 
-	assert.throws(
-		function() {
-			throw new CustomError("some error description");
-		},
-		/description/,
-		"raised error message contains 'description'"
-	);
+  assert.throws(
+    function() {
+      throw new CustomError("some error description");
+    },
+    /description/,
+    "raised error message contains 'description'"
+  );
 
-	assert.throws(
-		function() {
-			throw new CustomError();
-		},
-		CustomError,
-		"raised error is an instance of CustomError"
-	);
+  assert.throws(
+    function() {
+      throw new CustomError();
+    },
+    CustomError,
+    "raised error is an instance of CustomError"
+  );
 
-	assert.throws(
-		function() {
-			throw new CustomError("some error description");
-		},
-		new CustomError("some error description"),
-		"raised error instance matches the CustomError instance"
-	);
+  assert.throws(
+    function() {
+      throw new CustomError("some error description");
+    },
+    new CustomError("some error description"),
+    "raised error instance matches the CustomError instance"
+  );
 
-	assert.throws(
-		function() {
-			throw new CustomError("some error description");
-		},
-		function( err ) {
-			return err.toString() === "some error description";
-		},
-		"raised error instance satisfies the callback function"
-	);
+  assert.throws(
+    function() {
+      throw new CustomError("some error description");
+    },
+    function( err ) {
+      return err.toString() === "some error description";
+    },
+    "raised error instance satisfies the callback function"
+  );
 });
 ```

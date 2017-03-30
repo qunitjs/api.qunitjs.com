@@ -32,14 +32,14 @@ How to use `QUnit.todo` to denote code that is still under development.
 
 ```js
 QUnit.module( "robot", {
-	beforeEach: function() {
-		this.robot = new Robot();
-	}
+  beforeEach: function() {
+    this.robot = new Robot();
+  }
 });
 
 // fireLazer hasn't been properly implemented yet, so this is a todo test
 QUnit.todo( "fireLazer returns the correct value", function( assert ) {
-	var result = this.robot.fireLazer(); // Currently returns undefined
-	assert.equal( result, "I'm firing my lazer!" );
+  var result = this.robot.fireLazer(); // Currently returns undefined
+  assert.equal( result, "I'm firing my lazer!" );
 });
 ```
