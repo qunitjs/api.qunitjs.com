@@ -3,7 +3,7 @@ layout: default
 title: async
 categories:
   - assert
-  - async-control
+  - async
 ---
 
 ## `async( [ acceptCallCount = 1 ] )`
