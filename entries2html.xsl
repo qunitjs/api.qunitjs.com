@@ -17,7 +17,7 @@
 &lt;body&gt;
 &lt;div id="qunit"&gt;&lt;/div&gt;
 &lt;div id="qunit-fixture"&gt;
-	<xsl:copy-of select="html/text()"/>
+  <xsl:copy-of select="html/text()"/>
 &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
