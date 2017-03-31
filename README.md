@@ -2,11 +2,21 @@
 
 ## Building and Deploying
 
-To build and deploy your changes for previewing in a [`jquery-wp-content`](https://github.com/jquery/jquery-wp-content) instance, follow the [workflow instructions](http://contribute.jquery.org/web-sites/#workflow) from our documentation on [contributing to jQuery Foundation web sites](http://contribute.jquery.org/web-sites/).
+We're using GitHub pages. Anything going to the gh-pages branch will be immediately published.
 
 ### Requirements
 
-* [libxml2](http://xmlsoft.org/)
-* [libxslt](http://xmlsoft.org/libxslt/)
+This is currenly tested using Jekyll and bundler gems from Ruby 2.4.1.1.
 
-The `xmllint` and `xsltproc` utilities need to be in your path. If you are on Windows, you can get libxml2 and libxslt from <a href="http://sourceforge.net/projects/gnuwin32/files/">GnuWin32</a>.
+To setup for the first time:
+
+```shell
+gem install jekyll bundler
+bundle install
+```
+
+To run it locally:
+
+```shell
+bundle exec jekyll serve
+```
