@@ -233,7 +233,7 @@ p {
 
 a.logo-link:link,
 a.logo-link:visited {
-    background: url('/api/img/logo-qunit@2x.png') no-repeat 0 0;
+    background: url('/img/logo-qunit@2x.png') no-repeat 0 0;
     background-size: cover;
     border: none;
     display: block;
